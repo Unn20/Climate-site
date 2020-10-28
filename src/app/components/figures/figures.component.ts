@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { FigureComponent } from './figure/figure.component';
 
 @Component({
     selector: 'app-figures',
@@ -6,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./figures.component.css']
 })
 export class FiguresComponent implements OnInit {
-
+    figures = ['1', '2', '3', '4'];
     constructor() {
     }
 

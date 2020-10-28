@@ -8,6 +8,9 @@ import { FiguresComponent } from './components/figures/figures.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewsHeaderComponent } from './components/news-header/news-header.component';
 import { PollutionEffectsComponent } from './components/pollution-effects/pollution-effects.component';
+import { FigureComponent } from './components/figures/figure/figure.component';
+import {ChartModule} from 'primeng/chart';
+
 
 @NgModule({
     declarations: [
@@ -17,10 +20,12 @@ import { PollutionEffectsComponent } from './components/pollution-effects/pollut
         FiguresComponent,
         FooterComponent,
         NewsHeaderComponent,
-        PollutionEffectsComponent
+        PollutionEffectsComponent,
+        FigureComponent
     ],
     imports: [
-        BrowserModule
+        BrowserModule,
+        ChartModule
     ],
     providers: [],
     bootstrap: [AppComponent]
