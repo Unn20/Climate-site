@@ -7,7 +7,7 @@ build:
   stage: build
   image: node:latest
   only:
-    - test_ci
+    - master
   script:
     - npm install -g @angular/cli@
     - npm install
