@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "climate-site"
+    }
+  },
+  "defaultProject": "climate-site",
+  "cli": {
+    "analytics": false
+  }
 }
