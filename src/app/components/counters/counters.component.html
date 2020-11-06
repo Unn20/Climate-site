@@ -1,1 +1,8 @@
-<p>counters works!</p>
+<div>
+    <div *ngFor="let number of numbers">
+        <span id="{{number.id}}"></span>
+        <span> {{number.text}}</span>
+    </div>
+</div>
+
+<button (click)="updateCounters()">update</button>
