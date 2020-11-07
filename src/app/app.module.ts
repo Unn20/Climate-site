@@ -10,6 +10,7 @@ import {NewsHeaderComponent} from './components/news-header/news-header.componen
 import {PollutionEffectsComponent} from './components/pollution-effects/pollution-effects.component';
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {DeathsCounterComponent} from './components/pollution-effects/deaths-coun
         FooterComponent,
         NewsHeaderComponent,
         PollutionEffectsComponent,
-        DeathsCounterComponent
+        DeathsCounterComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,
