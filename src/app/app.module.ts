@@ -11,6 +11,11 @@ import {PollutionEffectsComponent} from './components/pollution-effects/pollutio
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
     declarations: [
@@ -22,11 +27,14 @@ import {NavbarComponent} from './components/navbar/navbar.component';
         NewsHeaderComponent,
         PollutionEffectsComponent,
         DeathsCounterComponent,
-        NavbarComponent
+        NavbarComponent,
+        NewsScrollComponent
     ],
     imports: [
         BrowserModule,
-        CommonModule
+        CommonModule,
+        ScrollViewModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
