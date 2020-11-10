@@ -28,11 +28,6 @@ export class CountersComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this.getCountersData();
-
-        for (let [i, c] of this.countersData.entries()) {
-            this.counters.push(new CountUp('counter-value-' + i.toString(), c, {separator: " ", startVal: c - c/3}));
-            document.getElementById('counter-text-' + i.toString()).innerHTML = this.countersText[i];
-        }
     }
 
     getCountersData(): void {
@@ -40,13 +35,17 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     updateCounters() {
-        this.countersData.forEach((value, index, array) =>
-            array[index] += Math.floor(Math.random()*5));
-        this.counters.forEach((value, index, array) =>
-            array[index].update(this.countersData[index]));
+        // this.countersData.forEach((value, index, array) =>
+        //     array[index] += Math.floor(Math.random()*5));
+        // this.counters.forEach((value, index, array) =>
+        //     array[index].update(this.countersData[index]));
     }
 
     ngAfterViewInit(): void {
+        for (let [i, c] of this.countersData.entries()) {
+            this.counters.push(new CountUp('counter-value-' + i.toString(), c, {separator: " ", startVal: c - c/3}));
+            document.getElementById('counter-text-' + i.toString()).innerHTML = this.countersText[i];
+        }
         this.updateCounters();
         for (let c of this.counters) {
             c.start();
