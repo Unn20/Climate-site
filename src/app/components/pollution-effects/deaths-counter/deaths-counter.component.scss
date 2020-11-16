@@ -1,0 +1,28 @@
+.deaths-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+
+    .deaths-count {
+        font-size: 52px;
+        font-weight: 600;
+    }
+
+    .deaths-explanation {
+        font-size: 22px;
+        color: grey;
+    }
+
+    .deaths-count, .deaths-explanation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s;
+
+        &.shown {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
