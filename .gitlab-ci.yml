@@ -8,9 +8,10 @@ build:
   image: node:latest
   only:
     - master
+    - development
   script:
     - npm install -g @angular/cli@
-    - npm install
+    - npm ci
     - ng build
   artifacts:
     paths:
