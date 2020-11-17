@@ -14,6 +14,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
     initialized = false;
     countersData: number[] = [];
     countersDataUpdates: number[] = [];
+    // TODO: Maybe also download text from backend
     countersText: string[] = ['Zginęło lwów w afryce',
         'Lodowców zostało stopionych',
         'Pobito niedźwiedzi w parkach',
@@ -30,6 +31,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     getCountersData(): Subscription {
+        // TODO: Return defaults value if you can't get data from backend
         return this.countersService.getCountersData().subscribe(value => {
             value.forEach(num => this.countersData.push(num));
             value.forEach(num => this.countersDataUpdates.push(num));
@@ -61,6 +63,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     tryInitCounters(): void {
+        // Try to init counters and retry if failed
         console.log(this.initialized);
         if (!this.initialized) {
             try {
