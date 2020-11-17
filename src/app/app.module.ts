@@ -33,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     imports: [
         BrowserModule,
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
         ScrollViewModule,
         BrowserAnimationsModule
     ],
