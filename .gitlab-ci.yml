@@ -12,6 +12,7 @@ build:
   script:
     - npm install -g @angular/cli@
     - npm install
+    - npm rebuild node-sass
     - ng build
   artifacts:
     paths:
