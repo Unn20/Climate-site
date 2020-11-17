@@ -11,6 +11,7 @@ import {PollutionEffectsComponent} from './components/pollution-effects/pollutio
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     ],
     imports: [
         BrowserModule,
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

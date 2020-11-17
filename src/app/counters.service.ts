@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from "rxjs";
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,9 @@ import {Observable, of} from "rxjs";
 export class CountersService {
     countersData: number[] = [3456, 12, 98, 234, 53645, 345];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getCountersData(): Observable<any> {
-      return of(this.countersData);
+  getCountersData(): Observable<number[]> {
+      return this.httpClient.get<number[]>('http://localhost:3000/api/counters');
   }
 }
