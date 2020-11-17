@@ -12,6 +12,10 @@ import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
     declarations: [
@@ -23,12 +27,15 @@ import {HttpClientModule} from '@angular/common/http';
         NewsHeaderComponent,
         PollutionEffectsComponent,
         DeathsCounterComponent,
-        NavbarComponent
+        NavbarComponent,
+        NewsScrollComponent
     ],
     imports: [
         BrowserModule,
         CommonModule,
         HttpClientModule
+        ScrollViewModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
