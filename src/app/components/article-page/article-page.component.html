@@ -1,0 +1,21 @@
+<div class="article">
+    <header>
+        <h1>{{articleToShow.title}}</h1>
+        <img class="main-image" src="{{articleToShow.mainImageUrl}}">
+        <div class="date">{{articleToShow.dateAdded}}</div>
+    </header>
+    <div class="content-container">
+        <div class="content" *ngFor="let content of articleToShow.articleContentList">
+            <h2 *ngIf="isContentTypeHeader(content.contentType)">{{content.value}}</h2>
+            <div *ngIf="isContentTypeText(content.contentType)">{{content.value}}</div>
+            <img *ngIf="isContentTypeImage(content.contentType)" src="{{content.value}}">
+        </div>
+    </div>
+    <div class="latest-articles">
+        <div *ngFor="let article of latestArticles" (click)="setArticleToShow(article.id)" class="article-link">
+            <img src="{{article.mainImageUrl}}">
+            <div class="title">{{article.title}}</div>
+        </div>
+    </div>
+</div>
+

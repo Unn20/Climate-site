@@ -6,7 +6,6 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {CountersComponent} from './components/counters/counters.component';
 import {FiguresComponent} from './components/figures/figures.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {NewsHeaderComponent} from './components/news-header/news-header.component';
 import {PollutionEffectsComponent} from './components/pollution-effects/pollution-effects.component';
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
@@ -15,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ArticlePageComponent} from './components/article-page/article-page.component';
 
 @NgModule({
     declarations: [
@@ -24,11 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CountersComponent,
         FiguresComponent,
         FooterComponent,
-        NewsHeaderComponent,
         PollutionEffectsComponent,
         DeathsCounterComponent,
         NavbarComponent,
-        NewsScrollComponent
+        NewsScrollComponent,
+        ArticlePageComponent
     ],
     imports: [
         BrowserModule,
