@@ -1,11 +1,19 @@
 .k-scrollview-wrap {
-    margin: 0 auto;
+    //margin: 0 auto;
 }
 
 .k-scrollview-wrap {
-    margin: 0 auto;
+    //margin: 0 auto;
+    border-top: 3px solid #00006d;
+    border-bottom: 3px solid #00006d;
 }
-.titleDiv {
+
+div {
+    color:black
+}
+
+div.titleDiv {
+    transition: .5s;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +22,7 @@
     margin: 0;
     padding: 0;
     color: #fff;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.3);
     text-align: center;
     font-size: 24px;
 }

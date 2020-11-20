@@ -8,6 +8,7 @@
     }
 
     .counters-container {
+        box-shadow: 0 0 20px rgb(50 50 50);
         padding: 15px;
         background-color: darkblue;
         color: white;
@@ -23,15 +24,17 @@
 
         div {
             width: 200px;
-            border: 1px white dashed;
+            border: 1px solid darkblue;
             border-radius: 10px;
             margin: 3px;
             display: flex;
+            transition: .3s;
             flex-flow: column-reverse nowrap;
             justify-content: space-between;
 
             &:hover {
                 background-color: #00006d;
+                border: white solid 1px;
             }
 
             span {
