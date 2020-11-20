@@ -1,6 +1,6 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {CountUp} from 'countup.js';
-import {CountersService} from '../../counters.service';
+import {CountersService} from '../../services/counters.service';
 import {Subscription} from 'rxjs';
 
 @Component({

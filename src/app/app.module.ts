@@ -15,6 +15,7 @@ import { NewsScrollComponent } from './components/news-scroll/news-scroll.compon
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {ArticlePageComponent} from './components/article-page/article-page.compo
         CommonModule,
         HttpClientModule,
         ScrollViewModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]

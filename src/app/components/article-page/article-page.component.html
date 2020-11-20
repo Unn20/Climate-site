@@ -1,4 +1,5 @@
-<div class="article">
+<app-navbar></app-navbar>
+<div *ngIf="articleToShow" class="article">
     <header>
         <h1>{{articleToShow.title}}</h1>
         <img class="main-image" src="{{articleToShow.mainImageUrl}}">
@@ -12,7 +13,7 @@
         </div>
     </div>
     <div class="latest-articles">
-        <div *ngFor="let article of latestArticles" (click)="setArticleToShow(article.id)" class="article-link">
+        <div *ngFor="let article of latestArticles" (click)="redirectToArticle(article.id)" class="article-link">
             <img src="{{article.mainImageUrl}}">
             <div class="title">{{article.title}}</div>
         </div>

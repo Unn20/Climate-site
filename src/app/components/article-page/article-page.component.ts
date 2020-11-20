@@ -1,8 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {ContentfulService} from '../../services/contentful.service';
+import {Component} from '@angular/core';
 import {Article} from '../../models/article';
 import {ArticleContentTypeEnum} from '../../enums/article-content-type-enum';
 import {ArticleService} from '../../services/article.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-article-page',
@@ -12,24 +12,23 @@ import {ArticleService} from '../../services/article.service';
 export class ArticlePageComponent {
     public latestArticles: Article[];
     public articleToShow: Article;
+    private articles: Article[];
     private latestArticlesMaxCount = 3;
-    private articleToShowId = 1;
 
     constructor(private articleService: ArticleService,
-                private contentfulService: ContentfulService) {
-        this.contentfulService.getArticlesEntries()
-            .then(entries => {
-                const articles = this.contentfulService.convertEntriesToArticlesList(entries);
-                this.articleService.articles = articles.sort((a, b) => a.id - b.id).reverse();
-                this.latestArticles = articles.slice(0, this.latestArticlesMaxCount);
-                this.setArticleToShow(this.articleToShowId);
-                console.log(this.latestArticles);
-            });
+                private activatedRoute: ActivatedRoute,
+                private router: Router) {
+        articleService.getArticles().then(articles => {
+            this.articles = articles;
+            this.latestArticles = articles.slice(0, this.latestArticlesMaxCount);
+        }).then(() => {
+            this.setArticleToShowUsingUrl();
+        });
     }
 
-    public setArticleToShow(articleId: number): void {
-        this.articleToShow = this.articleService.articles.find(article => article.id === articleId);
+    public redirectToArticle(articleId: number): void {
         window.scrollTo(0, 0);
+        this.router.navigate(['/article/' + articleId]);
     }
 
     public isContentTypeHeader(contentType: ArticleContentTypeEnum): boolean {
@@ -42,6 +41,13 @@ export class ArticlePageComponent {
 
     public isContentTypeImage(contentType: ArticleContentTypeEnum): boolean {
         return contentType === ArticleContentTypeEnum.IMAGE;
+    }
+
+    private setArticleToShowUsingUrl(): void {
+        this.activatedRoute.params.subscribe(event => {
+            const articleToShowId = parseInt(event.articleId, 10);
+            this.articleToShow = this.articles.find(article => article.id === articleToShowId);
+        });
     }
 
 }
