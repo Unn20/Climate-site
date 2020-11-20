@@ -4,10 +4,10 @@ import { FigureComponent } from './figure/figure.component';
 @Component({
     selector: 'app-figures',
     templateUrl: './figures.component.html',
-    styleUrls: ['./figures.component.css']
+    styleUrls: ['./figures.component.scss']
 })
 export class FiguresComponent implements OnInit {
-    figures = ['1', '2', '3', '4'];
+    figures: string[] = ['temp', 'co2', 'methane', 'nitrous', 'arctic'];
     constructor() {
     }
 

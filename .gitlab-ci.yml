@@ -1,0 +1,21 @@
+stages:
+  - build
+  - package
+  - deploy
+
+build:
+  stage: build
+  image: node:latest
+  only:
+    - master
+    - development
+  script:
+    - npm install -g @angular/cli@
+    - npm ci
+    - ng build
+  artifacts:
+    paths:
+      - dist/
+  cache:
+    paths:
+      - node_modules/
