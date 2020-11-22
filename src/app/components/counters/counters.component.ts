@@ -63,14 +63,10 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     tryInitCounters(): void {
-        // Try to init counters and retry if failed
-        console.log(this.initialized);
         if (!this.initialized) {
             try {
                 this.initializeCounters();
             } catch (error) {
-                console.log(error);
-                console.log('retrying in 50ms');
                 this.counters = [];
             }
             setTimeout(() => this.tryInitCounters(), 50);

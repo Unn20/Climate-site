@@ -47,7 +47,6 @@ export class ArticlePageComponent {
         this.activatedRoute.params.subscribe(event => {
             const articleToShowId = parseInt(event.articleId, 10);
             this.articleToShow = this.articles.find(article => article.id === articleToShowId);
-            console.log(this.articleToShow);
             if (!this.articleToShow) {
                 this.router.navigate(['/home']);
             }

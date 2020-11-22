@@ -4,7 +4,7 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomePageComponent},
     {path: 'article/:articleId', component: ArticlePageComponent},
 ];

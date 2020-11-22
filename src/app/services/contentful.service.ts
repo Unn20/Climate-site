@@ -1,20 +1,22 @@
 import {Injectable} from '@angular/core';
-import {createClient, Entry} from 'contentful';
+import {ContentfulClientApi, createClient, Entry} from 'contentful';
 import {Article} from '../models/article';
 import {ArticleContent} from '../models/article-content';
 import {ArticleContentTypeEnum} from '../enums/article-content-type-enum';
+import {environment} from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ContentfulService {
 
-    private client = createClient({
-        space: '01yn6lkn00ay',
-        accessToken: 'afYgrxTYcjw2VWFGHS_QT40Ri1FMnucKLGwuGUgTDn0'
-    });
+    private client: ContentfulClientApi;
 
     constructor() {
+        this.client = createClient({
+            space: environment.contentful.space,
+            accessToken: environment.contentful.accessToken
+        });
     }
 
     public getArticlesEntries(query?: object): Promise<Entry<any>[]> {
