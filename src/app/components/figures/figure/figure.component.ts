@@ -30,29 +30,29 @@ export class FigureComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getData(this.dataType);
+        this.setFigure(this.dataType);
     }
 
-    getData(dataType: string): void {
+    setFigure(dataType: string): void {
         switch (dataType) {
             case 'temp': {
-                this.getTemperatureData();
+                this.setTemperatureFigure();
                 break;
             }
             case 'co2': {
-                this.getCarbonDioxideData();
+                this.setCarbonDioxideFigure();
                 break;
             }
             case 'methane': {
-                this.getMethaneData();
+                this.setMethaneFigure();
                 break;
             }
             case `nitrous`: {
-                this.getNitrousOxideData();
+                this.setNitrousOxideFigure();
                 break;
             }
             case 'arctic': {
-                this.getArcticMeltedData();
+                this.setArcitcFigure();
                 break;
             }
             default: {
@@ -60,7 +60,11 @@ export class FigureComponent implements OnInit {
             }
         }
     }
-    getTemperatureData(): void {
+    selectData(event): void {
+        this.messageService.add({severity: 'info', summary: 'Data Selected',
+            detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]});
+    }
+    private setTemperatureFigure(): void {
         this.climateDataApiService.getTemperatureData().subscribe(
             data => {
                 this.apiData = data[`temperature`];
@@ -119,8 +123,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
-
-    getCarbonDioxideData(): void {
+    private setCarbonDioxideFigure(): void {
         this.climateDataApiService.getCo2Data().subscribe(
             data => {
                 this.apiData = data[`co2`];
@@ -175,8 +178,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
-
-    getMethaneData(): void {
+    private setMethaneFigure(): void {
         this.climateDataApiService.getMethaneData().subscribe(
             data => {
                 this.apiData = data[`methane`];
@@ -232,8 +234,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
-
-    getNitrousOxideData(): void {
+    private setNitrousOxideFigure(): void {
         this.climateDataApiService.getNitrousOxideData().subscribe(
             data => {
                 this.apiData = data[`nitrous`];
@@ -289,8 +290,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
-
-    getArcticMeltedData(): void {
+    private setArcitcFigure(): void {
         this.climateDataApiService.getArcticData().subscribe(
             data => {
                 this.apiData = data[`result`];
@@ -344,10 +344,5 @@ export class FigureComponent implements OnInit {
                 throw new Error('ERR: ' + error);
             }
         );
-    }
-
-    selectData(event): void {
-        this.messageService.add({severity: 'info', summary: 'Data Selected',
-            detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]});
     }
 }
