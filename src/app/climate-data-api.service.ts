@@ -6,34 +6,34 @@ import {HttpClient} from '@angular/common/http';
     providedIn: 'root'
 })
 export class ClimateDataApiService {
-    temperatureDataApiUrl = 'http://localhost:3000/api/climate-data/temperature';
-    co2DataApiUrl = 'http://localhost:3000/api/climate-data/co2';
-    methaneDataApiUrl = 'http://localhost:3000/api/climate-data/methane';
-    nitrousOxideDataApiUrl = 'http://localhost:3000/api/climate-data/nitrous-oxide';
-    arcticDataApiUrl = 'http://localhost:3000/api/climate-data/arctic';
+    private static temperatureDataApiUrl = 'http://localhost:3000/api/climate-data/temperature';
+    private static co2DataApiUrl = 'http://localhost:3000/api/climate-data/co2';
+    private static methaneDataApiUrl = 'http://localhost:3000/api/climate-data/methane';
+    private static nitrousOxideDataApiUrl = 'http://localhost:3000/api/climate-data/nitrous-oxide';
+    private static arcticDataApiUrl = 'http://localhost:3000/api/climate-data/arctic';
 
     constructor(private httpClient: HttpClient) {
     }
 
             /* Get data from given APIs */
-    getTemperatureData(): Observable<any> {
-        return this.httpClient.get(this.temperatureDataApiUrl);
+    public getTemperatureData(): Observable<any> {
+        return this.httpClient.get(ClimateDataApiService.temperatureDataApiUrl);
     }
 
-    getCo2Data(): Observable<any> {
-        return this.httpClient.get(this.co2DataApiUrl);
+    public getCo2Data(): Observable<any> {
+        return this.httpClient.get(ClimateDataApiService.co2DataApiUrl);
     }
 
-    getMethaneData(): Observable<any> {
-        return this.httpClient.get(this.methaneDataApiUrl);
+    public getMethaneData(): Observable<any> {
+        return this.httpClient.get(ClimateDataApiService.methaneDataApiUrl);
     }
 
-    getNitrousOxideData(): Observable<any> {
-        return this.httpClient.get(this.nitrousOxideDataApiUrl);
+    public getNitrousOxideData(): Observable<any> {
+        return this.httpClient.get(ClimateDataApiService.nitrousOxideDataApiUrl);
     }
 
-    getArcticData(): Observable<any> {
-        return this.httpClient.get(this.arcticDataApiUrl);
+    public getArcticData(): Observable<any> {
+        return this.httpClient.get(ClimateDataApiService.arcticDataApiUrl);
     }
             /* *********** */
 }

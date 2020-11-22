@@ -1,10 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Injector} from '@angular/core';
-import {ChartModule} from 'primeng/chart';
-import { MessageService } from 'primeng/api';
-import { ClimateDataApiService } from '../../../climate-data-api.service';
+import {MessageService} from 'primeng/api';
+import {ClimateDataApiService} from '../../../climate-data-api.service';
 import {Observable} from 'rxjs';
 import {DatePipe} from '@angular/common';
+import {FigureTypeEnum} from '../../../enums/figure-type-enums';
 
 @Component({
     selector: 'app-figure',
@@ -13,9 +12,9 @@ import {DatePipe} from '@angular/common';
     providers: [MessageService]
 })
 export class FigureComponent implements OnInit {
-    @Input() dataType: string; /* One from String[] = { 'temp', 'co2', 'methane', 'nitrous', 'arctic' } */
-    data: any;
-    options: any;
+    @Input() dataType: FigureTypeEnum;
+    public data: any;
+    public options: any;
     private apiData: any[];
 
     private pipe: any;
@@ -23,35 +22,36 @@ export class FigureComponent implements OnInit {
     private messageService: MessageService;
     private climateDataApiService: ClimateDataApiService;
 
-    constructor(injector: Injector) {
-        this.messageService = injector.get(MessageService);
-        this.climateDataApiService = injector.get(ClimateDataApiService);
+    constructor(messageService: MessageService,
+                climateDataApiService: ClimateDataApiService) {
+        this.messageService = messageService;
+        this.climateDataApiService = climateDataApiService;
         this.pipe = new DatePipe(`en-GB`);
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.setFigure(this.dataType);
     }
 
-    setFigure(dataType: string): void {
+    public setFigure(dataType: FigureTypeEnum): void {
         switch (dataType) {
-            case 'temp': {
+            case FigureTypeEnum.TEMPERATURE_ANOMALIES: {
                 this.setTemperatureFigure();
                 break;
             }
-            case 'co2': {
+            case FigureTypeEnum.CARBON_DIOXIDE_LEVEL: {
                 this.setCarbonDioxideFigure();
                 break;
             }
-            case 'methane': {
+            case FigureTypeEnum.METHANE_LEVEL: {
                 this.setMethaneFigure();
                 break;
             }
-            case `nitrous`: {
+            case FigureTypeEnum.NITROUS_OXIDE_LEVEL: {
                 this.setNitrousOxideFigure();
                 break;
             }
-            case 'arctic': {
+            case FigureTypeEnum.ARCTIC_ICE_MELTING: {
                 this.setArcitcFigure();
                 break;
             }
@@ -60,10 +60,14 @@ export class FigureComponent implements OnInit {
             }
         }
     }
-    selectData(event): void {
-        this.messageService.add({severity: 'info', summary: 'Data Selected',
-            detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]});
+
+    public selectData(event): void {
+        this.messageService.add({
+            severity: 'info', summary: 'Data Selected',
+            detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]
+        });
     }
+
     private setTemperatureFigure(): void {
         this.climateDataApiService.getTemperatureData().subscribe(
             data => {
@@ -123,6 +127,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
+
     private setCarbonDioxideFigure(): void {
         this.climateDataApiService.getCo2Data().subscribe(
             data => {
@@ -178,6 +183,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
+
     private setMethaneFigure(): void {
         this.climateDataApiService.getMethaneData().subscribe(
             data => {
@@ -234,6 +240,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
+
     private setNitrousOxideFigure(): void {
         this.climateDataApiService.getNitrousOxideData().subscribe(
             data => {
@@ -290,6 +297,7 @@ export class FigureComponent implements OnInit {
             }
         );
     }
+
     private setArcitcFigure(): void {
         this.climateDataApiService.getArcticData().subscribe(
             data => {
