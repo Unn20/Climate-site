@@ -7,13 +7,15 @@
 
 .pollution-effect-container {
     box-shadow: 0 0 10px rgb(50 50 50);
-    background: #8bc5ea;
+    //background: linear-gradient(90deg, #8bc5ea, white);
+    background: radial-gradient(white, #0d92cf);
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 70px;
+    border: darkblue 1px solid;
 
     .pollution-effect {
         width: 800px;

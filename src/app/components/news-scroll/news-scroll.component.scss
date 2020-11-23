@@ -4,8 +4,16 @@
 
 .k-scrollview-wrap {
     //margin: 0 auto;
-    border-top: 3px solid #00006d;
-    border-bottom: 3px solid #00006d;
+    border-top: 3px solid darkblue;
+    border-top: 3px solid #a8e6f0;
+    border-bottom: 3px solid darkblue;
+    border-bottom: 3px solid #a8e6f0;
+}
+
+kendo-scrollview {
+    // kontrowersyjna opcja
+    background-color: darkblue;
+    background-color: #a8e6f0;
 }
 
 div {
