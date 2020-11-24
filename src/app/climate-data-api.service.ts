@@ -15,7 +15,6 @@ export class ClimateDataApiService {
     constructor(private httpClient: HttpClient) {
     }
 
-            /* Get data from given APIs */
     public getTemperatureData(): Observable<any> {
         return this.httpClient.get(ClimateDataApiService.temperatureDataApiUrl);
     }
@@ -35,5 +34,4 @@ export class ClimateDataApiService {
     public getArcticData(): Observable<any> {
         return this.httpClient.get(ClimateDataApiService.arcticDataApiUrl);
     }
-            /* *********** */
 }
