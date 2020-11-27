@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PollutionEffectsComponent,
         DeathsCounterComponent,
         NavbarComponent,
-        NewsScrollComponent
+        NewsScrollComponent,
+        HomePageContentComponent
     ],
     imports: [
         BrowserModule,
