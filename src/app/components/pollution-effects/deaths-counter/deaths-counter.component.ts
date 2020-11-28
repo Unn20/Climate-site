@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CountUp} from 'countup.js';
 
 @Component({
-  selector: 'app-deaths-counter',
-  templateUrl: './deaths-counter.component.html',
-  styleUrls: ['./deaths-counter.component.scss']
+    selector: 'app-deaths-counter',
+    templateUrl: './deaths-counter.component.html',
+    styleUrls: ['./deaths-counter.component.scss']
 })
 export class DeathsCounterComponent implements OnInit {
 
