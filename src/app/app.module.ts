@@ -16,6 +16,7 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import {AppRoutingModule} from './app-routing.module';
         DeathsCounterComponent,
         NavbarComponent,
         NewsScrollComponent,
-        ArticlePageComponent
+        ArticlePageComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
