@@ -16,6 +16,8 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { PrivacyPolicyPageComponent } from './components/privacy-policy-page/privacy-policy-page.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,9 @@ import {AppRoutingModule} from './app-routing.module';
         DeathsCounterComponent,
         NavbarComponent,
         NewsScrollComponent,
-        ArticlePageComponent
+        ArticlePageComponent,
+        ContactPageComponent,
+        PrivacyPolicyPageComponent
     ],
     imports: [
         BrowserModule,
