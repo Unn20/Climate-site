@@ -16,6 +16,10 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
+import { FigureComponent } from './components/figures/figure/figure.component';
+import { ChartModule } from 'primeng/chart';
+import { ClimateDataApiService } from './climate-data-api.service';
+
 
 @NgModule({
     declarations: [
@@ -28,7 +32,8 @@ import {AppRoutingModule} from './app-routing.module';
         DeathsCounterComponent,
         NavbarComponent,
         NewsScrollComponent,
-        ArticlePageComponent
+        ArticlePageComponent,
+        FigureComponent
     ],
     imports: [
         BrowserModule,
@@ -36,9 +41,10 @@ import {AppRoutingModule} from './app-routing.module';
         HttpClientModule,
         ScrollViewModule,
         BrowserAnimationsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ChartModule
     ],
-    providers: [],
+    providers: [ ClimateDataApiService ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
