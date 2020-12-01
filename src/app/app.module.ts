@@ -11,14 +11,16 @@ import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
-import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
-import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
+import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
-import { FigureComponent } from './components/figures/figure/figure.component';
-import { ChartModule } from 'primeng/chart';
-import { ClimateDataApiService } from './climate-data-api.service';
+import {ContactPageComponent} from './components/contact-page/contact-page.component';
+import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
+import {FigureComponent} from './components/figures/figure/figure.component';
+import {ChartModule} from 'primeng/chart';
+import {ClimateDataApiService} from './climate-data-api.service';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { ClimateDataApiService } from './climate-data-api.service';
         NavbarComponent,
         NewsScrollComponent,
         ArticlePageComponent,
+        ContactPageComponent,
+        PrivacyPolicyPageComponent,
         FigureComponent
     ],
     imports: [
