@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ArticleService} from '../../services/article.service';
 import {Article} from '../../models/article';
-import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,15 +14,10 @@ export class NewsScrollComponent {
     public height = '600px';
     public articleHover = false;
 
-    constructor(private articleService: ArticleService,
-                private router: Router) {
+    constructor(public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
             this.articles = articles;
         });
-    }
-
-    public onArticleClicked(articleId: number): void {
-        this.router.navigate(['/article/' + articleId]);
     }
 
 }
