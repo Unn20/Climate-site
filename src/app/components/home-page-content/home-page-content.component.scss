@@ -3,29 +3,45 @@
     flex-flow: column wrap;
     align-items: center;
 
-    .content-div {
-        color: black;
-        border: solid 1px black;
+    .content-container {
+        box-shadow: 0 0 25px rgb(77 77 77);
         border-radius: 30px;
         background: #8ac5e9;
-        margin: 20px 20px 20px 20px;
-        box-shadow: 0 0 25px rgb(77 77 77);
-        //padding: 20px;
-        text-align: justify;
+        margin-bottom: 70px;
+        font-size: 14pt;
+        width: 60%;
         display: flex;
         flex-flow: row nowrap;
-        width: 80%;
-        font-size: 16pt;
+        justify-content: space-between;
         align-items: center;
 
-        .text {
-            padding: 20px;
+        .content-text {
             width: 60%;
+            padding: 20px;
             box-sizing: border-box;
+
+            .title {
+                font-size: 22px;
+                font-weight: 600;
+                margin: 20px 0 30px 20px;
+            }
+
+            .point {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+            .icon {
+                width: 55px;
+                height: auto;
+                margin-right: 15px;
+            }
         }
 
-        img {
-            height: 420px;
+        .photo {
+            height: 500px;
             width: 40%;
             object-fit: cover;
 
@@ -36,6 +52,18 @@
             &:nth-child(odd) {
                 border-radius: 30px 0 0 30px;
             }
+        }
+
+        &.eco-facts {
+            background-color: darkseagreen;
+        }
+
+        &.about-ecology {
+            background-color: lightblue;
+        }
+
+        &.be-eco {
+            background-color: darkseagreen;
         }
     }
 }
