@@ -1,14 +1,14 @@
-<div style="vertical-align:middle; text-align:center" (mouseenter)="onArticle=true" (mouseleave)="onArticle=false">
-    <kendo-scrollview class="firstScrollviewWrapper" [data]="items" [width]="width" [height]="height" [arrows]="true" [pageable]="true">
-        <ng-template let-item="item">
+<div style="vertical-align: middle; text-align: center" (mouseenter)="articleHover=true" (mouseleave)="articleHover=false">
+    <kendo-scrollview class="firstScrollviewWrapper" [data]="articles" [width]="width" [height]="height" [arrows]="true"
+                      [pageable]="true">
+        <ng-template let-article="item">
             <div class="containerDiv">
-                <!-- <a href="https://www.w3schools.com"> -->
-                    <img src='{{item.path}}' alt='{{item.title}}' [ngStyle]="{maxWidth: '100%', maxHeight: '100%'}" draggable="false" />
-                <!-- </a> -->
-                <a href='{{item.url}}'>
-                <div *ngIf="showText" [ngClass]="{'titleDiv': onArticle}">
-                    <h2 class="title">{{item.title}}</h2>
-                </div>
+                <img src="{{article.mainImageUrl}}" alt='{{article.title}}'
+                     draggable="false"/>
+                <a (click)="articleService.redirectToArticle(article.id)">
+                    <div [ngClass]="{'titleDiv': articleHover}">
+                        <h2 class="title">{{article.title}}</h2>
+                    </div>
                 </a>
             </div>
         </ng-template>
