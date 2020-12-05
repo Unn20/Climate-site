@@ -22,6 +22,7 @@ import {FigureComponent} from './components/figures/figure/figure.component';
 import {ChartModule} from 'primeng/chart';
 import {ClimateDataApiService} from './services/climate-data-api.service';
 import { ArticleListPageComponent } from './components/article-list-page/article-list-page.component';
+import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ArticleListPageComponent } from './components/article-list-page/article
         ContactPageComponent,
         PrivacyPolicyPageComponent,
         FigureComponent,
-        ArticleListPageComponent
+        ArticleListPageComponent,
+        HomePageContentComponent
     ],
     imports: [
         BrowserModule,
