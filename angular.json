@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+              "allowedCommonJsDependencies": [
+                  "chart.js"
+              ],
             "outputPath": "dist/climate-site",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,10 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              {
+                {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
-              "src/styles.scss"
+              "src/styles.scss",
+                "node_modules/primeicons/primeicons.css",
+                "node_modules/primeng/resources/themes/saga-blue/theme.css",
+                "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -94,7 +100,10 @@
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
-              "src/styles.scss"
+              "src/styles.scss",
+                "node_modules/primeicons/primeicons.css",
+                "node_modules/primeng/resources/themes/saga-blue/theme.css",
+                "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           }

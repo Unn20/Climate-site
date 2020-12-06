@@ -1,0 +1,48 @@
+div.contact-page {
+    h2 {
+        margin: 20px 20px;
+        font-size: 40pt;
+        text-align: center;
+    }
+
+    div.about-us {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        div.intro {
+           width: 40%;
+            text-align: justify;
+        }
+
+        .professor {
+            font-family: "Comic Sans MS", serif;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        div.info {
+            margin: 10px 10px;
+            width: 40%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+
+            .text {
+                padding: 10px;
+            }
+
+            img {
+                width: 200px;
+            }
+        }
+    }
+
+    .contact-info {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 30px 30px;
+    }
+}
