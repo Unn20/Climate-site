@@ -4,6 +4,7 @@ nav {
     background-color: darkblue;
     display: flex;
     justify-content: flex-start;
+    //overflow: hidden;
 
     z-index: 1;
     position: sticky;
@@ -46,6 +47,34 @@ nav {
                 cursor: pointer;
             }
         }
+
+        .dropdown {
+            .dropdown-expandable {
+            }
+
+            .dropdown-expandable-content {
+                display: none;
+                position: absolute;
+                top: 100%;
+                background-color: darkblue;
+
+                font-family: Verdana, serif;
+                font-size: small;
+                min-width: 20%;
+
+                z-index: 1;
+
+                .nav-element {
+                    padding: 5% 0;
+                }
+            }
+
+            &:hover .dropdown-expandable-content{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
     }
 }
 

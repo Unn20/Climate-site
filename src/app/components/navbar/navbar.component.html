@@ -5,7 +5,18 @@
 
     <div class="nav-container">
         <div class="nav-element" routerLink="/article/1" routerLinkActive="active">Artykuły</div>
-        <div class="nav-element" routerLink="/article/2" routerLinkActive="active">Środowisko</div>
+
+        <div class="nav-element dropdown">
+            <div class="dropdown-expandable">
+                Środowisko
+            </div>
+            <div class="dropdown-expandable-content">
+                <div class="nav-element" routerLink="/article/2" routerLinkActive="active">Globalne ocieplenie</div>
+                <div class="nav-element" routerLink="/article/3" routerLinkActive="active">Dziura ozonowa</div>
+                <div class="nav-element" routerLink="/article/4" routerLinkActive="active">Smog</div>
+            </div>
+        </div>
+
         <div class="nav-element" routerLink="/article/3" routerLinkActive="active">EKO-porady</div>
         <div class="nav-element" routerLink="/article/4" routerLinkActive="active">O nas</div>
     </div>
