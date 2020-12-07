@@ -20,7 +20,9 @@ import {ContactPageComponent} from './components/contact-page/contact-page.compo
 import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
 import {FigureComponent} from './components/figures/figure/figure.component';
 import {ChartModule} from 'primeng/chart';
-import {ClimateDataApiService} from './climate-data-api.service';
+import {ClimateDataApiService} from './services/climate-data-api.service';
+import { ArticleListPageComponent } from './components/article-list-page/article-list-page.component';
+import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import {ClimateDataApiService} from './climate-data-api.service';
         ArticlePageComponent,
         ContactPageComponent,
         PrivacyPolicyPageComponent,
-        FigureComponent
+        FigureComponent,
+        ArticleListPageComponent,
+        HomePageContentComponent
     ],
     imports: [
         BrowserModule,
