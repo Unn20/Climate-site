@@ -1,9 +1,10 @@
 nav {
     width: 100%;
-    background-color: darkblue;
+    background-color: #a8e6f0;
     display: flex;
     justify-content: center;
     z-index: 1;
+    box-shadow: 0 5px 20px rgb(50 50 50);
     position: sticky;
     top: 0;
 
@@ -13,15 +14,18 @@ nav {
         justify-content: space-evenly;
 
         .nav-element {
-            color: white;
+            color: black;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: transform .2s; /* Animation */
             width: 100%;
             height: 70px;
 
             &:hover {
-                background-color: #00006d;
+                background-color: #88c6d0;
+                transform: scale(1.1);
+                box-shadow: 0 0 10px rgb(50 50 50);
             }
         }
     }
