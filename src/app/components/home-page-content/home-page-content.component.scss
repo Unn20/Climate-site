@@ -54,16 +54,19 @@
             }
         }
 
-        &.eco-facts {
-            background-color: darkseagreen;
+        &.be-eco {
+            background-color: #78d6b0;
+            border: 4px solid #68c6a0;
         }
 
         &.about-ecology {
-            background-color: lightblue;
+            background-color: #a8e6f0;
+            border: 4px solid #98d6e0;
         }
 
-        &.be-eco {
-            background-color: darkseagreen;
+        &.eco-facts {
+            background-color: #78d6b0;
+            border: 4px solid #68c6a0;
         }
     }
 }

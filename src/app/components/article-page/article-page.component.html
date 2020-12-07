@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div *ngIf="articleToShow" class="article">
+<div *ngIf="articleToShow" class="article sec-bg">
     <header>
         <h1>{{articleToShow.title}}</h1>
         <img class="main-image" src="{{articleToShow.mainImageUrl}}">
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="latest-articles">
-        <div *ngFor="let article of latestArticles" (click)="articleService.redirectToArticle(article.id)" class="article-link">
+        <div *ngFor="let article of latestArticles" (click)="articleService.redirectToArticle(article.id)" class="article-link sec-bg-b shade">
             <img src="{{article.mainImageUrl}}">
             <div class="title">{{article.title}}</div>
         </div>

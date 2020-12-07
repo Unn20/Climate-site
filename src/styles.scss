@@ -1,26 +1,71 @@
 * {
     font-family: Bahnschrift, Arial, serif;
-    //text-shadow: 0px 0px 20px rgb(50 50 50);
 }
 
 body {
     margin: 0;
-    // Color palette
-    // box-shadow: 0px 0px 20px rgb(50 50 50);
-    //background: #00008b;
-    //background: #00006d;
-    background: #3eabd6;
-    background: #40b7d6;
-    background: #5fb2e1;
-    background: #88c6e0;
-    background: #8bc5ea;
-    background: #88c6d0;
-    background: #a8e6f0;
-    //background: #b0daf1;
-    //background: #0d92cf;
+    // a bunch of interesting colors
+    // uncomment to see color preview on the left
+    //background: #78d6b0;
+    //background: #68c6a0;
+    //background: #cccccc;
+    //background: #bcbcbc;
+    //background: #a8e6f0;
+    //background: #98d6e0;
     background: white;
-    //background: linear-gradient(90deg, white, #0d92cf, white);
     font-size: 14pt;
+}
+
+.main-bg-b {
+    background-color: #a8e6f0;
+    border: 4px solid #98d6e0;
+}
+
+.main-bg {
+    background-color: #a8e6f0;
+}
+
+.sec-bg-b {
+    background-color: #cccccc;
+    border: 4px solid #bcbcbc;
+}
+
+.sec-bg {
+    background-color: #cccccc;
+}
+
+.shade {
+    transition: .2s;
+
+    &:hover {
+        box-shadow: 0 0 10px rgb(50 50 50);
+    }
+}
+
+.zoom {
+    transition: .2s;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgb(50 50 50);
+    }
+}
+
+.box-shadows {
+    // box shadows templates DONT USE AS A CLASS
+    //box-shadow: 0 0 10px rgb(50 50 50);
+    //box-shadow: 0 0 20px rgb(50 50 50);
+}
+
+:link {
+    color: #48a680;
+    &:hover {
+        color: #389670;
+    }
+}
+
+:visited {
+    color: #48a680;
 }
 
 h1, h2, h3, h4, h5, h6 {
