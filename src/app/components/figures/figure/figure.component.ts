@@ -7,7 +7,7 @@ import {FigureTypeEnum} from '../../../enums/figure-type-enums';
 @Component({
     selector: 'app-figure',
     templateUrl: './figure.component.html',
-    styleUrls: ['./figure.component.css'],
+    styleUrls: ['./figure.component.scss'],
     providers: [MessageService]
 })
 export class FigureComponent implements OnInit {
@@ -113,7 +113,7 @@ export class FigureComponent implements OnInit {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                callback: (value, index, values) => {
+                                callback: (value) => {
                                     return value + '\xB0C';
                                 }
                             }
@@ -169,7 +169,7 @@ export class FigureComponent implements OnInit {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                callback: (value, index, values) => {
+                                callback: (value) => {
                                     return value + 'ppm';
                                 }
                             }
@@ -226,7 +226,7 @@ export class FigureComponent implements OnInit {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                callback: (value, index, values) => {
+                                callback: (value) => {
                                     return value + 'ppm';
                                 }
                             }
@@ -283,7 +283,7 @@ export class FigureComponent implements OnInit {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                callback: (value, index, values) => {
+                                callback: (value) => {
                                     return value + 'ppm';
                                 }
                             }
@@ -339,7 +339,7 @@ export class FigureComponent implements OnInit {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                callback: (value, index, values) => {
+                                callback: (value) => {
                                     return value + 'x 10\u2076 km\u00B2';
                                 }
                             }
