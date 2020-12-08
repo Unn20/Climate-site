@@ -1,16 +1,15 @@
-import {AfterViewInit, Component, HostListener, Output} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent {
     public innerWidth: any;
+    public logoPath: string;
 
-    public logoPath = 'assets/img/icons/logo3.png';
-
-    ngAfterViewInit(): void {
+    constructor() {
         this.innerWidth = window.innerWidth;
         this.setLogo();
     }
