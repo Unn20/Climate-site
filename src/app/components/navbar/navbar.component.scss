@@ -5,6 +5,7 @@ nav {
     display: flex;
     justify-content: flex-start;
     min-height: 3em;
+    max-height: 4em;
 
     z-index: 1;
     box-shadow: 0 3px 20px rgb(50 50 50);
@@ -87,13 +88,13 @@ nav {
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
     nav {
         background-color: red;
     }
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 550px) {
     nav {
         background-color: yellow;
     }
