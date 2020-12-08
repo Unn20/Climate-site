@@ -5,7 +5,7 @@
             <div class="containerDiv">
                 <img src="{{article.mainImageUrl}}" alt='{{article.title}}'
                      draggable="false"/>
-                <a (click)="onArticleClicked(article.id)">
+                <a (click)="articleService.redirectToArticle(article.id)">
                     <div [ngClass]="{'titleDiv': articleHover}">
                         <h2 class="title">{{article.title}}</h2>
                     </div>

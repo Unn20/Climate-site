@@ -15,7 +15,7 @@ export class ArticlePageComponent {
     private articles: Article[];
     private latestArticlesMaxCount = 3;
 
-    constructor(private articleService: ArticleService,
+    constructor(public articleService: ArticleService,
                 private activatedRoute: ActivatedRoute,
                 private router: Router) {
         articleService.getArticles().then(articles => {
@@ -24,11 +24,6 @@ export class ArticlePageComponent {
         }).then(() => {
             this.setArticleToShowUsingUrl();
         });
-    }
-
-    public redirectToArticle(articleId: number): void {
-        window.scrollTo(0, 0);
-        this.router.navigate(['/article/' + articleId]);
     }
 
     public isContentTypeHeader(contentType: ArticleContentTypeEnum): boolean {
