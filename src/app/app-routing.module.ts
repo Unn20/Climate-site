@@ -5,6 +5,7 @@ import {ArticlePageComponent} from './components/article-page/article-page.compo
 import {ContactPageComponent} from './components/contact-page/contact-page.component';
 import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
 import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
     {path: 'article/:articleId', component: ArticlePageComponent},
     {path: 'contact', component: ContactPageComponent},
     {path: 'privacy', component: PrivacyPolicyPageComponent},
-    {path: 'articles', component: ArticleListPageComponent}
+    {path: 'articles', component: ArticleListPageComponent},
+    {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({

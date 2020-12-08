@@ -13,4 +13,8 @@ describe('FiguresService', () => {
     it('should be created', () => {
         expect(service).toBeTruthy();
     });
+
+    it('should contain backend URL', () => {
+        expect(service.backendUrl).toBeTruthy();
+    });
 });

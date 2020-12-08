@@ -23,7 +23,7 @@ import {ChartModule} from 'primeng/chart';
 import {ClimateDataApiService} from './services/climate-data-api.service';
 import { ArticleListPageComponent } from './components/article-list-page/article-list-page.component';
 import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
-
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +41,8 @@ import { HomePageContentComponent } from './components/home-page-content/home-pa
         PrivacyPolicyPageComponent,
         FigureComponent,
         ArticleListPageComponent,
-        HomePageContentComponent
+        HomePageContentComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
