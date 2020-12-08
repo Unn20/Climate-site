@@ -21,8 +21,9 @@ import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/priva
 import {FigureComponent} from './components/figures/figure/figure.component';
 import {ChartModule} from 'primeng/chart';
 import {ClimateDataApiService} from './services/climate-data-api.service';
-import { ArticleListPageComponent } from './components/article-list-page/article-list-page.component';
-import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
+import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
+import {HomePageContentComponent} from './components/home-page-content/home-page-content.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         PrivacyPolicyPageComponent,
         FigureComponent,
         ArticleListPageComponent,
-        HomePageContentComponent
+        HomePageContentComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
@@ -64,7 +66,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
             }
         })
     ],
-    providers: [ ClimateDataApiService ],
+    providers: [ClimateDataApiService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

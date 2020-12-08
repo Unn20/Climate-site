@@ -1,8 +1,23 @@
 <nav>
+    <div id="nav-logo">
+        <img routerLink="/home" src="assets/img/icons/logo3.png" alt="LOGO">
+    </div>
+
     <div class="nav-container">
-        <div class="nav-element zoom">{{ 'navbar.newsList' | translate }}</div>
-        <div class="nav-element zoom">{{ 'navbar.quiz' | translate }}</div>
-        <div class="nav-element zoom">{{ 'navbar.howToBeEco' | translate }}</div>
-        <div class="nav-element zoom">{{ 'navbar.lawHelp' | translate }}</div>
+        <div class="nav-element zoom" routerLink="/article/1" routerLinkActive="active">Artykuły</div>
+
+        <div class="nav-element dropdown">
+            <div class="dropdown-expandable">
+                Środowisko
+            </div>
+            <div class="dropdown-expandable-content">
+                <div class="nav-element zoom" routerLink="/article/2" routerLinkActive="active">Globalne ocieplenie</div>
+                <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">Dziura ozonowa</div>
+                <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">Smog</div>
+            </div>
+        </div>
+
+        <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">EKO-porady</div>
+        <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">O nas</div>
     </div>
 </nav>
