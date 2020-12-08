@@ -43,10 +43,10 @@ nav {
             width: 100%;
 
             font-family: Verdana, serif;
-            font-size: larger;
+            font-size: 20px;
+
             white-space: nowrap;
-            margin-left: 2%;
-            margin-right: 2%;
+            padding: 0 1%;
 
             &:hover {
                 background-color: #98d6e0;
@@ -64,13 +64,7 @@ nav {
                 top: 100%;
                 background-color: #a8e6f0;
 
-                font-family: Verdana, serif;
-                font-size: small;
                 min-width: 20%;
-
-                z-index: 1;
-
-                padding: 0 1%;
 
                 .nav-element {
                     padding: 5% 0;
@@ -82,7 +76,6 @@ nav {
                 flex-direction: column;
             }
         }
-
     }
 }
 
@@ -93,13 +86,14 @@ nav {
     background-color: #98d6e0;
 }
 
-@media only screen and (max-width: 620px) {
+
+@media only screen and (max-width: 650px) {
     nav {
         background-color: red;
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 540px) {
     nav {
         background-color: yellow;
     }
