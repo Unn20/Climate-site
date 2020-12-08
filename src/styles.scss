@@ -4,14 +4,6 @@
 
 body {
     margin: 0;
-    // a bunch of interesting colors
-    // uncomment to see color preview on the left
-    //background: #78d6b0;
-    //background: #68c6a0;
-    //background: #cccccc;
-    //background: #bcbcbc;
-    //background: #a8e6f0;
-    //background: #98d6e0;
     background: white;
     font-size: 14pt;
 }
@@ -51,12 +43,6 @@ body {
     }
 }
 
-.box-shadows {
-    // box shadows templates DONT USE AS A CLASS
-    //box-shadow: 0 0 10px rgb(50 50 50);
-    //box-shadow: 0 0 20px rgb(50 50 50);
-}
-
 :link {
     color: #48a680;
     &:hover {
@@ -71,3 +57,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
+
+$box-shadow-10: 0 0 10px rgb(50 50 50);
+$box-shadow-20: 0 0 20px rgb(50 50 50);
+
+$main-color: #a8e6f0;
+$main-color-dark: #98d6e0;
+$sec-color: #cccccc;
+$sec-color-dark: #bcbcbc;
+$teri-color: #78d6b0;
+$teri-color-dark: #68c6a0;
