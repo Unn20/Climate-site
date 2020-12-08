@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 export class ClimateDataApiService {
     private static temperatureDataApiUrl = 'api/climate-data/temperature';
     private static co2DataApiUrl = 'api/climate-data/co2';
-    private static methaneDataApiUrl = 'climate-data/methane';
+    private static methaneDataApiUrl = 'api/climate-data/methane';
     private static nitrousOxideDataApiUrl = 'api/climate-data/nitrous-oxide';
     private static arcticDataApiUrl = 'api/climate-data/arctic';
 
