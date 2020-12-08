@@ -4,21 +4,32 @@
     </div>
 
     <div class="nav-container">
-        <div class="nav-element zoom" routerLink="/article/1" routerLinkActive="active">Artykuły</div>
-
+        <div class="nav-element zoom" routerLink="/article/1" routerLinkActive="active">
+            {{'navbar.articles' | translate}}
+        </div>
         <div class="nav-element dropdown">
             <div class="nav-element dropdown-expandable">
-                Środowisko
+                {{'navbar.environment' | translate}}
             </div>
             <div class="dropdown-expandable-content">
-                <div class="nav-element zoom" routerLink="/article/2" routerLinkActive="active">Globalne ocieplenie</div>
-                <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">Dziura ozonowa</div>
-                <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">Smog</div>
+                <div class="nav-element zoom" routerLink="/article/2" routerLinkActive="active">
+                    {{'navbar.environment.warming' | translate}}
+                </div>
+                <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">
+                    {{'navbar.environment.ozone' | translate}}
+                </div>
+                <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">
+                    {{'navbar.environment.smog' | translate}}
+                </div>
             </div>
         </div>
 
-        <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">EKO-porady</div>
-        <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">O nas</div>
+        <div class="nav-element zoom" routerLink="/article/3" routerLinkActive="active">
+            {{'navbar.eco.tips' | translate}}
+        </div>
+        <div class="nav-element zoom" routerLink="/article/4" routerLinkActive="active">
+            {{'navbar.about.us' | translate}}
+        </div>
     </div>
 
     <div class="nav-hamburger">
