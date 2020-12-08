@@ -4,7 +4,7 @@ nav {
     background-color: darkblue;
     display: flex;
     justify-content: flex-start;
-    //overflow: hidden;
+    min-height: 3em;
 
     z-index: 1;
     position: sticky;
@@ -16,6 +16,8 @@ nav {
         display: flex;
         align-items: center;
         img {
+            max-height: 100%;
+            max-width: 100%;
             height: 80%;
             padding-left: 5%;
             &:hover {
@@ -41,6 +43,9 @@ nav {
 
             font-family: Verdana, serif;
             font-size: larger;
+            white-space: nowrap;
+            margin-left: 2%;
+            margin-right: 2%;
 
             &:hover {
                 background-color: #00006d;
@@ -64,6 +69,8 @@ nav {
 
                 z-index: 1;
 
+                padding: 0 1%;
+
                 .nav-element {
                     padding: 5% 0;
                 }
@@ -83,4 +90,16 @@ nav {
     border-width: 2px;
     border-color: white;
     background-color: #00006d;
+}
+
+@media only screen and (max-width: 620px) {
+    nav {
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    nav {
+        background-color: yellow;
+    }
 }
