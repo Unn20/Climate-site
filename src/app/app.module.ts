@@ -10,7 +10,7 @@ import {PollutionEffectsComponent} from './components/pollution-effects/pollutio
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
 import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,7 +23,12 @@ import {ChartModule} from 'primeng/chart';
 import {ClimateDataApiService} from './services/climate-data-api.service';
 import { ArticleListPageComponent } from './components/article-list-page/article-list-page.component';
 import { HomePageContentComponent } from './components/home-page-content/home-page-content.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     declarations: [
@@ -50,7 +55,14 @@ import { HomePageContentComponent } from './components/home-page-content/home-pa
         ScrollViewModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        ChartModule
+        ChartModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (HttpLoaderFactory),
+                deps: [HttpClient]
+            }
+        })
     ],
     providers: [ ClimateDataApiService ],
     bootstrap: [AppComponent]
