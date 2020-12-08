@@ -1,8 +1,11 @@
 {
     "navbar": {
-        "newsList": "Lista newsów",
-        "quiz": "Quiz",
-        "howToBeEco": "Jak być EKO",
-        "lawHelp": "Pomoc prawna"
+        "articles": "Artykuły",
+        "environment": "Środowisko",
+        "environment.warming": "Globalne ocieplenie",
+        "environment.ozone": "Dziura ozonowa",
+        "environment.smog": "Smog",
+        "eco.tips": "EKO-porady",
+        "about.us": "O nas"
     }
 }
