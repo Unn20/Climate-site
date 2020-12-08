@@ -2,10 +2,10 @@
     "navbar": {
         "articles": "Artykuły",
         "environment": "Środowisko",
-        "environment.warming": "Globalne ocieplenie",
-        "environment.ozone": "Dziura ozonowa",
-        "environment.smog": "Smog",
-        "eco.tips": "EKO-porady",
-        "about.us": "O nas"
+        "environment-global-warming": "Globalne ocieplenie",
+        "environment-ozone-hole": "Dziura ozonowa",
+        "environment-smog": "Smog",
+        "privacy-policy": "Polityka prywatności",
+        "about-us": "O nas"
     }
 }

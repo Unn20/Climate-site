@@ -129,7 +129,7 @@ nav {
     background-color: #98d6e0;
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 650px) {
     nav .nav-container {
         display: flex;
     }
@@ -138,7 +138,7 @@ nav {
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
     nav .nav-container {
         display: none;
     }

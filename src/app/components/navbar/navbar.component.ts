@@ -21,12 +21,9 @@ export class NavbarComponent {
     }
 
     setLogo(): void {
-        if (this.innerWidth >= 700) {
+        if (this.innerWidth >= 820) {
             this.logoPath = 'assets/img/icons/logo3.png';
-        } else if (this.innerWidth >= 550) {
-            this.logoPath = 'assets/img/icons/logo2.png';
         } else {
-            // TODO: refaktor jak bedzie trzeba
             this.logoPath = 'assets/img/icons/logo2.png';
         }
     }
