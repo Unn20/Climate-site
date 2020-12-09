@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
     selector: 'app-navbar',
@@ -6,7 +6,25 @@ import {Component} from '@angular/core';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-    public list: Array<string> =  ['1', '2', '3'];
+    public innerWidth: any;
+    public logoPath: string;
 
-    // TODO: dodac responsywnosc
+    constructor() {
+        this.innerWidth = window.innerWidth;
+        this.setLogo();
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event): void {
+        this.innerWidth = window.innerWidth;
+        this.setLogo();
+    }
+
+    setLogo(): void {
+        if (this.innerWidth >= 820) {
+            this.logoPath = 'assets/img/icons/logo3.png';
+        } else {
+            this.logoPath = 'assets/img/icons/logo2.png';
+        }
+    }
 }
