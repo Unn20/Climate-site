@@ -25,7 +25,6 @@ export class ArticleService {
     }
 
     public redirectToArticle(articleId: number): void {
-        window.scrollTo(0, 0);
         this.router.navigate(['/article/' + articleId]);
     }
 }

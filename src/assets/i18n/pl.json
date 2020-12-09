@@ -5,7 +5,10 @@
         "environment-global-warming": "Globalne ocieplenie",
         "environment-ozone-hole": "Dziura ozonowa",
         "environment-smog": "Smog",
-        "privacy-policy": "Polityka prywatności",
         "about-us": "O nas"
-    }
+    },
+    "footer": {
+        "privacy-policy": "Polityka prywatności"
+    },
+    "email": "climate.site.put@gmail.com"
 }

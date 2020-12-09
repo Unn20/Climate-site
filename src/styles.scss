@@ -1,5 +1,6 @@
 * {
     font-family: Bahnschrift, Arial, serif;
+    outline: none;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
 }
 
 .shade {
-    transition: .2s;
+    transition: box-shadow .2s;
 
     &:hover {
         box-shadow: 0 0 10px rgb(50 50 50);
@@ -35,11 +36,10 @@ body {
 }
 
 .zoom {
-    transition: .2s;
+    transition: transform .2s;
 
     &:hover {
         transform: scale(1.1);
-        box-shadow: 0 0 10px rgb(50 50 50);
     }
 }
 
