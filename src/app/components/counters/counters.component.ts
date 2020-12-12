@@ -46,7 +46,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
         });
         // Update counters based on the counterDataUpdates array
         this.counters.forEach((value, index) => {
-            value.update(this.countersDataUpdates[index]);
+            setTimeout(() => value.update(this.countersDataUpdates[index]), Math.floor(Math.random() * 5000));
         });
     }
 
