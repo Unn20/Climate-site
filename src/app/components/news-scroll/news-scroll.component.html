@@ -1,5 +1,5 @@
 <div style="vertical-align: middle; text-align: center" (mouseenter)="articleHover=true" (mouseleave)="articleHover=false">
-    <kendo-scrollview class="firstScrollviewWrapper" [data]="articles" [width]="width" [height]="height" [arrows]="true"
+    <kendo-scrollview #myScroll class="firstScrollviewWrapper" [data]="articles" [width]="width" [height]="height" [arrows]="true"
                       [pageable]="true">
         <ng-template let-article="item">
             <div class="containerDiv">
