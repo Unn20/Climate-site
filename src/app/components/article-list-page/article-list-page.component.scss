@@ -1,3 +1,5 @@
+@use "src/variables" as var;
+
 .article-list {
     width: 70%;
     margin: 100px auto;
@@ -63,7 +65,7 @@
 
             &:hover {
                 cursor: pointer;
-                background-color: #98d6e0;
+                background-color: var.$main-color-dark;
             }
         }
     }

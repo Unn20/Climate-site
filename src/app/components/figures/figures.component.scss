@@ -1,3 +1,5 @@
+@use "src/variables" as var;
+
 .figures-container {
     display: flex;
     flex-flow: row wrap;

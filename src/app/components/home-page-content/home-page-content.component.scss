@@ -1,3 +1,5 @@
+@use "src/variables" as var;
+
 .home-page-content {
     display: flex;
     flex-flow: column wrap;
@@ -9,7 +11,7 @@
         background: #8ac5e9;
         margin-bottom: 70px;
         font-size: 14pt;
-        width: 60%;
+        width: 1000px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -55,18 +57,18 @@
         }
 
         &.be-eco {
-            background-color: #78d6b0;
-            border: 4px solid #68c6a0;
+            background-color: var.$teri-color;
+            border: 4px solid var.$teri-color-dark;
         }
 
         &.about-ecology {
-            background-color: #a8e6f0;
-            border: 4px solid #98d6e0;
+            background-color: var.$main-color;
+            border: 4px solid var.$main-color-dark;
         }
 
         &.eco-facts {
-            background-color: #78d6b0;
-            border: 4px solid #68c6a0;
+            background-color: var.$teri-color;
+            border: 4px solid var.$teri-color-dark;
         }
     }
 }
