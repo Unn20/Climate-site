@@ -1,14 +1,16 @@
+@use "src/variables" as var;
+
 .containerDiv:hover {
     cursor: pointer;
 }
 
 .k-scrollview-wrap {
-    border-top: 3px solid #a8e6f0;
-    border-bottom: 3px solid #a8e6f0;
+    border-top: 3px solid var.$main-color;
+    border-bottom: 3px solid var.$main-color;
 }
 
 div {
-    color:black
+    color: var.$black;
 }
 
 div.titleDiv {

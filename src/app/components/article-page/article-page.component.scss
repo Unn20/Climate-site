@@ -1,8 +1,10 @@
+@use "src/variables" as var;
+
 .article {
     width: 50%;
     margin: 0 auto;
     padding: 50px 0;
-    box-shadow: 0 0 10px rgb(50 50 50);
+    box-shadow: var.$box-shadow-10;
 
     header {
         margin-bottom: 50px;
