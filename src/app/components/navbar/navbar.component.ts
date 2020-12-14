@@ -15,9 +15,24 @@ export class NavbarComponent {
     }
 
     @HostListener('window:resize', ['$event'])
-    onResize(event): void {
+    onResize(): void {
         this.innerWidth = window.innerWidth;
         this.setLogo();
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll(): void {
+        const navElement = document.getElementsByTagName('nav').item(0);
+        const navLogoElement = document.getElementById('nav-logo');
+        if (document.scrollingElement.scrollTop === 0) {
+            navElement.style.backgroundPosition = '0px -250px';
+            navElement.style.boxShadow = 'none';
+            navLogoElement.style.height = '200%';
+        } else {
+            navElement.style.backgroundPosition = '0px -120px';
+            navElement.style.boxShadow = '0 3px 20px rgb(50 50 50)';
+            navLogoElement.style.height = '100%';
+        }
     }
 
     setLogo(): void {
