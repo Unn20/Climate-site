@@ -11,7 +11,8 @@
         background: #8ac5e9;
         margin-bottom: 70px;
         font-size: 14pt;
-        width: 1000px;
+        transition: .2s;
+        width: 60%;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -69,6 +70,10 @@
         &.eco-facts {
             background-color: var.$thi-color;
             border: 4px solid var.$thi-color-dark;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
         }
     }
 }
