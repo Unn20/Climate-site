@@ -1,6 +1,6 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {CountUp} from 'countup.js';
-import {CountersService} from '../../counters.service';
+import {CountersService} from '../../services/counters.service';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -63,14 +63,10 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     tryInitCounters(): void {
-        // Try to init counters and retry if failed
-        console.log(this.initialized);
         if (!this.initialized) {
             try {
                 this.initializeCounters();
             } catch (error) {
-                console.log(error);
-                console.log('retrying in 50ms');
                 this.counters = [];
             }
             setTimeout(() => this.tryInitCounters(), 50);

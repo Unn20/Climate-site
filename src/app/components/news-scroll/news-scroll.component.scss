@@ -1,11 +1,19 @@
-.k-scrollview-wrap {
-    margin: 0 auto;
+@use "src/variables" as var;
+
+.containerDiv:hover {
+    cursor: pointer;
 }
 
-.k-scrollview-wrap {
-    margin: 0 auto;
+div {
+    color:black;
+
+    kendo-scrollview {
+        border-top: 0px;
+    }
 }
-.titleDiv {
+
+div.titleDiv {
+    transition: .5s;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +22,7 @@
     margin: 0;
     padding: 0;
     color: #fff;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.3);
     text-align: center;
     font-size: 24px;
 }

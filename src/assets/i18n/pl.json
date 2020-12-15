@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "articles": "Artykuły",
+        "environment": "Środowisko",
+        "environment-global-warming": "Globalne ocieplenie",
+        "environment-ozone-hole": "Dziura ozonowa",
+        "environment-smog": "Smog",
+        "about-us": "O nas"
+    },
+    "footer": {
+        "privacy-policy": "Polityka prywatności"
+    },
+    "email": "climate.site.put@gmail.com"
+}

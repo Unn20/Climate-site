@@ -1,0 +1,11 @@
+@use "src/variables" as var;
+
+div.privacy-policy-page {
+    display: flex;
+    flex-flow: column nowrap;
+
+    div.privacy-content {
+        width: 80%;
+        align-self: center;
+    }
+}

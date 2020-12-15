@@ -1,7 +1,61 @@
+@use "src/variables" as var;
+
 * {
-    font-family: Arial;
+    font-family: Bahnschrift, Arial, serif;
+    outline: none;
 }
 
 body {
+    margin: 0;
+    background: var.$white;
+    font-size: 14pt;
+}
+
+.main-bg-b {
+    background-color: var.$main-color;
+    border: 4px solid var.$main-color-dark;
+}
+
+.main-bg {
+    background-color: var.$main-color;
+}
+
+.sec-bg-b {
+    background-color: var.$sec-color;
+    border: 4px solid var.$sec-color-dark;
+}
+
+.sec-bg {
+    background-color: var.$sec-color;
+}
+
+.shade {
+    transition: box-shadow .2s;
+
+    &:hover {
+        box-shadow: var.$box-shadow-10;
+    }
+}
+
+.zoom {
+    transition: transform .2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+:link {
+    color: var.$thi-color;
+    &:hover {
+        color: var.$thi-color-dark;
+    }
+}
+
+:visited {
+    color: #48a680;
+}
+
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }

@@ -6,16 +6,30 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {CountersComponent} from './components/counters/counters.component';
 import {FiguresComponent} from './components/figures/figures.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {NewsHeaderComponent} from './components/news-header/news-header.component';
 import {PollutionEffectsComponent} from './components/pollution-effects/pollution-effects.component';
 import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http';
-import { NewsScrollComponent } from './components/news-scroll/news-scroll.component';
-import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
+import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ArticlePageComponent} from './components/article-page/article-page.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AboutUsPageComponent} from './components/about-us-page/about-us-page.component';
+import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
+import {FigureComponent} from './components/figures/figure/figure.component';
+import {ChartModule} from 'primeng/chart';
+import {ClimateDataApiService} from './services/climate-data-api.service';
+import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
+import {HomePageContentComponent} from './components/home-page-content/home-page-content.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     declarations: [
@@ -24,20 +38,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CountersComponent,
         FiguresComponent,
         FooterComponent,
-        NewsHeaderComponent,
         PollutionEffectsComponent,
         DeathsCounterComponent,
         NavbarComponent,
-        NewsScrollComponent
+        NewsScrollComponent,
+        ArticlePageComponent,
+        AboutUsPageComponent,
+        PrivacyPolicyPageComponent,
+        FigureComponent,
+        ArticleListPageComponent,
+        HomePageContentComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
         CommonModule,
         HttpClientModule,
         ScrollViewModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        ChartModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (HttpLoaderFactory),
+                deps: [HttpClient]
+            }
+        })
     ],
-    providers: [],
+    providers: [ClimateDataApiService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,12 +1,50 @@
+@use "src/variables" as var;
+
 footer {
-    height: 200px;
-    background-color: darkblue;
+    background-color: var.$main-color;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
 
-    img {
-        height: 100%;
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+
+
+        .logo {
+            width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .social-media-icons {
+            display: flex;
+            justify-content: center;
+            width: 200px;
+
+            img {
+                width: 30px;
+                margin: 10px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .email {
+            margin-bottom: 15px;
+        }
+
+        .privacy-policy {
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
     }
+
 }

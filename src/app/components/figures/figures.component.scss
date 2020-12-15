@@ -1,0 +1,16 @@
+@use "src/variables" as var;
+
+.figures-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+
+    app-figure {
+        margin: 0.5rem;
+        width: 55rem;
+        height: auto;
+    }
+}
