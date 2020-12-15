@@ -4,13 +4,12 @@
     cursor: pointer;
 }
 
-.k-scrollview-wrap {
-    border-top: 3px solid var.$main-color;
-    border-bottom: 3px solid var.$main-color;
-}
-
 div {
-    color: var.$black;
+    color:black;
+
+    kendo-scrollview {
+        border-top: 0px;
+    }
 }
 
 div.titleDiv {
