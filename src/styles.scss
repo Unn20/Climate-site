@@ -1,3 +1,5 @@
+@use "src/variables" as var;
+
 * {
     font-family: Bahnschrift, Arial, serif;
     outline: none;
@@ -5,33 +7,33 @@
 
 body {
     margin: 0;
-    background: white;
+    background: var.$white;
     font-size: 14pt;
 }
 
 .main-bg-b {
-    background-color: #a8e6f0;
-    border: 4px solid #98d6e0;
+    background-color: var.$main-color;
+    border: 4px solid var.$main-color-dark;
 }
 
 .main-bg {
-    background-color: #a8e6f0;
+    background-color: var.$main-color;
 }
 
 .sec-bg-b {
-    background-color: #cccccc;
-    border: 4px solid #bcbcbc;
+    background-color: var.$sec-color;
+    border: 4px solid var.$sec-color-dark;
 }
 
 .sec-bg {
-    background-color: #cccccc;
+    background-color: var.$sec-color;
 }
 
 .shade {
     transition: box-shadow .2s;
 
     &:hover {
-        box-shadow: 0 0 10px rgb(50 50 50);
+        box-shadow: var.$box-shadow-10;
     }
 }
 
@@ -44,9 +46,9 @@ body {
 }
 
 :link {
-    color: #48a680;
+    color: var.$thi-color;
     &:hover {
-        color: #389670;
+        color: var.$thi-color-dark;
     }
 }
 
@@ -57,13 +59,3 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
-
-$box-shadow-10: 0 0 10px rgb(50 50 50);
-$box-shadow-20: 0 0 20px rgb(50 50 50);
-
-$main-color: #a8e6f0;
-$main-color-dark: #98d6e0;
-$sec-color: #cccccc;
-$sec-color-dark: #bcbcbc;
-$teri-color: #78d6b0;
-$teri-color-dark: #68c6a0;
