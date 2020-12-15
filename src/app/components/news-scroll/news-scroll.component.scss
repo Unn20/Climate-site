@@ -3,7 +3,11 @@
 }
 
 div {
-    color:black
+    color:black;
+
+    kendo-scrollview {
+        border-top: 0px;
+    }
 }
 
 div.titleDiv {
