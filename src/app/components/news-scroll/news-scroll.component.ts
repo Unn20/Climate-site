@@ -32,6 +32,9 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         });
         this.lastHeight = window.innerHeight;
         this.lastWidth = window.innerWidth;
+        this.maxHeight = Math.round( 0.65 * screen.height);
+        this.height = `${this.maxHeight}px`;
+        this.minHeight = Math.round(2 * this.maxHeight / 8);
         this.updateHeight();
         this.heightListener = renderer.listen('window', 'resize', () => this.updateHeight());
         this.scrollTimer = this.resetTimer.pipe(
@@ -49,10 +52,11 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
             this.lastHeight = window.innerHeight;
         }
         const width = window.innerWidth;
+        const screenWidthRatio = Math.round(0.7 * screen.width);
         if (widthChanged) {
-            if (width < 1200) {
-                if (this.maxHeight - (1200 - width) > 200) {
-                    this.height = `${this.maxHeight - (1200 - width)}px`;
+            if (width < screenWidthRatio) {
+                if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
+                    this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
                 } else {
                     this.height = `${this.minHeight}px`;
                 }
