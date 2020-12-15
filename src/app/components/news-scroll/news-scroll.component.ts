@@ -28,7 +28,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private renderer: Renderer2, public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
-            this.articles = articles;  // TODO: sort by id take up to 5
+            this.articles = articles.sort( (a, b) => {return a.id - b.id;} );  // TODO: sort by id take up to 5
         });
         this.lastHeight = window.innerHeight;
         this.lastWidth = window.innerWidth;
