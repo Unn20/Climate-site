@@ -13,7 +13,6 @@ export class NavbarComponent implements AfterViewInit {
 
     constructor(private router: Router) {
         this.innerWidth = window.innerWidth;
-        console.log('constructor: ' + this.router.url);
         this.setLogo();
     }
 
