@@ -14,13 +14,15 @@ export class CountersComponent implements OnInit, AfterViewInit {
     initialized = false;
     countersData: number[] = [];
     countersDataUpdates: number[] = [];
-    // TODO: Maybe also download text from backend
-    countersText: string[] = ['Zginęło lwów w afryce',
-        'Lodowców zostało stopionych',
-        'Pobito niedźwiedzi w parkach',
-        'Złych rzeczy przydarzyło się zwierzętom',
-        'Zgubiono psów w ostatnim roku',
-        'Okłamano koal w schroniskach'
+    changeBySecond: number[] = [];
+    updateTimeout = 6000;
+    hourOfDataFetch = 23;
+    countersText: string[] = ['Wydalono ton CO2 do atmosfery',
+        'Stopniało ton lodu',
+        'Użyto teradżuli prądu',
+        'Wyrzucono ton odpadów',
+        'Wydobyto ton surowców z ziemi',
+        'Wyrzucono ton plastiku do oceanu'
     ];
 
     constructor(private countersService: CountersService) { }
@@ -31,7 +33,6 @@ export class CountersComponent implements OnInit, AfterViewInit {
     }
 
     getCountersData(): Subscription {
-        // TODO: Return defaults value if you can't get data from backend
         return this.countersService.getCountersData().subscribe(value => {
             value.forEach(num => this.countersData.push(num));
             value.forEach(num => this.countersDataUpdates.push(num));
@@ -41,24 +42,34 @@ export class CountersComponent implements OnInit, AfterViewInit {
     updateCounters(): void {
         // Increase each counterDataUpdate by random number from 0 to 10
         // We can't use array used for initializing because it produces errors
+        const localTimeout = [];
         this.countersDataUpdates.forEach((value, index) => {
-            this.countersDataUpdates[index] = value + Math.floor(Math.random() * 10);
+            localTimeout.push(Math.round((Math.random() * 5000) / 1000) * 1000);
+            this.countersDataUpdates[index] += this.changeBySecond[index] * (Math.round(localTimeout[index] / 1000) +
+                this.updateTimeout / 1000);
         });
         // Update counters based on the counterDataUpdates array
         this.counters.forEach((value, index) => {
-            setTimeout(() => value.update(this.countersDataUpdates[index]), Math.floor(Math.random() * 5000));
+            setTimeout(() => value.update(this.countersDataUpdates[index]), localTimeout[index]);
         });
     }
 
     initializeCounters(): void {
         for (const [i, c] of this.countersData.entries()) {
-            this.counters.push(new CountUp('counter-value-' + i.toString(), c, {separator: ' ', startVal: c - (c / 3)}));
+            const secondData = c / (this.hourOfDataFetch * 3600);
+            const now = new Date();
+            const secondsPassed = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+            const initValue = secondsPassed * secondData;
+            this.changeBySecond.push(secondData);
+            this.counters.push(new CountUp('counter-value-' + i.toString(), initValue,
+                {separator: ' ', startVal: initValue - (initValue / 3)}));
+            this.countersDataUpdates[i] = initValue;
             document.getElementById('counter-text-' + i.toString()).innerHTML = this.countersText[i];
         }
         for (const c of this.counters) {
             c.start();
         }
-        setInterval(() => this.updateCounters(), 6000);
+        setInterval(() => this.updateCounters(), this.updateTimeout);
         this.initialized = true;
     }
 
@@ -68,6 +79,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
                 this.initializeCounters();
             } catch (error) {
                 this.counters = [];
+                this.changeBySecond = [];
             }
             setTimeout(() => this.tryInitCounters(), 50);
         }
