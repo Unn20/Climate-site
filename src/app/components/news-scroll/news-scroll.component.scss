@@ -1,14 +1,42 @@
+@use "src/variables" as var;
+
 .containerDiv:hover {
     cursor: pointer;
 }
 
-.k-scrollview-wrap {
-    border-top: 3px solid #a8e6f0;
-    border-bottom: 3px solid #a8e6f0;
-}
+// Zostawiam zakomentowane, zeby przedyskutowac ogarnac, bo mi nie działa i duzo grzebania po szczegol
+// https://gregoryalexander.com/blog/2019/4/16/Kendo-scrollview-button-size   Jakis trop dal ale nie dziala
+// https://github.com/kendo-labs/angular-kendo/blob/master/demos/mobile-widgets/scrollview.html
+// node_modules\@progress\kendo-theme-default\dist\all.css
+// node_modules\@progress\kendo-theme-default\scss\pager   -> tutaj rozne pliczki, typu vars i layout moze naprowadza
+
+//$pager-number-selected-bg: rgba($pager-item-selected-bg, $pager-number-selected-opacity) !default;
+//.k-primary {
+//    border-color: black;
+//    color: black;
+//    background-color: black;
+//}
+
+//#scrollViewWrapper {
+//
+//    .k-scrollview-wrap {
+//        border-top: 3px solid #a8e6f0;
+//        border-bottom: 3px solid #a8e6f0;
+//    }
+//
+//    .km-ios #scrollview-container .km-pages .km-current-page {
+//        color: black;
+//        background-color: #ff009c;
+//    }
+//}
+
 
 div {
-    color:black
+    color:black;
+
+    kendo-scrollview {
+        border-top: 0px;
+    }
 }
 
 div.titleDiv {

@@ -1,5 +1,7 @@
+@use "src/variables" as var;
+
 footer {
-    background-color: #a8e6f0;
+    background-color: var.$main-color;
     padding: 20px;
     box-sizing: border-box;
     display: flex;

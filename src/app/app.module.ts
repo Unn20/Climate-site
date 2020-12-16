@@ -16,7 +16,7 @@ import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
-import {ContactPageComponent} from './components/contact-page/contact-page.component';
+import {AboutUsPageComponent} from './components/about-us-page/about-us-page.component';
 import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
 import {FigureComponent} from './components/figures/figure/figure.component';
 import {ChartModule} from 'primeng/chart';
@@ -43,7 +43,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         NavbarComponent,
         NewsScrollComponent,
         ArticlePageComponent,
-        ContactPageComponent,
+        AboutUsPageComponent,
         PrivacyPolicyPageComponent,
         FigureComponent,
         ArticleListPageComponent,

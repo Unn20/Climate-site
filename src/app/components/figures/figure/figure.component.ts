@@ -51,7 +51,7 @@ export class FigureComponent implements OnInit {
                 break;
             }
             case FigureTypeEnum.ARCTIC_ICE_MELTING: {
-                this.setArcitcFigure();
+                this.setArcticFigure();
                 break;
             }
             default: {
@@ -70,12 +70,9 @@ export class FigureComponent implements OnInit {
     private setTemperatureFigure(): void {
         this.climateDataApiService.getTemperatureData().subscribe(
             data => {
-                this.apiData = data[`temperature`];
+                this.apiData = data;
                 const xArray: any[] = this.apiData.map(value => {
-                    const d = value[`time`].split('.');
-                    d[1] = '0.' + d[1];
-                    d[1] = Math.floor(d[1] * 12);
-                    return this.pipe.transform(new Date(d[0], d[1]), 'MM/yyyy');
+                    return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
                 const yArray1: any[] = this.apiData.map(value => {
                     return value[`station`];
@@ -130,9 +127,9 @@ export class FigureComponent implements OnInit {
     private setCarbonDioxideFigure(): void {
         this.climateDataApiService.getCo2Data().subscribe(
             data => {
-                this.apiData = data[`co2`];
+                this.apiData = data;
                 const xArray: any[] = this.apiData.map(value => {
-                    return this.pipe.transform(new Date(value[`year`], value[`month`] - 1, value[`day`]), 'dd/MM/yy');
+                    return this.pipe.transform(new Date(value[`year`], value[`month`], value[`day`]), 'dd/MM/yy');
                 });
                 const yArray1: any[] = this.apiData.map(value => {
                     return value[`cycle`];
@@ -186,10 +183,9 @@ export class FigureComponent implements OnInit {
     private setMethaneFigure(): void {
         this.climateDataApiService.getMethaneData().subscribe(
             data => {
-                this.apiData = data[`methane`];
+                this.apiData = data;
                 const xArray: any[] = this.apiData.map(value => {
-                    const d = value[`date`].split('.');
-                    return this.pipe.transform(new Date(d[0], d[1] - 1), 'MM/yyyy');
+                    return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
                 const yArray1: any[] = this.apiData.map(value => {
                     return value[`average`];
@@ -243,10 +239,9 @@ export class FigureComponent implements OnInit {
     private setNitrousOxideFigure(): void {
         this.climateDataApiService.getNitrousOxideData().subscribe(
             data => {
-                this.apiData = data[`nitrous`];
+                this.apiData = data;
                 const xArray: any[] = this.apiData.map(value => {
-                    const d = value[`date`].split('.');
-                    return this.pipe.transform(new Date(d[0], d[1] - 1), 'MM/yyyy');
+                    return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
                 const yArray1: any[] = this.apiData.map(value => {
                     return value[`average`];
@@ -297,10 +292,10 @@ export class FigureComponent implements OnInit {
         );
     }
 
-    private setArcitcFigure(): void {
+    private setArcticFigure(): void {
         this.climateDataApiService.getArcticData().subscribe(
             data => {
-                this.apiData = data[`result`];
+                this.apiData = data;
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`]), 'yyyy');
                 });
