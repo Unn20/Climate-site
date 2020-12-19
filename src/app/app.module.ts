@@ -26,6 +26,7 @@ import {HomePageContentComponent} from './components/home-page-content/home-page
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { SourcesPageComponent } from './components/sources-page/sources-page.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
@@ -48,7 +49,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         FigureComponent,
         ArticleListPageComponent,
         HomePageContentComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        SourcesPageComponent
     ],
     imports: [
         BrowserModule,

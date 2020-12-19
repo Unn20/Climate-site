@@ -6,6 +6,7 @@ import {AboutUsPageComponent} from './components/about-us-page/about-us-page.com
 import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
 import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {SourcesPageComponent} from './components/sources-page/sources-page.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path: 'about', component: AboutUsPageComponent},
     {path: 'privacy', component: PrivacyPolicyPageComponent},
     {path: 'articles', component: ArticleListPageComponent},
+    {path: 'sources', component: SourcesPageComponent},
     {path: '**', component: PageNotFoundComponent},
 ];
 
