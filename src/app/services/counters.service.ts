@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 export class CountersService {
   constructor(private httpClient: HttpClient) { }
 
-  getCountersData(): Observable<number[]> {
-      return this.httpClient.get<number[]>(environment.backend.url + 'api/counters');
+  getCountersData(): Observable<object[]> {
+      return this.httpClient.get<object[]>(environment.backend.url + 'api/counters');
   }
 }
