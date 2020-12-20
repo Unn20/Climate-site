@@ -1,97 +1,91 @@
 @use "src/variables" as var;
 
 .pollution-effects-title {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    margin: 40px 0;
+    font-size: 50px;
+    text-align: center;
+    background-color: var.$thi-color;
+    padding: 5%;
 }
 
-.pollution-effect-container {
-    box-shadow: var.$box-shadow-10;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
+.pollution-effects-container {
+    margin:  0 auto 200px auto;
+    padding: 100px 5%;
     display: flex;
-    justify-content: center;
-    margin-bottom: 70px;
-
-    &.warming {
-        background: radial-gradient(var.$white, #9a8d2b);
-        border: 1px solid #8a7d1b;
-    }
-
-    &.smog {
-        background: radial-gradient(var.$white, #d0893b);
-        border: 1px solid #c0792b;
-    }
-
-    &.ozone {
-        background: radial-gradient(var.$white, #4155a9);
-        border: 1px solid #314599;
-    }
+    justify-content: space-evenly;
+    background-color: var.$thi-color-dark;
 
     .pollution-effect {
-        width: 800px;
+        $pollution-effect-size: 25vw;
+        border: 3px solid var.$black;
+        border-radius: 50%;
+        width: $pollution-effect-size;
+        height: $pollution-effect-size;
         display: flex;
         justify-content: center;
-        border-radius: 30px;
-        box-shadow: var.$box-shadow-20;
+        align-items: center;
 
         &.warming {
-            background-color: #9a8d2b;
-            border: 4px solid #8a7d1b;
-        }
-
-        &.smog {
-            background-color: #d0893b;
-            border: 4px solid #c0792b;
+            background: url("../../../assets/img/photos/forestFire.jpg");
         }
 
         &.ozone {
-            background-color: #4155a9;
-            border: 4px solid #314599;
+            background: url("../../../assets/img/photos/earthFromSpace.jpg");
         }
 
-        .pollution-effect-content {
-            padding: 20px;
-            width: 60%;
-            box-sizing: border-box;
+        &.smog {
+            background: url("../../../assets/img/photos/smog.jpg");
+        }
+
+        &.warming, &.ozone, &.smog {
+            background-size: $pollution-effect-size auto;
+        }
+
+        .text {
+            width: 80%;
+            margin: auto;
             color: var.$white;
-
-            .title {
-                font-size: 22px;
-                font-weight: 600;
-                margin: 20px 0 30px 20px;
-            }
-
-            .point {
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-                font-size: 14px;
-            }
-
-            .icon {
-                width: 55px;
-                height: auto;
-                margin-right: 15px;
-            }
+            font-size: 30px;
+            text-align: center;
+            opacity: 0;
         }
 
-        .pollution-effect-image {
-            height: 420px;
-            width: 40%;
-            object-fit: cover;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            background-blend-mode: darken;
+            cursor: pointer;
 
-            &:nth-child(even) {
-                border-radius: 0 30px 30px 0;
-            }
-
-            &:nth-child(odd) {
-                border-radius: 30px 0 0 30px;
+            .text {
+                opacity: 1;
             }
         }
     }
 
+}
+
+@media all and (max-width: 650px) {
+    .pollution-effects-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        .pollution-effect {
+            $pollution-effect-size-sm: 300px;
+            width: $pollution-effect-size-sm;
+            height: $pollution-effect-size-sm;
+            margin: 30px;
+            cursor: pointer;
+
+            &.warming, &.ozone, &.smog {
+                background-size: $pollution-effect-size-sm auto;
+                background-color: rgba(0, 0, 0, 0.2);
+                background-blend-mode: darken;
+            }
+
+            .text {
+                opacity: 1;
+                font-size: 36px;
+            }
+        }
+
+    }
 }
