@@ -38,8 +38,13 @@ footer {
             margin-bottom: 15px;
         }
 
-        .privacy-policy {
+        .additional-info-link {
             text-align: center;
+
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+
             &:hover {
                 cursor: pointer;
                 font-weight: bold;

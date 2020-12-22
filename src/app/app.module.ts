@@ -29,6 +29,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {PollutionEffectWarmingPageComponent} from './components/pollution-effect-warming-page/pollution-effect-warming-page.component';
 import {PollutionEffectSmogPageComponent} from './components/pollution-effect-smog-page/pollution-effect-smog-page.component';
 import {PollutionEffectOzonePageComponent} from './components/pollution-effect-ozone-page/pollution-effect-ozone-page.component';
+import { SourcesPageComponent } from './components/sources-page/sources-page.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         PageNotFoundComponent,
         PollutionEffectWarmingPageComponent,
         PollutionEffectSmogPageComponent,
-        PollutionEffectOzonePageComponent
+        PollutionEffectOzonePageComponent,
+        SourcesPageComponent
     ],
     imports: [
         BrowserModule,
