@@ -67,21 +67,22 @@ export class FigureComponent implements OnInit {
             detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]
         });
     }
-
+    private restrictDataItems(dataset: any[]): any[] {
+        if (dataset.length > this.maxDataArraySize) {
+            const result = [];
+            const delta = dataset.length / this.maxDataArraySize;
+            for (let i = 0; i < this.maxDataArraySize; i++) {
+                result.push(dataset[Math.floor(i * delta)]);
+            }
+            return result;
+        } else {
+            return dataset;
+        }
+    }
     private setTemperatureFigure(): void {
         this.climateDataApiService.getTemperatureData().subscribe(
             data => {
-                if (data.length > this.maxDataArraySize) {
-                    this.apiData = [];
-                    const delta = data.length / this.maxDataArraySize;
-                    let index = 0;
-                    for (let i = 0; i < this.maxDataArraySize; i++) {
-                        this.apiData.push(data[Math.floor(index)]);
-                        index += delta;
-                    }
-                } else {
-                    this.apiData = data;
-                }
+                this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
@@ -138,17 +139,7 @@ export class FigureComponent implements OnInit {
     private setCarbonDioxideFigure(): void {
         this.climateDataApiService.getCo2Data().subscribe(
             data => {
-                if (data.length > this.maxDataArraySize) {
-                    this.apiData = [];
-                    const delta = data.length / this.maxDataArraySize;
-                    let index = 0;
-                    for (let i = 0; i < this.maxDataArraySize; i++) {
-                        this.apiData.push(data[Math.floor(index)]);
-                        index += delta;
-                    }
-                } else {
-                    this.apiData = data;
-                }
+                this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`], value[`month`], value[`day`]), 'dd/MM/yy');
                 });
@@ -204,17 +195,7 @@ export class FigureComponent implements OnInit {
     private setMethaneFigure(): void {
         this.climateDataApiService.getMethaneData().subscribe(
             data => {
-                if (data.length > this.maxDataArraySize) {
-                    this.apiData = [];
-                    const delta = data.length / this.maxDataArraySize;
-                    let index = 0;
-                    for (let i = 0; i < this.maxDataArraySize; i++) {
-                        this.apiData.push(data[Math.floor(index)]);
-                        index += delta;
-                    }
-                } else {
-                    this.apiData = data;
-                }
+                this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
@@ -270,17 +251,7 @@ export class FigureComponent implements OnInit {
     private setNitrousOxideFigure(): void {
         this.climateDataApiService.getNitrousOxideData().subscribe(
             data => {
-                if (data.length > this.maxDataArraySize) {
-                    this.apiData = [];
-                    const delta = data.length / this.maxDataArraySize;
-                    let index = 0;
-                    for (let i = 0; i < this.maxDataArraySize; i++) {
-                        this.apiData.push(data[Math.floor(index)]);
-                        index += delta;
-                    }
-                } else {
-                    this.apiData = data;
-                }
+                this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
@@ -336,17 +307,7 @@ export class FigureComponent implements OnInit {
     private setArcticFigure(): void {
         this.climateDataApiService.getArcticData().subscribe(
             data => {
-                if (data.length > this.maxDataArraySize) {
-                    this.apiData = [];
-                    const delta = data.length / this.maxDataArraySize;
-                    let index = 0;
-                    for (let i = 0; i < this.maxDataArraySize; i++) {
-                        this.apiData.push(data[Math.floor(index)]);
-                        index += delta;
-                    }
-                } else {
-                    this.apiData = data;
-                }
+                this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`]), 'yyyy');
                 });
