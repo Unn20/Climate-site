@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Renderer2, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {interval, Observable, Subject, Subscribable, Subscription, timer} from 'rxjs';
+import {Observable, Subject, Subscription, timer} from 'rxjs';
 import {ArticleService} from '../../services/article.service';
 import {Article} from '../../models/article';
 import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
@@ -28,7 +28,11 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private renderer: Renderer2, public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
-            this.articles = articles.sort( (a, b) => {return a.id - b.id;} );
+            this.articles = articles.sort((a, b) => {
+                let dateA = new Date(a.dateAdded);
+                let dateB = new Date(b.dateAdded);
+                return (dateA < dateB)? 1: 0;
+            }).slice(0, 5);
         });
         this.lastHeight = window.innerHeight;
         this.lastWidth = window.innerWidth;
@@ -87,7 +91,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         });
     }
 
-    public refreshScrollTimer(event): void {
+    public refreshScrollTimer(): void {
         this.resetTimer.next(void 0);  // true
     }
 
@@ -113,5 +117,6 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         this.myScrollView.pageChange(0);
         this.myScrollView.endless = true;
+        this.updateHeight();
     }
 }

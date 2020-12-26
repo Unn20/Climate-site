@@ -16,7 +16,11 @@ export class ArticleListPageComponent implements AfterViewInit {
     constructor(public articleService: ArticleService) {
         this.showingArticlesCount = 0;
         articleService.getArticles().then(articles => {
-            this.articles = articles;
+            this.articles = articles.sort( (a, b) => {
+                let dateA = new Date(a.dateAdded);
+                let dateB = new Date(b.dateAdded);
+                return (dateA < dateB)? 1: 0;
+            } );
             this.showMoreArticles();
         });
     }
