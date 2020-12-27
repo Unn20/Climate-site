@@ -30,6 +30,7 @@ import {PollutionEffectWarmingPageComponent} from './components/pollution-effect
 import {PollutionEffectSmogPageComponent} from './components/pollution-effect-smog-page/pollution-effect-smog-page.component';
 import {PollutionEffectOzonePageComponent} from './components/pollution-effect-ozone-page/pollution-effect-ozone-page.component';
 import { SourcesPageComponent } from './components/sources-page/sources-page.component';
+import { NasaCountersComponent } from './components/nasa-counters/nasa-counters.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         PollutionEffectWarmingPageComponent,
         PollutionEffectSmogPageComponent,
         PollutionEffectOzonePageComponent,
-        SourcesPageComponent
+        SourcesPageComponent,
+        NasaCountersComponent
     ],
     imports: [
         BrowserModule,
