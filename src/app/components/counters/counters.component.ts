@@ -76,7 +76,7 @@ export class CountersComponent implements OnInit, AfterViewInit {
 
     initializeCounters(): void {
         for (const [i, c] of this.countersData.entries()) {
-            const secondData = c / ((this.dateOfDataFetch.getHours() + 1) * 3600 +
+            const secondData = c / ((this.dateOfDataFetch.getHours()) * 3600 +
                 this.dateOfDataFetch.getMinutes() * 60 +
                 this.dateOfDataFetch.getSeconds());
             const now = new Date();
