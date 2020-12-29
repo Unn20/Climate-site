@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, Renderer2, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Observable, Subject, Subscription, timer} from 'rxjs';
+import {AfterViewInit, Component, Renderer2, OnDestroy, OnInit, ViewChild, AfterViewChecked} from '@angular/core';
+import {interval, Observable, Subject, Subscribable, Subscription, timer} from 'rxjs';
 import {ArticleService} from '../../services/article.service';
 import {Article} from '../../models/article';
 import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
@@ -15,6 +15,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     public articles: Article[] = [];
     public width = '100%';
     public height = '800px';
+    public arrows = true;
     public maxHeight = 800;
     public minHeight = 200;
     public articleHover = false;
@@ -25,6 +26,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     private scrollListener: () => void;
     private scrollTimer: Observable<any>;
     private resetTimer = new Subject();
+    private freshPage = true;
 
     constructor(private renderer: Renderer2, public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
@@ -57,7 +59,8 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         const width = window.innerWidth;
         const screenWidthRatio = Math.round(0.7 * screen.width);
-        if (widthChanged) {
+        if (this.freshPage || widthChanged) {
+            this.freshPage = false;
             if (width < screenWidthRatio) {
                 if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
                     this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
@@ -68,15 +71,17 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
                 this.height = `${this.maxHeight}px`;
             }
         } else {
-            const heightDifference = window.innerHeight - +this.height.slice(0, -2);
-            if (heightDifference < 70) {
-                if (window.innerHeight > 200){
-                    this.height = `${window.innerHeight - 70}px`;
+            if (window.innerWidth >= screenWidthRatio){
+                const heightDifference = window.innerHeight - +this.height.slice(0, -2);
+                if (heightDifference < 70) {
+                    if (window.innerHeight > this.minHeight){
+                        this.height = `${window.innerHeight - 70}px`;
+                    } else {
+                        this.height = `${this.minHeight}px`;
+                    }
                 } else {
-                    this.height = `${this.minHeight}px`;
+                    this.height = `${this.maxHeight}px`;
                 }
-            } else {
-                this.height = `${this.maxHeight}px`;
             }
         }
     }
@@ -117,5 +122,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         this.myScrollView.pageChange(0);
         this.myScrollView.endless = true;
+        this.updateHeight();
     }
+
 }
