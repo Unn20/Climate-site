@@ -7,7 +7,7 @@ import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/priva
 import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {SourcesPageComponent} from './components/sources-page/sources-page.component';
-import {WarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/warming-page.component';
+import {GlobalWarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/global-warming-page.component';
 import {SmogPageComponent} from './components/pollution-effects-subpages/smog-page/smog-page.component';
 import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-page/ozone-page.component';
 
@@ -18,7 +18,7 @@ const routes: Routes = [
     {path: 'about', component: AboutUsPageComponent},
     {path: 'privacy', component: PrivacyPolicyPageComponent},
     {path: 'articles', component: ArticleListPageComponent},
-    {path: 'pollution-effects-subpages/global-warming-page', component: WarmingPageComponent},
+    {path: 'pollution-effects-subpages/global-warming-page', component: GlobalWarmingPageComponent},
     {path: 'pollution-effects-subpages/smog-page', component: SmogPageComponent},
     {path: 'pollution-effects-subpages/ozone-page', component: OzonePageComponent},
     {path: 'sources', component: SourcesPageComponent},

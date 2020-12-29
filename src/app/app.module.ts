@@ -25,7 +25,7 @@ import {HomePageContentComponent} from './components/home-page-content/home-page
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {WarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/warming-page.component';
+import {GlobalWarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/global-warming-page.component';
 import {SmogPageComponent} from './components/pollution-effects-subpages/smog-page/smog-page.component';
 import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-page/ozone-page.component';
 import { SourcesPageComponent } from './components/sources-page/sources-page.component';
@@ -51,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         ArticleListPageComponent,
         HomePageContentComponent,
         PageNotFoundComponent,
-        WarmingPageComponent,
+        GlobalWarmingPageComponent,
         SmogPageComponent,
         OzonePageComponent,
         SourcesPageComponent
