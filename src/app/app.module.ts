@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HomePageComponent} from './components/home-page/home-page.component';
 import {CountersComponent} from './components/counters/counters.component';
-import {FiguresComponent} from './components/figures/figures.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {PollutionEffectsDigestComponent} from './components/pollution-effects-digest/pollution-effects-digest.component';
 import {CommonModule} from '@angular/common';
@@ -18,7 +17,7 @@ import {ArticlePageComponent} from './components/article-page/article-page.compo
 import {AppRoutingModule} from './app-routing.module';
 import {AboutUsPageComponent} from './components/about-us-page/about-us-page.component';
 import {PrivacyPolicyPageComponent} from './components/privacy-policy-page/privacy-policy-page.component';
-import {FigureComponent} from './components/figures/figure/figure.component';
+import {FigureComponent} from './components/figure/figure.component';
 import {ChartModule} from 'primeng/chart';
 import {ClimateDataApiService} from './services/climate-data-api.service';
 import {ArticleListPageComponent} from './components/article-list-page/article-list-page.component';
@@ -40,7 +39,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         AppComponent,
         HomePageComponent,
         CountersComponent,
-        FiguresComponent,
         FooterComponent,
         PollutionEffectsDigestComponent,
         DeathsCounterComponent,

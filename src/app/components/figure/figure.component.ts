@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
-import {ClimateDataApiService} from '../../../services/climate-data-api.service';
+import {ClimateDataApiService} from '../../services/climate-data-api.service';
 import {DatePipe} from '@angular/common';
-import {FigureTypeEnum} from '../../../enums/figure-type-enums';
+import {FigureTypeEnum} from '../../enums/figure-type-enums';
 
 @Component({
     selector: 'app-figure',
