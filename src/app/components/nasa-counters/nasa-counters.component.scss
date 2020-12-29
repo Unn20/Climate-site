@@ -1,0 +1,57 @@
+@use "src/variables" as var;
+
+.nasa-counters-overhead {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .nasa-counters-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        margin-top: 5px;
+        box-shadow: var.$box-shadow-10;
+        border-radius: 20px;
+        padding: 5px;
+
+        .nasa-counter {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            margin-right: 20px;
+            margin-left: 20px;
+
+            .name {
+                font-size: 1.7em;
+                margin-bottom: 5px;
+            }
+
+            .counter-content {
+                font-size: 0.9em;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    margin-left: 3px;
+                    margin-right: 3px;
+                }
+
+                .value {
+                    font-weight: bolder;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}
