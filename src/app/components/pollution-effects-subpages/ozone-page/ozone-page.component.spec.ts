@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PollutionEffectOzonePageComponent } from './pollution-effect-ozone-page.component';
+import { OzonePageComponent } from './ozone-page.component';
 
 describe('PollutionEffectOzonePageComponent', () => {
-  let component: PollutionEffectOzonePageComponent;
-  let fixture: ComponentFixture<PollutionEffectOzonePageComponent>;
+  let component: OzonePageComponent;
+  let fixture: ComponentFixture<OzonePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PollutionEffectOzonePageComponent ]
+      declarations: [ OzonePageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PollutionEffectOzonePageComponent);
+    fixture = TestBed.createComponent(OzonePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

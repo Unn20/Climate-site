@@ -1,11 +1,10 @@
-@use "src/variables" as var;
+@use "../../../../variables" as var;
 
 .main-image {
     width: 100%;
     min-height: 700px;
-    background-image: url("../../../assets/img/photos/earthFromSpace2.jpg");
-    background-position: 35% -130px;
-    background-size: 2000px;
+    background-image: url("../../../../assets/img/photos/forestFire2.jpg");
+    background-position: 0 center;
     background-repeat: no-repeat;
 
     .title-text {
@@ -76,8 +75,7 @@
 @media all and (max-width: 600px) {
     .main-image {
         min-height: 400px;
-        background-size: 260%;
-        background-position: 30% -70px;
+        background-size: 200%;
 
         .title-text {
             top: 100px;

@@ -1,9 +1,9 @@
-@use "src/variables" as var;
+@use "../../../../variables" as var;
 
 .main-image {
     width: 100%;
     min-height: 700px;
-    background-image: url("../../../assets/img/photos/smog2.jpg");
+    background-image: url("../../../../assets/img/photos/smog2.jpg");
     background-position: 30% -380px;
     background-size: 2000px;
     background-repeat: no-repeat;

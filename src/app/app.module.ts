@@ -6,9 +6,9 @@ import {HomePageComponent} from './components/home-page/home-page.component';
 import {CountersComponent} from './components/counters/counters.component';
 import {FiguresComponent} from './components/figures/figures.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {PollutionEffectsComponent} from './components/pollution-effects/pollution-effects.component';
+import {PollutionEffectsDigestComponent} from './components/pollution-effects-digest/pollution-effects-digest.component';
 import {CommonModule} from '@angular/common';
-import {DeathsCounterComponent} from './components/pollution-effects/deaths-counter/deaths-counter.component';
+import {DeathsCounterComponent} from './components/pollution-effects-digest/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
@@ -26,9 +26,9 @@ import {HomePageContentComponent} from './components/home-page-content/home-page
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {PollutionEffectWarmingPageComponent} from './components/pollution-effect-warming-page/pollution-effect-warming-page.component';
-import {PollutionEffectSmogPageComponent} from './components/pollution-effect-smog-page/pollution-effect-smog-page.component';
-import {PollutionEffectOzonePageComponent} from './components/pollution-effect-ozone-page/pollution-effect-ozone-page.component';
+import {WarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/warming-page.component';
+import {SmogPageComponent} from './components/pollution-effects-subpages/smog-page/smog-page.component';
+import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-page/ozone-page.component';
 import { SourcesPageComponent } from './components/sources-page/sources-page.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -42,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         CountersComponent,
         FiguresComponent,
         FooterComponent,
-        PollutionEffectsComponent,
+        PollutionEffectsDigestComponent,
         DeathsCounterComponent,
         NavbarComponent,
         NewsScrollComponent,
@@ -53,9 +53,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         ArticleListPageComponent,
         HomePageContentComponent,
         PageNotFoundComponent,
-        PollutionEffectWarmingPageComponent,
-        PollutionEffectSmogPageComponent,
-        PollutionEffectOzonePageComponent,
+        WarmingPageComponent,
+        SmogPageComponent,
+        OzonePageComponent,
         SourcesPageComponent
     ],
     imports: [
