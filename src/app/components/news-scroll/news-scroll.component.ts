@@ -46,37 +46,41 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     private updateHeight(): void {
-        let widthChanged = false;
-        if (this.lastWidth !== window.innerWidth){
-            this.lastWidth = window.innerWidth;
-            widthChanged = true;
+        if (screen.width < 500) {
+            this.height = `${Math.round(5 * this.maxHeight / 8)}px`;
         } else {
-            this.lastHeight = window.innerHeight;
-        }
-        const width = window.innerWidth;
-        const screenWidthRatio = Math.round(0.7 * screen.width);
-        if (this.freshPage || widthChanged) {
-            this.freshPage = false;
-            if (width < screenWidthRatio) {
-                if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
-                    this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
-                } else {
-                    this.height = `${this.minHeight}px`;
-                }
+            let widthChanged = false;
+            if (this.lastWidth !== window.innerWidth){
+                this.lastWidth = window.innerWidth;
+                widthChanged = true;
             } else {
-                this.height = `${this.maxHeight}px`;
+                this.lastHeight = window.innerHeight;
             }
-        } else {
-            if (window.innerWidth >= screenWidthRatio){
-                const heightDifference = window.innerHeight - +this.height.slice(0, -2);
-                if (heightDifference < 70) {
-                    if (window.innerHeight > this.minHeight){
-                        this.height = `${window.innerHeight - 70}px`;
+            const width = window.innerWidth;
+            const screenWidthRatio = Math.round(0.7 * screen.width);
+            if (this.freshPage || widthChanged) {
+                this.freshPage = false;
+                if (width < screenWidthRatio) {
+                    if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
+                        this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
                     } else {
                         this.height = `${this.minHeight}px`;
                     }
                 } else {
-                    this.height = `${this.maxHeight}px`;
+                        this.height = `${this.maxHeight}px`;
+                }
+            } else {
+                if (window.innerWidth >= screenWidthRatio){
+                    const heightDifference = window.innerHeight - +this.height.slice(0, -2);
+                    if (heightDifference < 70) {
+                        if (window.innerHeight > this.minHeight){
+                            this.height = `${window.innerHeight - 70}px`;
+                        } else {
+                            this.height = `${this.minHeight}px`;
+                        }
+                    } else {
+                        this.height = `${this.maxHeight}px`;
+                    }
                 }
             }
         }
