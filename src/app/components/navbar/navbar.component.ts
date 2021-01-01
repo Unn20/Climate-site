@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
 
 @Component({
     selector: 'app-navbar',
@@ -7,9 +8,11 @@ import {NavigationEnd, Router} from '@angular/router';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements AfterViewInit {
+    @ViewChild('myHamburger') private myHamburgerDiv;
     public innerWidth: any;
     public logoPath: string;
     private isInitializedOnHomePage: boolean;
+    public hamburgerVisible = 'none';
 
     constructor(private router: Router) {
         this.innerWidth = window.innerWidth;
@@ -29,6 +32,14 @@ export class NavbarComponent implements AfterViewInit {
     onResize(): void {
         this.innerWidth = window.innerWidth;
         this.setLogo();
+    }
+
+    public hamburgerToggle(): void {
+        if (this.hamburgerVisible === 'none'){
+            this.hamburgerVisible = 'flex';
+        } else {
+            this.hamburgerVisible = 'none';
+        }
     }
 
     @HostListener('window:scroll', ['$event'])
