@@ -1,0 +1,410 @@
+{
+  "id": "1acd8dc1-397e-4a5f-b035-6659d075f24f",
+  "version": "2.0",
+  "name": "ClimateSite Testing",
+  "url": "http://climate-site.s3-website.eu-central-1.amazonaws.com",
+  "tests": [{
+    "id": "f8e87cd1-19b9-487e-bfc1-e29c9fea4ae2",
+    "name": "Go to articles and back",
+    "commands": [{
+      "id": "06a42465-1eef-4307-ba34-60453067ae8a",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e0e87fd-af1d-4e1a-9dbe-9d73ea4fdc73",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef159fa8-9c72-4a9f-bce9-139ad62f4108",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-container > .nav-element:nth-child(1)",
+      "targets": [
+        ["css=.nav-container > .nav-element:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a28f9bf-9de7-47eb-bf5e-58061b81c2b7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.article-list",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea4cef2d-40e9-4abb-9d6e-d0b86264ea0f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-logo > .zoom",
+      "targets": [
+        ["css=#nav-logo > .zoom", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//div[@id='nav-logo']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fb36166-9eb9-47fb-9398-d76ab2db9d71",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d7755470-7a77-4003-8a2e-46e1425674b6",
+    "name": "Go to global warming and back",
+    "commands": [{
+      "id": "f5031b62-34d3-42da-ba2e-1a340b0b4c40",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4563c6d-9a43-47cd-9d5b-4e05724ce4cf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fda82d0-e7fa-493c-b9a1-04913692494e",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.nav-element:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b254f447-89dd-49f2-9bf7-e1e254004ff2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(1)",
+      "targets": [
+        ["css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49a78214-b58d-428e-bb05-c4a51be6a5d0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-pollution-effect-warming-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "711be47b-8765-4116-adb0-b7662df2e699",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-logo > .zoom",
+      "targets": [
+        ["css=#nav-logo > .zoom", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//div[@id='nav-logo']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c07eb071-7ab8-4b95-afbe-5fb6c7f4f7a0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "88826981-d5b6-403c-828b-69c37e2cc814",
+    "name": "Go to about us and back",
+    "commands": [{
+      "id": "e02cf1b8-6c1e-4f38-bcc5-3d30dd7b1c12",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59c4dfed-003f-4825-b107-4b73aa93e373",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd68cb5c-25ed-4300-b9ff-e313253be168",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-container > .nav-element:nth-child(3)",
+      "targets": [
+        ["css=.nav-container > .nav-element:nth-child(3)", "css:finder"],
+        ["xpath=//nav/div[2]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f64f4542-463f-4f4d-9ed8-a0c5f238334f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-about-us-page",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30b07269-91e1-4122-abd3-90838ba40294",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-logo > .zoom",
+      "targets": [
+        ["css=#nav-logo > .zoom", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//div[@id='nav-logo']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac77d061-94ef-4fd4-b787-b521d81d0b9e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1d575472-57bb-40c0-b332-c5a4f4102986",
+    "name": "Go to ozone hole and back",
+    "commands": [{
+      "id": "60b5ae7f-548c-41d1-a6c5-0e756fcf722a",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1feb66e5-4ee8-4c8f-9156-7062e583add1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "854b8f91-9191-4bb2-8cc4-7ffb70718c4f",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.nav-element:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3dbccc8d-15e3-4aca-b256-e7cc2c3ede04",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(2)",
+      "targets": [
+        ["css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "777f9d1a-96f4-4893-b3b5-a6ce6d2df835",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-pollution-effect-ozone-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c85ceea1-cf27-4d99-8919-7b64654dc134",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-logo > .zoom",
+      "targets": [
+        ["css=#nav-logo > .zoom", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//div[@id='nav-logo']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad7f92c3-3c8b-4cd7-9a29-9ce50885181e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c973a8e8-5955-49c3-b118-2a4118ea8620",
+    "name": "Go to smog and back",
+    "commands": [{
+      "id": "1e99e3a5-c03b-4c87-8cd4-4add5dc79a48",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af245263-bce0-4228-af1c-fdb71d2accfc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3d4784a-b04d-4649-9400-a07b1d765d5b",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.nav-element:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7e82717-a02a-46a7-875b-0dc42ca37a39",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(3)",
+      "targets": [
+        ["css=.nav-element:nth-child(2) > .dropdown-expandable-content > .nav-element:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcc29af6-a94b-429c-af2c-3cea5f1faf3f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-pollution-effect-smog-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "626c2182-4b2e-4ae7-bfcc-9dd247a546e6",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-logo > .zoom",
+      "targets": [
+        ["css=#nav-logo > .zoom", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//div[@id='nav-logo']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82b5df67-e1b5-4d5c-9156-63c0ee28095a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page",
+      "targets": [
+        ["css=.home-page-content", "css:finder"],
+        ["xpath=//app-home-page-content/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "67a277b9-808b-42b4-a0e9-57f55a88e47b",
+    "name": "Check home page contents",
+    "commands": [{
+      "id": "0f60f968-5d40-4d8a-916b-e26f5cb02568",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30bcabd5-ecdc-458c-be65-5293ffb9bf88",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "911x945",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf7cbaa3-4b92-424f-802c-beb32f46cb8d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-counters",
+      "targets": [
+        ["css=.counter-overhead > h2", "css:finder"],
+        ["xpath=//app-counters/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'W ciągu dzisiejszego dnia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4386f5fa-7487-4faa-9549-3f9ce0f08294",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-news-scroll",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0784303-b351-442c-a6b2-9e1047ec350c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-home-page-content",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e1a695f-b55a-4d35-9486-06286db88bad",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-pollution-effects",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07885eb1-f38c-4eb7-bb4b-9505fc811710",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-deaths-counter",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5bc8376e-03e0-4ef1-bf19-f5e2b9a91886",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-navbar",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0cde27d6-b67f-4f55-b1ec-da8e283c1ad9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//app-footer",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "17d9e8b5-af89-4fdd-a0ea-8c4289d5e3a8",
+    "name": "Navigation",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f8e87cd1-19b9-487e-bfc1-e29c9fea4ae2", "88826981-d5b6-403c-828b-69c37e2cc814", "d7755470-7a77-4003-8a2e-46e1425674b6", "1d575472-57bb-40c0-b332-c5a4f4102986", "c973a8e8-5955-49c3-b118-2a4118ea8620"]
+  }, {
+    "id": "a6afcdc7-53af-4b75-ac0e-bbb90da5f554",
+    "name": "Check content",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["67a277b9-808b-42b4-a0e9-57f55a88e47b"]
+  }],
+  "urls": ["http://climate-site.s3-website.eu-central-1.amazonaws.com/"],
+  "plugins": []
+}
