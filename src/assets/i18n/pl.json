@@ -1,4 +1,56 @@
 {
+    "about-us-page": {
+        "intro": "Jesteśmy grupką 4 znajomych z politechniki poznańskiej których połączyła praca inżynierska. W składzie:",
+        "professor": "Naszym promotorem podczas tworzenia tego projektu był: ",
+        "professor-info": "Dr Hab. Inż. Maciej Zakrzewicz, profesor Politechniki Poznańskiej.",
+        "team-mates": "Poniżej znajdziecie nieco więcej informacji o każdym z nas a także jak się z nami skontaktować.",
+        "kamil": "Cześć jestem Kamil, lubie rzecz1, rzecz2, rzecz3. A nie lubie rzecz1, rzecz2, rzecz3. Podczas projektu\nzajmowałem się głównie rzecz1, rzecz2, rzecz3. Uważam że projekt jest ...",
+        "krzysztof": "Cześć jestem Krzysiek, lubie rzecz1, rzecz2, rzecz3. A nie lubie rzecz1, rzecz2, rzecz3. Podczas projektu\nzajmowałem się głównie rzecz1, rzecz2, rzecz3. Uważam że projekt jest ...",
+        "maciej": "Cześć jestem Maciej, lubie rzecz1, rzecz2, rzecz3. A nie lubie rzecz1, rzecz2, rzecz3. Podczas projektu\nzajmowałem się głównie rzecz1, rzecz2, rzecz3. Uważam że projekt jest ...",
+        "pawel": "Cześć jestem Paweł, lubie rzecz1, rzecz2, rzecz3. A nie lubie rzecz1, rzecz2, rzecz3. Podczas projektu\nzajmowałem się głównie rzecz1, rzecz2, rzecz3. Uważam że projekt jest ...",
+        "contact": "Jak się z nami skontaktować ?",
+        "email-info": "Adres email: ",
+        "email-ref": "mailto:climatesite@gmail.com",
+        "email": "climatesite@gmail.com"
+    },
+    "article-list-page": {
+        "all-articles": "Lista wszystkich artykułów",
+        "show-more": "Pokaż więcej"
+    },
+    "counters": {
+        "title": "W ciągu dzisiejszego dnia"
+    },
+    "footer": {
+        "privacy-policy": "Polityka prywatności",
+        "sources": "Źródła strony"
+    },
+    "home-page-content": {
+        "be-eco": {
+            "title": "Co znajdziecie na tej stronie ?",
+            "trivia": "Ciekawostki z dziedziny ekologi i ochrony środowiska.",
+            "plots": "Wykresy z danymi klimatycznymi.",
+            "counters": "Liczniki odnośnie tempa zmian środowiskowych na świecie.",
+            "articles": "Artykuły o ekologii i ochronie środowiska."
+        },
+        "about-ecology": {
+            "title": "Czym jest ekologia ?",
+            "about-1": "Ekologia to dziedzina nauki zajmująca się badaniem otaczającej nas przyrody.",
+            "about-2-start": "Badanie przyrody prowadzi do ciekawych odkryć np.:",
+            "about-2-ref": "https://pl.wikipedia.org/wiki/Algorytm_mr%C3%B3wkowy",
+            "about-2-ref-text": "algorytm mrówkowy",
+            "about-2-end": "wzorowany na zachowaniu mrówek.",
+            "about-3": "Ekologia nie jest synonimem wiedzy o środowisku lub nauką obejmująca problemy środowiska.",
+            "about-4": "Nie oznacza to, że wyniki poznania ekologicznego nie powinny być wykorzystane w ochronie środowiska."
+        },
+        "eco-facts": {
+            "title": "Garść faktów z dziedziny ochrony środowiska",
+            "about-1": "Codziennie wymiera od 150 do 200 gatunków.",
+            "about-2": "Codziennie ścina się 27 000 drzew tylko do wyrobu papieru toaletowego.",
+            "about-3": "Co roku ludzie używają w przybliżeniu 80 000 000 000 000 aluminiowych puszek.",
+            "about-4": "Co roku około 1 000 000 zwierząt wodnych umiera z powodu odpadów plastikowych w morzach.",
+            "about-5": "Szło rozkłada się 4000 lat."
+        }
+    },
     "navbar": {
         "articles": "Artykuły",
         "environment": "Środowisko",
@@ -7,9 +59,45 @@
         "environment-smog": "Smog",
         "about-us": "O nas"
     },
-    "footer": {
-        "privacy-policy": "Polityka prywatności",
-        "sources": "Źródła strony"
+    "page-not-found": {
+        "link-text-start": "Kliknij",
+        "link-text-ref": "tutaj",
+        "link-text-end": "aby powrócić na stronę główną."
+    },
+    "pollution-effect-ozone-page": {
+        "title": "Dziura ozonowa",
+        "about-1": "Jest to zmniejszenie się powłoki ozonowej, która ochrania nas przed szkodliwym dla zdrowia\npromieniowaniem UV",
+        "about-2": "Przyczynia się do wzrostu zachorowań na raka skóry i choroby oczu",
+        "about-3": "Jest przyczyną osłabienia odporności, a w konsekwencji zwiększenia ryzyka zarażenia chorobami\nwirusowymi i pasożytniczymi"
+    },
+    "pollution-effect-smog-page": {
+        "title": "Smog",
+        "about-1": "W głównej mierze spowodowany emisją spalin i pyłów do atmosfery przez samochody oraz zakłady\nprzemysłowe",
+        "about-2": "Jest przyczyną kwaśnych deszczy, które mają bardzo negatywny wpływ na środowisko",
+        "about-3": "Znacząco obniża poziom zdrowia mieszkańców obszarów na których występuje"
+    },
+    "pollution-effect-warming-page": {
+        "title": "Globalne ocieplenie",
+        "about-1": "Jest to stopniowe podnoszenie się średniej globalnej temperatury",
+        "about-2": "Skutkuje wymieraniem gatunków",
+        "about-3": "Powoduje częstsze występowanie zjawisk ekstremalnych takich jak fale upałów, susze,\npożary,\nhuragany, trąby powietrzne",
+        "about-4": "Jest przyczyną topnienia lodowców"
+    },
+    "pollution-effects": {
+        "title": "Skutki zaniedbania środowiska",
+        "global-warming": "Globalne ocieplenie",
+        "ozone-depletion": "Dziura ozonowa",
+        "smog": "Smog",
+        "deaths-counter": {
+            "main-text": "tyle osób rocznie umiera z powodu zanieczyszczenia wody i powietrza"
+        }
+    },
+    "sources-page": {
+        "sources": "Źródła",
+        "about-freepik-start": "Ikony stworzone przez",
+        "about-freepik-ref": "Freepik",
+        "about-freepik-end": "ze strony",
+        "about-pexels": "Obrazki pobrane ze strony"
     },
     "email": "climate.site.put@gmail.com"
 }
