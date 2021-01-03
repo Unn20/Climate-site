@@ -43,4 +43,4 @@ deploy_master:
     before_script:
         - pip install awscli
     script:
-        - aws s3 sync ./dist/climate-site s3://climate-site/ --acl=public-read --delete
+        - aws s3 sync ./dist/climate-site s3://climate-site/ --acl=public-read --delete --debug
