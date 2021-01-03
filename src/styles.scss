@@ -29,6 +29,11 @@ body {
     background-color: var.$sec-color;
 }
 
+.main-linear-gradient {
+    background: rgb(3,177,168);
+    background: linear-gradient(90deg, rgba(3,177,168,0.7) 13%, rgba(45,224,147,0.7) 50%, rgba(3,181,178,0.7) 87%);
+}
+
 .shade {
     transition: box-shadow .2s;
 

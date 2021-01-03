@@ -1,0 +1,118 @@
+@use "../../../variables" as var;
+
+.main-image {
+    width: 100%;
+    min-height: 700px;
+
+    .title-text {
+        width: 30%;
+        min-width: 320px;
+        padding: 30px;
+        //background-color: var.$thi-color-dark;
+        color: var.$black;
+        font-size: 52px;
+        position: relative;
+        top: 200px;
+        left: 10%;
+    }
+}
+
+.content {
+    box-shadow: 0 -20px 40px var.$thi-color-dark;
+    background-color: var.$thi-color-dark;
+    width: 100%;
+    padding: 5%;
+
+    .content-container {
+        background-color: var.$thi-color;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        padding: 10%;
+
+        .points {
+            margin-bottom: 100px;
+
+            .point {
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                font-size: 14px;
+                padding-top: 80px;
+                padding-bottom: 40px;
+
+                .icon {
+                    width: 120px;
+                    height: auto;
+                    margin-right: 20px;
+                }
+
+                .text {
+                    text-align: left;
+                    font-size: 30px;
+                }
+            }
+            .figure {
+                background-color: var.$sec-color;
+                border: 4px solid var.$sec-color-dark;
+            }
+        }
+
+        .text {
+            font-size: 20px;
+            text-align: justify;
+
+            a {
+                color: black;
+            }
+        }
+
+        .description {
+            padding-top: 20px;
+            padding-left: 10%;
+            font-size: 10px;
+
+            a {
+                color: black;
+            }
+        }
+
+    }
+}
+
+@media all and (max-width: 600px) {
+    .main-image {
+        min-height: 400px;
+        background-size: 200%;
+
+        .title-text {
+            top: 100px;
+        }
+    }
+
+    .content {
+        padding: 2%;
+
+        .content-container {
+            padding-left: 5%;
+            padding-right: 5%;
+
+            .points {
+                .point {
+                    flex-direction: column;
+                    margin-bottom: 70px;
+
+                    .icon {
+                        margin: 0 0 10px 0;
+                    }
+
+                    .text {
+                        width: 80%;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

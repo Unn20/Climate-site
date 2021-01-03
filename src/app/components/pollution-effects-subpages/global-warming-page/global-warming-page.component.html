@@ -1,17 +1,70 @@
 <div class="main-image">
-    <div class="title-text">Globalne ocieplenie</div>
+    <div class="title-text main-linear-gradient">Globalne ocieplenie</div>
 </div>
 <div class="content">
     <div class="content-container">
         <div class="points">
+
             <div class="point">
                 <img class="icon" src="../../../../assets/img/icons/warming.png" alt="thermometer">
                 <div class="text">Jest to stopniowe podnoszenie się średniej globalnej temperatury</div>
             </div>
-            <div class="point">
-                <img class="icon" src="../../../../assets/img/icons/bird.png" alt="bird">
-                <div class="text">Skutkuje wymieraniem gatunków</div>
+            <div class="text">Obecny, globalny przyrost średniej temperatury na Ziemii nie jest naturalny. W okresie 1880-1981
+                było to zmiana o 0.07&#176;C na dekadę. Od roku 1981 ta wartość wynosi 0.18&#176;C na dekadę.
             </div>
+            <div class="figure">
+                <app-figure [dataType]="figureTemperature"></app-figure>
+            </div>
+
+            <div class="description">
+                <p>
+                    Źródło danych: <a href="https://www.global-warming.org/">https://www.global-warming.org/</a>
+                </p>
+                <p>
+                    Dane pochodzą z analizy GISS Surface Temperature Analysis
+                    <a href="https://data.giss.nasa.gov/gistemp/">https://data.giss.nasa.gov/gistemp/</a>
+                </p>
+            </div>
+
+            <div class="point">
+                <img class="icon" src="../../../../assets/img/icons/air-pollution.png" alt="air-pollution">
+                <div class="text">Główną przyczyną globalnego ocieplenia jest emisja gazów cieplarnianych do atmosfery</div>
+            </div>
+            <div class="text">
+                Wraz z rozwojem przemysłu, w wyniku działań ludzkich emitowane są gazy cieplarniane, takie jak:
+                <ul>
+                    <li>Tlenek węgla (IV)</li>
+                    <li>Metan</li>
+                    <li>Tlenek azotu (I)</li>
+                </ul>
+                Ich nadmierna ilość w atmosferze przyczynia się do wzmocnienia się efektu cieplarnianego, zjawiska, które
+                zatrzymuje zaabsorbowaną energię słoneczną na Ziemii, w wyniku czego następuje globalny wzrost temperatury.
+            </div>
+            <div class="figure">
+                <app-figure [dataType]="figureCarbon"></app-figure>
+            </div>
+            <div class="description">
+                <p>
+                    Źródło danych: <a href="https://www.global-warming.org/">https://www.global-warming.org/</a>
+                </p>
+            </div>
+            <div class="figure">
+                <app-figure [dataType]="figureMethane"></app-figure>
+            </div>
+            <div class="description">
+                <p>
+                    Źródło danych: <a href="https://www.global-warming.org/">https://www.global-warming.org/</a>
+                </p>
+            </div>
+            <div class="figure">
+                <app-figure [dataType]="figureNitrous"></app-figure>
+            </div>
+            <div class="description">
+                <p>
+                    Źródło danych: <a href="https://www.global-warming.org/">https://www.global-warming.org/</a>
+                </p>
+            </div>
+
             <div class="point">
                 <img class="icon" src="../../../../assets/img/icons/flame.png" alt="flame">
                 <div class="text">Powoduje częstsze występowanie zjawisk ekstremalnych takich jak fale upałów, susze,
@@ -19,28 +72,36 @@
                     huragany, trąby powietrzne
                 </div>
             </div>
+            <div class="text">
+                Skutki zjawisk ekstremalnych w Polsce. (na podstawie
+                <a href="http://www.cop19.gov.pl/zmiany-klimatu">http://www.cop19.gov.pl/zmiany-klimatu</a>)
+                <ul>
+                    <li>Występujące dni upalne oraz fale upałów (z temperaturą maskymalną ponad 30&#176;c), występujące od końca lat 90,.
+                    przyczyniły się do ofiar śmiertelnch</li>
+                    <li>Intensywne opady prowadzą do podtopień i powodzi. Szacunkowo powoduje to straty o wartości 0.9% PKB</li>
+                    <li>Burze, szkwały i trąby powietrzne przyczyniają się do wyniszczania lasów.</li>
+                    <li>Susze przynoszą znaczne straty w rolnictwie</li>
+                </ul>
+            </div>
+
             <div class="point">
                 <img class="icon" src="../../../../assets/img/icons/ice.png" alt="iceberg">
                 <div class="text">Jest przyczyną topnienia lodowców</div>
             </div>
+            <div class="text">Od roku 2010 powierzchnia pokrywy lodowej spada w tempie 12.85% na dekadę.
+            </div>
+
+            <div class="figure">
+                <app-figure [dataType]="figureArctic"></app-figure>
+            </div>
+
+            <div class="description">
+                <p>
+                    Źródło danych: <a href="https://www.global-warming.org/">https://www.global-warming.org/</a>
+                </p>
+            </div>
         </div>
-        <div class="text">It is a long established fact that a reader will be distracted by the readable content of a
-            page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content here', making it look like readable
-            English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
-            text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-            have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </div>
-        <app-figure [dataType]="figureTemperature"></app-figure>
-        <div class="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-            alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-            hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-            chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
-            Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
-            reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
-            non-characteristic words etc.
-        </div>
-        <app-figure [dataType]="figureArctic"></app-figure>
+
+
     </div>
 </div>
