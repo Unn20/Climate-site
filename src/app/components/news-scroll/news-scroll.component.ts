@@ -46,8 +46,14 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     private updateHeight(): void {
-        if (screen.width < 500) {
-            this.height = `${Math.round(5 * this.maxHeight / 8)}px`;
+        if (screen.width < 650) {
+            this.height = `${Math.round(6 * this.maxHeight / 8)}px`;
+            if (screen.width < 500){
+                this.height = `${Math.round(4 * this.maxHeight / 8)}px`;
+                if (screen.width < 400){
+                    this.height = `${Math.round(3 * this.maxHeight / 8)}px`;
+                }
+            }
         } else {
             let widthChanged = false;
             if (this.lastWidth !== window.innerWidth){
