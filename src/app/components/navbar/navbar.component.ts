@@ -8,7 +8,6 @@ import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements AfterViewInit {
-    @ViewChild('myHamburger') private myHamburgerDiv;  // TODO: REMOVE THIS!
     public innerWidth: any;
     public logoPath: string;
     private isInitializedOnHomePage: boolean;
