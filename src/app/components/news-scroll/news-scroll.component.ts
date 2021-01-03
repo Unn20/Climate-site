@@ -30,7 +30,11 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private renderer: Renderer2, public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
-            this.articles = articles.sort( (a, b) => {return a.id - b.id;} );
+            this.articles = articles.sort((a, b) => {
+                const dateA = new Date(a.dateAdded);
+                const dateB = new Date(b.dateAdded);
+                return (dateA < dateB) ? 1 : 0;
+            }).slice(0, 5);
         });
         this.lastHeight = window.innerHeight;
         this.lastWidth = window.innerWidth;
@@ -46,37 +50,41 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     private updateHeight(): void {
-        let widthChanged = false;
-        if (this.lastWidth !== window.innerWidth){
-            this.lastWidth = window.innerWidth;
-            widthChanged = true;
+        if (screen.width < 500) {
+            this.height = `${Math.round(5 * this.maxHeight / 8)}px`;
         } else {
-            this.lastHeight = window.innerHeight;
-        }
-        const width = window.innerWidth;
-        const screenWidthRatio = Math.round(0.7 * screen.width);
-        if (this.freshPage || widthChanged) {
-            this.freshPage = false;
-            if (width < screenWidthRatio) {
-                if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
-                    this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
-                } else {
-                    this.height = `${this.minHeight}px`;
-                }
+            let widthChanged = false;
+            if (this.lastWidth !== window.innerWidth){
+                this.lastWidth = window.innerWidth;
+                widthChanged = true;
             } else {
-                this.height = `${this.maxHeight}px`;
+                this.lastHeight = window.innerHeight;
             }
-        } else {
-            if (window.innerWidth >= screenWidthRatio){
-                const heightDifference = window.innerHeight - +this.height.slice(0, -2);
-                if (heightDifference < 70) {
-                    if (window.innerHeight > this.minHeight){
-                        this.height = `${window.innerHeight - 70}px`;
+            const width = window.innerWidth;
+            const screenWidthRatio = Math.round(0.7 * screen.width);
+            if (this.freshPage || widthChanged) {
+                this.freshPage = false;
+                if (width < screenWidthRatio) {
+                    if (this.maxHeight - (screenWidthRatio - width) > this.minHeight) {
+                        this.height = `${this.maxHeight - (screenWidthRatio - width)}px`;
                     } else {
                         this.height = `${this.minHeight}px`;
                     }
                 } else {
-                    this.height = `${this.maxHeight}px`;
+                        this.height = `${this.maxHeight}px`;
+                }
+            } else {
+                if (window.innerWidth >= screenWidthRatio){
+                    const heightDifference = window.innerHeight - +this.height.slice(0, -2);
+                    if (heightDifference < 70) {
+                        if (window.innerHeight > this.minHeight){
+                            this.height = `${window.innerHeight - 70}px`;
+                        } else {
+                            this.height = `${this.minHeight}px`;
+                        }
+                    } else {
+                        this.height = `${this.maxHeight}px`;
+                    }
                 }
             }
         }
@@ -92,7 +100,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         });
     }
 
-    public refreshScrollTimer(event): void {
+    public refreshScrollTimer(): void {
         this.resetTimer.next(void 0);  // true
     }
 
@@ -113,7 +121,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        for(let i = 0; i < this.articles.length; i++) {
+        for (let i = 0; i < this.articles.length; i++) {
             this.myScrollView.next();
         }
         this.myScrollView.pageChange(0);

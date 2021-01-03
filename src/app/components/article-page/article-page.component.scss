@@ -1,7 +1,7 @@
 @use "src/variables" as var;
 
 .article {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     padding: 50px 0;
     box-shadow: var.$box-shadow-10;
@@ -77,5 +77,9 @@
                 font-size: 18px;
             }
         }
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
     }
 }
