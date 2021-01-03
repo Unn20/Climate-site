@@ -30,7 +30,11 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private renderer: Renderer2, public articleService: ArticleService) {
         articleService.getArticles().then(articles => {
-            this.articles = articles.sort( (a, b) => {return a.id - b.id;} );
+            this.articles = articles.sort((a, b) => {
+                const dateA = new Date(a.dateAdded);
+                const dateB = new Date(b.dateAdded);
+                return (dateA < dateB) ? 1 : 0;
+            }).slice(0, 5);
         });
         this.lastHeight = window.innerHeight;
         this.lastWidth = window.innerWidth;
@@ -92,7 +96,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
         });
     }
 
-    public refreshScrollTimer(event): void {
+    public refreshScrollTimer(): void {
         this.resetTimer.next(void 0);  // true
     }
 
@@ -113,7 +117,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        for(let i = 0; i < this.articles.length; i++) {
+        for (let i = 0; i < this.articles.length; i++) {
             this.myScrollView.next();
         }
         this.myScrollView.pageChange(0);
