@@ -26,7 +26,6 @@ build_master:
     stage: build
     only:
         - master
-        - aws_deployment # TODO: REMOVE
     script:
         - ng build --prod
     artifacts:
@@ -38,7 +37,6 @@ deploy_master:
     stage: deploy
     only:
         - master
-        - aws_deployment # TODO: REMOVE
     image: python:latest
     before_script:
         - pip install awscli
