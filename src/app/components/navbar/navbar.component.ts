@@ -8,11 +8,12 @@ import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements AfterViewInit {
-    @ViewChild('myHamburger') private myHamburgerDiv;
+    @ViewChild('myHamburger') private myHamburgerDiv;  // TODO: REMOVE THIS!
     public innerWidth: any;
     public logoPath: string;
     private isInitializedOnHomePage: boolean;
     public hamburgerVisible = 'none';
+    public hamburgerDirection = 'none';
 
     constructor(private router: Router) {
         this.innerWidth = window.innerWidth;
@@ -36,14 +37,36 @@ export class NavbarComponent implements AfterViewInit {
 
     public hamburgerToggle(): void {
         if (this.hamburgerVisible === 'none'){
-            this.hamburgerVisible = 'flex';
+            this.switchOnHamburger();
         } else {
-            this.hamburgerVisible = 'none';
+            this.switchOffHamburger();
+        }
+    }
+
+    private switchOnHamburger(): void {
+        this.hamburgerVisible = 'flex';
+        this.hamburgerDirection = 'column';
+    }
+
+    private switchOffHamburger(): void {
+        this.hamburgerVisible = 'none';
+        this.hamburgerDirection = 'none';
+    }
+
+    @HostListener('document:click', ['$event'])
+    clickout(event) {
+        if (!(document.getElementById('burgerIcon').contains(event.target))) {
+            this.switchOffHamburger();
+        } else {
+            if (document.getElementById('burgerContent').contains(event.target)) {
+                this.switchOffHamburger();
+            }
         }
     }
 
     @HostListener('window:scroll', ['$event'])
     onScroll(): void {
+        this.switchOffHamburger();
         const navElement = document.getElementsByTagName('nav').item(0);
         const navLogoElement = document.getElementById('nav-logo');
         if (this.isInitializedOnHomePage) {
