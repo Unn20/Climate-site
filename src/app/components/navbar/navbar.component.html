@@ -28,12 +28,12 @@
         </div>
     </div>
 
-    <div class="nav-hamburger">
+    <div id="burgerIcon" class="nav-hamburger" (click)="hamburgerToggle()">
         <div class="nav-element dropdown">
             <div class="nav-element dropdown-expandable">
                 <img src="/assets/img/icons/Hamburger_icon.png" alt="MENU">
             </div>
-            <div class="dropdown-expandable-content">
+            <div id="burgerContent" class="dropdown-expandable-content" [style.display]="hamburgerVisible" [style.flex-direction]="hamburgerDirection">
                 <div class="nav-element zoom shade" routerLink="/articles" routerLinkActive="active">
                     {{'navbar.articles' | translate}}</div>
                 <div class="nav-element zoom shade" routerLink="/pollution-effects/global-warming" routerLinkActive="active">
