@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PollutionEffectWarmingPageComponent } from './pollution-effect-warming-page.component';
+import { GlobalWarmingPageComponent } from './global-warming-page.component';
 
 describe('PollutionEffectWarmingPageComponent', () => {
-  let component: PollutionEffectWarmingPageComponent;
-  let fixture: ComponentFixture<PollutionEffectWarmingPageComponent>;
+  let component: GlobalWarmingPageComponent;
+  let fixture: ComponentFixture<GlobalWarmingPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PollutionEffectWarmingPageComponent ]
+      declarations: [ GlobalWarmingPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PollutionEffectWarmingPageComponent);
+    fixture = TestBed.createComponent(GlobalWarmingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

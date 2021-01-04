@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MessageService} from 'primeng/api';
-import {ClimateDataApiService} from '../../../services/climate-data-api.service';
+import {ClimateDataApiService} from '../../services/climate-data-api.service';
 import {DatePipe} from '@angular/common';
-import {FigureTypeEnum} from '../../../enums/figure-type-enums';
+import {FigureTypeEnum} from '../../enums/figure-type-enums';
 
 @Component({
     selector: 'app-figure',
@@ -11,6 +11,18 @@ import {FigureTypeEnum} from '../../../enums/figure-type-enums';
     providers: [MessageService]
 })
 export class FigureComponent implements OnInit {
+    static defaultFigureOptions: object = {
+        legend: {
+            display: true,
+            position: 'top'
+        },
+        layout: {
+            padding: {
+                top: 20
+            }
+        }
+    };
+
     @Input() dataType: FigureTypeEnum;
     public data: any;
     public options: any;
@@ -30,6 +42,7 @@ export class FigureComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.options = {...FigureComponent.defaultFigureOptions};
         this.setFigure(this.dataType);
     }
 
@@ -86,38 +99,35 @@ export class FigureComponent implements OnInit {
                 const xArray: any[] = this.apiData.map(value => {
                     return this.pipe.transform(new Date(value[`year`], value[`month`]), 'MM/yyyy');
                 });
-                const yArray1: any[] = this.apiData.map(value => {
-                    return value[`station`];
-                });
+                // const yArray1: any[] = this.apiData.map(value => {
+                //     return value[`station`];
+                // });
                 const yArray2: any[] = this.apiData.map(value => {
                     return value[`land`];
                 });
                 this.data = {
                     labels: xArray,
                     datasets: [
+                        // {
+                        //     label: 'Temperatura odnotowywana na stacji',
+                        //     data: yArray1,
+                        //     fill: false,
+                        //     borderColor: '#E50F0F',
+                        // },
                         {
-                            label: 'Temperatura odnotowywana na stacji',
-                            data: yArray1,
-                            fill: false,
-                            borderColor: '#E50F0F',
-                        },
-                        {
-                            label: 'Temperatura odnotowywana na powierzchni',
+                            label: 'Odnotowana temperatura [\xB0C]',
                             data: yArray2,
                             fill: false,
-                            borderColor: '#4bc0c0'
+                            borderColor: '#F24242',
+                            backgroundColor: '#D00000'
                         }
                     ]
                 };
-                this.options = {
+                this.options = Object.assign(this.options, {
                     title: {
                         display: true,
-                        text: 'Średnia anomalia temperatury na Ziemii',
+                        text: ['Średnia anomalia ', 'temperatury na Ziemi'],
                         fontSize: 24
-                    },
-                    legend: {
-                        display: true,
-                        position: 'top'
                     },
                     scales: {
                         yAxes: [{
@@ -126,14 +136,20 @@ export class FigureComponent implements OnInit {
                                     return value + '\xB0C';
                                 }
                             }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                lineHeight: 3
+                            }
                         }]
                     }
-                };
+                });
             },
             error => {
                 throw new Error('ERR: ' + error);
             }
         );
+
     }
 
     private setCarbonDioxideFigure(): void {
@@ -156,7 +172,7 @@ export class FigureComponent implements OnInit {
                             label: 'Pomiar',
                             data: yArray1,
                             fill: false,
-                            borderColor: '#4bc0c0'
+                            borderColor: '#8405D8'
                         },
                         {
                             label: 'Trend',
@@ -166,14 +182,11 @@ export class FigureComponent implements OnInit {
                         }
                     ]
                 };
-                this.options = {
+                this.options = Object.assign(this.options, {
                     title: {
                         display: true,
-                        text: 'Stężenie dwutlenku węgla na Ziemii',
+                        text: ['Stężenie tlenku ', 'węgla (IV) na Ziemi'],
                         fontSize: 24
-                    },
-                    legend: {
-                        position: 'top'
                     },
                     scales: {
                         yAxes: [{
@@ -182,9 +195,14 @@ export class FigureComponent implements OnInit {
                                     return value + 'ppm';
                                 }
                             }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                lineHeight: 3
+                            }
                         }]
                     }
-                };
+                });
             },
             error => {
                 throw new Error('ERR: ' + error);
@@ -212,7 +230,7 @@ export class FigureComponent implements OnInit {
                             label: 'Pomiar',
                             data: yArray1,
                             fill: false,
-                            borderColor: '#4bc0c0'
+                            borderColor: '#A20D3E'
                         },
                         {
                             label: 'Trend',
@@ -222,14 +240,11 @@ export class FigureComponent implements OnInit {
                         }
                     ]
                 };
-                this.options = {
+                this.options = Object.assign(this.options, {
                     title: {
                         display: true,
-                        text: 'Stężenie metanu na Ziemii',
+                        text: ['Stężenie metanu ', 'na Ziemi'],
                         fontSize: 24
-                    },
-                    legend: {
-                        position: 'top'
                     },
                     scales: {
                         yAxes: [{
@@ -238,9 +253,14 @@ export class FigureComponent implements OnInit {
                                     return value + 'ppm';
                                 }
                             }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                lineHeight: 3
+                            }
                         }]
                     }
-                };
+                });
             },
             error => {
                 throw new Error('ERR: ' + error);
@@ -268,7 +288,7 @@ export class FigureComponent implements OnInit {
                             label: 'Pomiar',
                             data: yArray1,
                             fill: false,
-                            borderColor: '#4bc0c0'
+                            borderColor: '#0B2BAB'
                         },
                         {
                             label: 'Trend',
@@ -278,14 +298,11 @@ export class FigureComponent implements OnInit {
                         }
                     ]
                 };
-                this.options = {
+                this.options = Object.assign(this.options, {
                     title: {
                         display: true,
-                        text: 'Stężenie podtlenku azotu na Ziemii',
+                        text: ['Stężenie tlenku ', 'azotu (I) na Ziemi'],
                         fontSize: 24
-                    },
-                    legend: {
-                        position: 'top'
                     },
                     scales: {
                         yAxes: [{
@@ -294,9 +311,14 @@ export class FigureComponent implements OnInit {
                                     return value + 'ppm';
                                 }
                             }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                lineHeight: 3
+                            }
                         }]
                     }
-                };
+                });
             },
             error => {
                 throw new Error('ERR: ' + error);
@@ -324,24 +346,21 @@ export class FigureComponent implements OnInit {
                             label: 'Zasięg lodu',
                             data: yArray1,
                             fill: false,
-                            borderColor: '#4bc0c0'
+                            borderColor: '#06AFB5'
                         },
                         {
                             label: 'Powierzchnia lodowca',
                             data: yArray2,
                             fill: false,
-                            borderColor: '#565656'
+                            borderColor: '#A8411C'
                         }
                     ]
                 };
-                this.options = {
+                this.options = Object.assign(this.options, {
                     title: {
                         display: true,
-                        text: 'Powierzchnia lodowca w Arktyce',
+                        text: ['Powierzchnia lodowca ', 'w Arktyce'],
                         fontSize: 24
-                    },
-                    legend: {
-                        position: 'top'
                     },
                     scales: {
                         yAxes: [{
@@ -350,9 +369,14 @@ export class FigureComponent implements OnInit {
                                     return value + 'x 10\u2076 km\u00B2';
                                 }
                             }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                lineHeight: 3
+                            }
                         }]
                     }
-                };
+                });
             },
             error => {
                 throw new Error('ERR: ' + error);
