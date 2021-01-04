@@ -10,14 +10,15 @@
 
     h2 {
         font-size: 3rem;
+        text-align: center;
     }
 
     .nasa-counters-container {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: center;
-
-        margin-top: 5px;
+        
+        margin: 5px 15px 0 15px;
         box-shadow: var.$box-shadow-10;
         border-radius: 20px;
         padding: 5px;
@@ -26,9 +27,11 @@
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
+            background: var.$main-color-dark;
+            padding: 5px;
+            border-radius: 20px;
 
-            margin-right: 20px;
-            margin-left: 20px;
+            margin: 10px 20px 10px 20px;
 
             .name {
                 font-size: 1.7em;
@@ -52,6 +55,14 @@
                     font-size: 1.3em;
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        flex-flow: column nowrap;
+        .nasa-counter {
+            font-size: 20px;
+            margin: 20px 0;
         }
     }
 }
