@@ -14,25 +14,12 @@ nav {
     top: 0;
     transition: 0.5s ease-out;
 
-    &.on-top {
-        background-position: 0px -250px;
-        box-shadow: none;
-    }
-
     #nav-logo {
         height: 100%;
         min-width: 45%;
         display: flex;
         align-items: center;
         transition: 0.5s ease-out;
-
-        &.on-top {
-            height: 200%;
-
-            img:hover {
-                transform: none;
-            }
-        }
 
         img {
             max-height: 100%;
@@ -169,5 +156,32 @@ nav {
     }
     nav .nav-hamburger {
         display: flex;
+    }
+}
+
+
+
+@media all and (min-width: 700px) {
+    nav {
+        &.on-top {
+            background-position: 0px -250px;
+            box-shadow: none;
+            color: var.$white;
+        }
+    }
+
+
+    #nav-logo.on-top {
+        height: 200% !important;
+
+        img:hover {
+            transform: none;
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+    nav {
+        position: sticky !important;
     }
 }
