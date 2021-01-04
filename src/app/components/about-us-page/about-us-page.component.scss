@@ -1,42 +1,71 @@
 @use "src/variables" as var;
 
 div.contact-page {
+    margin: 0;
+    background: var.$thi-color;
+
     h2 {
-        margin: 20px 20px;
+        padding: 20px 0;
         font-size: 40pt;
         text-align: center;
+        background: var.$thi-color-dark;
+    }
+
+    div.intro {
+        text-align: justify;
+        align-self: center;
+        background: var.$thi-color-dark;
+        padding: 20px 20%;
+        margin-bottom: 20px;
+    }
+
+    .professor {
+        font-size: 14pt;
+        font-weight: bold;
     }
 
     div.about-us {
+        margin-top: 20px;
         display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-
-        div.intro {
-           width: 40%;
-            text-align: justify;
-        }
-
-        .professor {
-            font-family: "Comic Sans MS", serif;
-            font-size: 14pt;
-            font-weight: bold;
-        }
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: center;
+        padding: 20px 0;
 
         div.info {
-            margin: 10px 10px;
-            width: 40%;
+            margin: 20px;
+            width: 35%;
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: column nowrap;
             align-items: center;
-            justify-content: space-between;
+            box-shadow: var.$box-shadow-10;
+            border: 4px solid var.$main-color-dark;
+            background: var.$main-color;
 
             .text {
                 padding: 10px;
+                text-align: justify;
+                font-size: 100%;
+                line-height: 140%;
             }
 
             img {
-                width: 200px;
+                width: 100%;
+                border-bottom: 4px solid var.$main-color-dark;
+            }
+        }
+
+        @media all and (max-width: 900px) {
+            div.intro {
+                width: 80%;
+            }
+
+            div.info {
+                width: 80%;
+                flex-flow: column nowrap;
+                img {
+                    width: 100%;
+                }
             }
         }
     }
