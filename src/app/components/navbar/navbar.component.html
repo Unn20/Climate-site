@@ -12,13 +12,13 @@
                 {{'navbar.environment' | translate}}
             </div>
             <div class="dropdown-expandable-content">
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/global-warming" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/global-warming-page" routerLinkActive="active">
                     {{'navbar.environment-global-warming' | translate}}
                 </div>
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/ozone" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/ozone-page" routerLinkActive="active">
                     {{'navbar.environment-ozone-hole' | translate}}
                 </div>
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/smog" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/smog-page" routerLinkActive="active">
                     {{'navbar.environment-smog' | translate}}
                 </div>
             </div>
@@ -28,19 +28,19 @@
         </div>
     </div>
 
-    <div class="nav-hamburger">
+    <div id="burgerIcon" class="nav-hamburger" (click)="hamburgerToggle()">
         <div class="nav-element dropdown">
             <div class="nav-element dropdown-expandable">
                 <img src="/assets/img/icons/Hamburger_icon.png" alt="MENU">
             </div>
-            <div class="dropdown-expandable-content">
+            <div id="burgerContent" class="dropdown-expandable-content" [style.display]="hamburgerVisible" [style.flex-direction]="hamburgerDirection">
                 <div class="nav-element zoom shade" routerLink="/articles" routerLinkActive="active">
                     {{'navbar.articles' | translate}}</div>
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/global-warming" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/global-warming-page" routerLinkActive="active">
                     {{'navbar.environment-global-warming' | translate}}</div>
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/ozone" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/ozone-page" routerLinkActive="active">
                     {{'navbar.environment-ozone-hole' | translate}}</div>
-                <div class="nav-element zoom shade" routerLink="/pollution-effects/smog" routerLinkActive="active">
+                <div class="nav-element zoom shade" routerLink="/pollution-effects-subpages/smog-page" routerLinkActive="active">
                     {{'navbar.environment-smog' | translate}}</div>
                 <div class="nav-element zoom shade" routerLink="/about" routerLinkActive="active">
                     {{'navbar.about-us' | translate}}</div>
