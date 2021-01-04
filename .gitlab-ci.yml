@@ -1,17 +1,19 @@
+image: node:latest
+
 stages:
   - build
-  - package
   - deploy
 
-build:
-  stage: build
-  image: node:latest
-  only:
-    - master
-    - development
-  script:
+before_script:
     - npm install -g @angular/cli@
     - npm ci
+
+
+build_development:
+  stage: build
+  only:
+    - development
+  script:
     - ng build
   artifacts:
     paths:
@@ -19,3 +21,24 @@ build:
   cache:
     paths:
       - node_modules/
+
+build_master:
+    stage: build
+    only:
+        - master
+    script:
+        - ng build --prod
+    artifacts:
+        paths:
+            - dist/
+
+
+deploy_master:
+    stage: deploy
+    only:
+        - master
+    image: python:latest
+    before_script:
+        - pip install awscli
+    script:
+        - aws s3 sync ./dist/climate-site s3://climate-site/ --acl=public-read --delete --debug

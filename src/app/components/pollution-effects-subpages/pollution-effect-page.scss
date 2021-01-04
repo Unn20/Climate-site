@@ -1,18 +1,14 @@
-@use "src/variables" as var;
+@use "../../../variables" as var;
 
 .main-image {
     width: 100%;
     min-height: 700px;
-    background-image: url("../../../assets/img/photos/earthFromSpace2.jpg");
-    background-position: 35% -130px;
-    background-size: 2000px;
-    background-repeat: no-repeat;
 
     .title-text {
         width: 30%;
         min-width: 320px;
         padding: 30px;
-        background-color: var.$thi-color-dark;
+        //background-color: var.$thi-color-dark;
         color: var.$black;
         font-size: 52px;
         position: relative;
@@ -42,6 +38,8 @@
                 align-items: center;
                 margin-bottom: 30px;
                 font-size: 14px;
+                padding-top: 80px;
+                padding-bottom: 40px;
 
                 .icon {
                     width: 120px;
@@ -51,33 +49,41 @@
 
                 .text {
                     text-align: left;
+                    font-size: 30px;
                 }
+            }
+            .figure {
+                background-color: var.$sec-color;
+                border: 4px solid var.$sec-color-dark;
             }
         }
 
         .text {
-            font-size: 26px;
+            font-size: 20px;
             text-align: justify;
+
+            a {
+                color: black;
+            }
         }
 
-        .figure {
-            margin: 30px;
-            border: 2px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 400px;
-            height: 300px;
-            font-size: 60px;
+        .description {
+            padding-top: 20px;
+            padding-left: 10%;
+            font-size: 10px;
+
+            a {
+                color: black;
+            }
         }
+
     }
 }
 
 @media all and (max-width: 600px) {
     .main-image {
         min-height: 400px;
-        background-size: 260%;
-        background-position: 30% -70px;
+        background-size: 200%;
 
         .title-text {
             top: 100px;
