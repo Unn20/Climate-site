@@ -85,7 +85,7 @@ export class NavbarComponent implements AfterViewInit {
     }
 
     private onRouteUrlUpdate(): void {
-        this.isInitializedOnHomePage = this.router.url === '/home';
+        this.isInitializedOnHomePage = this.router.url.includes('/home');
         this.onScroll();
     }
 
