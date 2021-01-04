@@ -1,8 +1,12 @@
 <div class="article-list">
     <h2>Lista wszystkich artykułów</h2>
+    <div id="main-separator"></div>
     <div class="articles-container" id="articles">
         <div *ngFor="let article of articles" (click)="articleService.redirectToArticle(article.id);" class="article">
-            <div class="image" [ngStyle]="{'background-image': 'url(' + article.mainImageUrl + ')'}"></div>
+            <div class="separator"></div>
+            <div class="image-container">
+                <div class="image" [ngStyle]="{'background-image': 'url(' + article.mainImageUrl + ')'}"></div>
+            </div>
             <div class="header">
                 <div class="title">{{article.title}}</div>
                 <div class="date">{{article.dateAdded}}</div>
