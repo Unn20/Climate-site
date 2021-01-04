@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     h2 {
         font-size: 3rem;
@@ -30,8 +30,9 @@
             margin: 0.6rem 1.6rem;
             display: flex;
             transition: .3s;
-            flex-flow: row nowrap;
+            flex-flow: column nowrap;
             align-items: center;
+            justify-content: stretch;
 
             &:hover {
                 background-color: #88c6d0;
@@ -43,15 +44,17 @@
                 padding: 1px;
 
                 &.counter-value {
-                    width: 150px;
+                    width: 170px;
                     text-align: center;
-                    font-size: 0.6em;
+                    font-size: 0.7em;
+                    font-weight: bold;
                 }
 
                 &.counter-text {
-                    width: 80px;
-                    font-size: 0.4em;
+                    width: 170px;
+                    font-size: 0.5em;
                     text-align: center;
+                    color: #404040;
                 }
             }
         }
