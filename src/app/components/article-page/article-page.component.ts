@@ -20,7 +20,6 @@ export class ArticlePageComponent {
                 private router: Router) {
         articleService.getArticles().then(articles => {
             this.articles = articles;
-            this.latestArticles = articles.slice(0, this.latestArticlesMaxCount);
         }).then(() => {
             this.setArticleToShowUsingUrl();
         });
@@ -44,6 +43,10 @@ export class ArticlePageComponent {
             this.articleToShow = this.articles.find(article => article.id === articleToShowId);
             if (!this.articleToShow) {
                 this.router.navigate(['/home']);
+            } else {
+                const articlesWithoutCurrent = [...this.articles];
+                articlesWithoutCurrent.splice(this.articles.indexOf(this.articleToShow), 1);
+                this.latestArticles = articlesWithoutCurrent.slice(0, this.latestArticlesMaxCount);
             }
         });
     }
