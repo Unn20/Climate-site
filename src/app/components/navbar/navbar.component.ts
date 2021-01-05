@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
 
 @Component({
     selector: 'app-navbar',
@@ -10,6 +11,8 @@ export class NavbarComponent implements AfterViewInit {
     public innerWidth: any;
     public logoPath: string;
     private isInitializedOnHomePage: boolean;
+    public hamburgerVisible = 'none';
+    public hamburgerDirection = 'none';
 
     constructor(private router: Router) {
         this.innerWidth = window.innerWidth;
@@ -31,8 +34,38 @@ export class NavbarComponent implements AfterViewInit {
         this.setLogo();
     }
 
+    public hamburgerToggle(): void {
+        if (this.hamburgerVisible === 'none'){
+            this.switchOnHamburger();
+        } else {
+            this.switchOffHamburger();
+        }
+    }
+
+    private switchOnHamburger(): void {
+        this.hamburgerVisible = 'flex';
+        this.hamburgerDirection = 'column';
+    }
+
+    private switchOffHamburger(): void {
+        this.hamburgerVisible = 'none';
+        this.hamburgerDirection = 'none';
+    }
+
+    @HostListener('document:click', ['$event'])
+    clickout(event) {
+        if (!(document.getElementById('burgerIcon').contains(event.target))) {
+            this.switchOffHamburger();
+        } else {
+            if (document.getElementById('burgerContent').contains(event.target)) {
+                this.switchOffHamburger();
+            }
+        }
+    }
+
     @HostListener('window:scroll', ['$event'])
     onScroll(): void {
+        this.switchOffHamburger();
         const navElement = document.getElementsByTagName('nav').item(0);
         const navLogoElement = document.getElementById('nav-logo');
         if (this.isInitializedOnHomePage) {
@@ -52,7 +85,7 @@ export class NavbarComponent implements AfterViewInit {
     }
 
     private onRouteUrlUpdate(): void {
-        this.isInitializedOnHomePage = this.router.url === '/home';
+        this.isInitializedOnHomePage = this.router.url.includes('/home');
         this.onScroll();
     }
 
