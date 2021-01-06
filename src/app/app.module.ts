@@ -1,18 +1,20 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {ErrorInterceptor} from './interceptors/error.interceptor';
 
 import {AppComponent} from './app.component';
 import {HomePageComponent} from './components/home-page/home-page.component';
 import {CountersComponent} from './components/counters/counters.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {PollutionEffectsDigestComponent} from './components/pollution-effects-digest/pollution-effects-digest.component';
-import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects-digest/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
 import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
 import {AboutUsPageComponent} from './components/about-us-page/about-us-page.component';
@@ -74,8 +76,17 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
             }
         })
     ],
-    providers: [ClimateDataApiService],
-    bootstrap: [AppComponent]
+    providers: [
+        ClimateDataApiService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptor,
+            multi: true
+        }
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule {
 }
