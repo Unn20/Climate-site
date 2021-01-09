@@ -4,22 +4,34 @@ import {
     HttpHandler,
     HttpEvent,
     HttpErrorResponse,
-    HttpInterceptor
+    HttpInterceptor, HttpResponse
 } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import {catchError, finalize, retry, tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import { LoadingPageService } from '../services/loading-page.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-
-    constructor(private router: Router) {
+    constructor(private router: Router, private loadingPage: LoadingPageService) {
     }
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+        console.log('request intercept');
+        console.log(request);
+
+        this.loadingPage.incrementItemsLoading();
+
         return next.handle(request)
             .pipe(
                 retry(1),
+                tap((event: HttpEvent<any>) => {
+                    console.log('success');
+                    if (event instanceof HttpResponse) {
+                        this.loadingPage.setError(false);
+                        console.log('SUCCESS');
+                    }
+                }),
                 catchError((error: HttpErrorResponse) => {
                     let errorMessage = '';
                     if (error.error instanceof ErrorEvent) {
@@ -29,9 +41,11 @@ export class ErrorInterceptor implements HttpInterceptor {
                         // server-side error
                         errorMessage = `Error Status: ${error.status}\nMessage: ${error.message}`;
                     }
-                    console.log(errorMessage);
-                    this.redirectToErrorComponent();
+                    this.loadingPage.setError(true);
                     return throwError(errorMessage);
+                }),
+                finalize(() => {
+                    this.loadingPage.decrementItemsLoading();
                 })
             );
     }

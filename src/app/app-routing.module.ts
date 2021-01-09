@@ -10,10 +10,12 @@ import {SourcesPageComponent} from './components/sources-page/sources-page.compo
 import {GlobalWarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/global-warming-page.component';
 import {SmogPageComponent} from './components/pollution-effects-subpages/smog-page/smog-page.component';
 import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-page/ozone-page.component';
+import {LoadingPageComponent} from './components/loading-page/loading-page.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomePageComponent},
+    {path: 'loading', component: LoadingPageComponent},
     {path: 'article/:articleId', component: ArticlePageComponent},
     {path: 'about', component: AboutUsPageComponent},
     {path: 'privacy', component: PrivacyPolicyPageComponent},

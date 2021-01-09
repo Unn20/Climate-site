@@ -33,6 +33,10 @@ import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-
 import { SourcesPageComponent } from './components/sources-page/sources-page.component';
 import { NasaCountersComponent } from './components/nasa-counters/nasa-counters.component';
 
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { LoadingPageComponent } from './components/loading-page/loading-page.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
 }
@@ -58,7 +62,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         SmogPageComponent,
         OzonePageComponent,
         SourcesPageComponent,
-        NasaCountersComponent
+        NasaCountersComponent,
+        LoadingPageComponent,
+        ErrorPageComponent
     ],
     imports: [
         BrowserModule,
@@ -68,6 +74,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         BrowserAnimationsModule,
         AppRoutingModule,
         ChartModule,
+        ProgressSpinnerModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
