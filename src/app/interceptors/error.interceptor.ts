@@ -17,19 +17,13 @@ export class ErrorInterceptor implements HttpInterceptor {
     }
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-        console.log('request intercept');
-        console.log(request);
-
         this.loadingPage.incrementItemsLoading();
-
         return next.handle(request)
             .pipe(
                 retry(1),
                 tap((event: HttpEvent<any>) => {
-                    console.log('success');
                     if (event instanceof HttpResponse) {
                         this.loadingPage.setError(false);
-                        console.log('SUCCESS');
                     }
                 }),
                 catchError((error: HttpErrorResponse) => {
@@ -48,9 +42,5 @@ export class ErrorInterceptor implements HttpInterceptor {
                     this.loadingPage.decrementItemsLoading();
                 })
             );
-    }
-
-    public redirectToErrorComponent(): void {
-        this.router.navigate(['/error']);
     }
 }

@@ -30,10 +30,18 @@ export class AppComponent {
             this.itemsLoading = newValue;
         });
         this.loadingPage.incrementItemsLoadingCalled$.subscribe(() => {
-            this.itemsLoading++;
+            if (this.itemsLoading < 0) {
+                this.itemsLoading = 1;
+            } else {
+                this.itemsLoading++;
+            }
         });
         this.loadingPage.decrementItemsLoadingCalled$.subscribe(() => {
-            this.itemsLoading--;
+            if (this.itemsLoading === 0) {
+                this.itemsLoading = 0;
+            } else {
+                this.itemsLoading--;
+            }
         });
     }
 
