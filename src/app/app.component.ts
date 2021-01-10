@@ -26,9 +26,7 @@ export class AppComponent {
         this.loadingPage.setErrorCalled$.subscribe((newValue: boolean) => {
             this.errorFlag = newValue;
         });
-        this.loadingPage.setItemsLoadingCalled$.subscribe((newValue: number) => {
-            this.itemsLoading = newValue;
-        });
+
         this.loadingPage.incrementItemsLoadingCalled$.subscribe(() => {
             if (this.itemsLoading < 0) {
                 this.itemsLoading = 1;
