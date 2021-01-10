@@ -1,6 +1,5 @@
 <div *ngIf="itemsLoading > 0">
     <app-loading-page></app-loading-page>
-    <p>{{itemsLoading}}</p>
 </div>
 
 <div [hidden]="itemsLoading > 0 || errorFlag">
