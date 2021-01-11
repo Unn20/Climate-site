@@ -15,7 +15,7 @@ export class AppComponent {
 
     constructor(private translateService: TranslateService,
                 private router: Router,
-                private loadingPage: LoadingPageService) {
+                private loadingPageService: LoadingPageService) {
         translateService.setDefaultLang('pl');
         this.router.events.subscribe((evt) => {
             if (evt instanceof NavigationEnd) {
@@ -23,18 +23,18 @@ export class AppComponent {
             }
         });
 
-        this.loadingPage.setErrorCalled$.subscribe((newValue: boolean) => {
+        this.loadingPageService.setErrorCalled$.subscribe((newValue: boolean) => {
             this.errorFlag = newValue;
         });
 
-        this.loadingPage.incrementItemsLoadingCalled$.subscribe(() => {
+        this.loadingPageService.incrementItemsLoadingCalled$.subscribe(() => {
             if (this.itemsLoading < 0) {
                 this.itemsLoading = 1;
             } else {
                 this.itemsLoading++;
             }
         });
-        this.loadingPage.decrementItemsLoadingCalled$.subscribe(() => {
+        this.loadingPageService.decrementItemsLoadingCalled$.subscribe(() => {
             if (this.itemsLoading === 0) {
                 this.itemsLoading = 0;
             } else {
