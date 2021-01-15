@@ -10,7 +10,7 @@ import {CommonModule} from '@angular/common';
 import {DeathsCounterComponent} from './components/pollution-effects-digest/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
+import {ArticlesScrollComponent} from './components/articles-scroll/articles-scroll.component';
 import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
@@ -44,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         PollutionEffectsDigestComponent,
         DeathsCounterComponent,
         NavbarComponent,
-        NewsScrollComponent,
+        ArticlesScrollComponent,
         ArticlePageComponent,
         AboutUsPageComponent,
         PrivacyPolicyPageComponent,

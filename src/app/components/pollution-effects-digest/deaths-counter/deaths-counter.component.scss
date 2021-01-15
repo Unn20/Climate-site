@@ -5,15 +5,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 200px;
+    background-color: var.$thi-color;
+    padding: 120px 0 180px 0;
 
     .deaths-count {
-        font-size: 52px;
+        font-size: 70px;
         font-weight: 600;
     }
 
     .deaths-explanation {
-        font-size: 22px;
+        font-size: 30px;
+        text-align: center;
+        padding: 0 40px;
     }
 
     .deaths-count, .deaths-explanation {

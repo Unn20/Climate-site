@@ -6,11 +6,11 @@ import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
 import {startWith, switchMap} from 'rxjs/operators';
 
 @Component({
-    selector: 'app-news-scroll',
-    templateUrl: './news-scroll.component.html',
-    styleUrls: ['./news-scroll.component.scss'],
+    selector: 'app-articles-scroll',
+    templateUrl: './articles-scroll.component.html',
+    styleUrls: ['./articles-scroll.component.scss'],
 })
-export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ArticlesScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild('myScroll') private myScrollView: ScrollViewComponent;
     public latestArticles: Article[] = [];
     public width = '100%';
@@ -51,9 +51,9 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
     private updateHeight(): void {
         if (screen.width < 650) {
             this.height = `${Math.round(6 * this.maxHeight / 8)}px`;
-            if (screen.width < 500){
+            if (screen.width < 500) {
                 this.height = `${Math.round(4 * this.maxHeight / 8)}px`;
-                if (screen.width < 400){
+                if (screen.width < 400) {
                     this.height = `${Math.round(3 * this.maxHeight / 8)}px`;
                 }
             }
@@ -76,7 +76,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
                         this.height = `${this.minHeight}px`;
                     }
                 } else {
-                        this.height = `${this.maxHeight}px`;
+                    this.height = `${this.maxHeight}px`;
                 }
             } else {
                 if (window.innerWidth >= screenWidthRatio) {

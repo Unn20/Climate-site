@@ -51,14 +51,15 @@ body {
 }
 
 :link {
-    color: var.$thi-color;
+    color: var.$link-color;
+
     &:hover {
-        color: var.$thi-color-dark;
+        color: var.$link-color-hover;
     }
 }
 
 :visited {
-    color: #48a680;
+    color: var.$link-color-hover;
 }
 
 h1, h2, h3, h4, h5, h6 {
