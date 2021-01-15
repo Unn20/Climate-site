@@ -167,6 +167,14 @@ nav {
             background-position: 0px -250px;
             box-shadow: none;
             color: var.$white;
+
+            .nav-container .nav-element:hover {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-container .dropdown .dropdown-expandable-content {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
         }
     }
 
