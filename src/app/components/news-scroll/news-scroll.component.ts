@@ -32,7 +32,7 @@ export class NewsScrollComponent implements OnInit, OnDestroy, AfterViewInit {
             this.latestArticles = articles.sort((a, b) => {
                 const dateA = new Date(a.dateAdded);
                 const dateB = new Date(b.dateAdded);
-                return (dateA < dateB) ? 1 : 0;
+                return (dateA < dateB) ? 1 : -1;
             }).slice(0, 5);
         });
         this.lastHeight = window.innerHeight;
