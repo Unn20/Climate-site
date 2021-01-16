@@ -1,16 +1,15 @@
-<div style="vertical-align: middle; text-align: center" (mouseenter)="articleHover=true" (mouseleave)="articleHover=false">
-    <kendo-scrollview #myScroll class="firstScrollviewWrapper" (itemChanged)="refreshScrollTimer($event)" [data]="articles" [width]="width" [height]="height" [arrows]="arrows"
+<div style="vertical-align: middle; text-align: center">
+    <kendo-scrollview #myScroll class="firstScrollviewWrapper" (itemChanged)="refreshScrollTimer()"
+                      [data]="latestArticles" [width]="width" [height]="height" [arrows]="arrows"
                       [pageable]="true"> <!--style="min-height: 10px; max-height: 500px"-->
         <ng-template let-article="item">
             <div class="containerDiv">
+                <div class="dark-overlay" (click)="articleService.redirectToArticle(article.id)">
+                    <div class="title">{{article.title}}</div>
+                </div>
                 <img src="{{article.mainImageUrl}}" alt="{{article.title}}" style="width: 100%;  height: 10%; margin-left: auto;
-  margin-right: auto;"
+margin-right: auto;"
                      draggable="false"/>
-                <a (click)="articleService.redirectToArticle(article.id)">
-                    <div [ngClass]="{'titleDiv': articleHover}">
-                        <h2 class="title">{{article.title}}</h2>
-                    </div>
-                </a>
             </div>
         </ng-template>
     </kendo-scrollview>

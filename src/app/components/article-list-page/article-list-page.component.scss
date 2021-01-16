@@ -1,44 +1,102 @@
 @use "src/variables" as var;
 
+$article-order-toggle: 600px;
+
 .article-list {
-    width: 70%;
-    margin: 100px auto;
+    width: 92vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 
     h2 {
-        margin-bottom: 50px;
+        padding: 70px 0;
+    }
+
+    #main-separator {
+        width: 100%;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
     }
 
     .articles-container {
         overflow: hidden;
         transition: height 1.2s ease-out;
 
+        .separator {
+            width: 110%;
+            border-bottom: 1px solid black;
+            position: relative;
+            top: 10px;
+            @media only screen and (min-width: $article-order-toggle) {
+                display: none;
+            }
+            @media only screen and (max-width: $article-order-toggle) {
+                display: block;
+            }
+        }
+
         .article {
             display: flex;
             padding: 15px;
             box-sizing: border-box;
+
+            @media only screen and (min-width: $article-order-toggle) {
+                flex-direction: row;
+                .image-container {
+                    min-width: 250px;
+                    min-height: 200px;
+                }
+                .header {
+                    width: auto;
+                    .title {
+                        font-size: 30px;
+                    }
+                }
+            }
+            @media only screen and (max-width: $article-order-toggle) {
+                flex-direction: column-reverse;
+                .image-container {
+                    width: auto;
+                    height: 250px;
+                    max-height: 250px;
+                    max-width: 300px;
+                }
+                .header {
+                    width: 100%;
+                    .title {
+                        font-size: 25px;
+                    }
+                }
+            }
 
             &:hover {
                 cursor: pointer;
                 background-color: lightgrey;
             }
 
-            .image {
-                width: 30%;
-                height: auto;
-                background-size: auto 300px;
-                background-position: center;
+            .image-container{
+                .image {
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                @media only screen and (max-width: 320px) {
+                    display: none;
+                    .image {
+                        display: none;
+                    }
+
+                }
             }
 
             .header {
                 padding: 10px;
-                width: 70%;
+
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-
-                .title {
-                    font-size: 40px;
-                }
 
                 .date {
                     color: darkgray;
@@ -53,15 +111,23 @@
 
     .button-container {
         margin-top: 60px;
+        margin-bottom: 30px;
         display: flex;
         justify-content: center;
 
         button.show-more {
-            width: 30%;
             font-size: 20px;
             padding: 15px;
             border-radius: 7px;
             overflow: hidden;
+
+            @media only screen and (min-width: 300px) {
+                width: 250px;
+            }
+
+            @media only screen and (max-width: 300px) {
+                width: 85%;
+            }
 
             &:hover {
                 cursor: pointer;

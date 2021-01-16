@@ -17,12 +17,12 @@ export class CountersComponent implements OnInit, AfterViewInit {
     changeBySecond: number[] = [];
     updateTimeout = 6000;
     dateOfDataFetch: Date;
-    countersText: string[] = ['Wydalono ton CO2 do atmosfery',
-        'Stopniało ton lodu',
-        'Użyto teradżuli prądu',
-        'Wyrzucono ton odpadów',
-        'Wydobyto ton surowców z ziemi',
-        'Wyrzucono ton plastiku do oceanu'
+    countersText: string[] = ['ton CO2 wydalono do atmosfery',
+        'ton lodu stopniało',
+        'teradżuli prądu zużyto',
+        'ton odpadów wyrzucono',
+        'ton surowców z ziemi wydobyto',
+        'ton plastiku do oceanu wyrzucono'
     ];
     urls = {
         0: 'https://www.theworldcounts.com/challenges/climate-change/global-warming/global-co2-emissions/story',
