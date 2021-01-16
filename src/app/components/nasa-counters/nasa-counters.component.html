@@ -1,15 +1,15 @@
 <div class="nasa-counters-overhead">
-    <h2><a href="https://climate.nasa.gov/" target="_blank">Dane ze strony NASA</a></h2>
+    <h2><a href="https://climate.nasa.gov/" target="_blank">{{ 'nasa-counters.general.link' | translate }}</a></h2>
     <div class="nasa-counters-container main-bg-b">
         <div *ngFor="let counter of nasaCountersData; let i = index" id="nasa-counter-{{i}}" class="nasa-counter">
-            <div class="name" [innerText]="nasaCountersData[i].name">
+            <div class="name" [innerText]="counterNameMapping[nasaCountersData[i].name] | translate">
             </div>
             <div class="counter-content">
-                <div class="direction" [innerText]="nasaCountersData[i].dir">
+                <div class="direction" [innerText]="counterDirMapping[nasaCountersData[i].dir] | translate">
                 </div>
                 <div class="value" [innerText]="nasaCountersData[i].val">
                 </div>
-                <div class="unit" [innerText]="nasaCountersData[i].unit">
+                <div class="unit" [innerText]="counterUnitMapping[nasaCountersData[i].name] | translate">
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <div #deaths class="deaths-container" (window:scroll)="onScroll(deaths)">
     <div id="countUp" class="deaths-count" [class.shown]="counterStarted"></div>
     <div class="deaths-explanation" [class.shown]="counterFinished">
-        {{'deaths-counter.main-text' | translate}}
+        {{ 'pollution-effects.deaths-counter.main-text' | translate}}
     </div>
 </div>
