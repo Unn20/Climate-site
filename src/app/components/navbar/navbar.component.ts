@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {ScrollViewComponent} from '@progress/kendo-angular-scrollview';
 
 @Component({
     selector: 'app-navbar',
@@ -35,7 +34,7 @@ export class NavbarComponent implements AfterViewInit {
     }
 
     public hamburgerToggle(): void {
-        if (this.hamburgerVisible === 'none'){
+        if (this.hamburgerVisible === 'none') {
             this.switchOnHamburger();
         } else {
             this.switchOffHamburger();
@@ -89,7 +88,7 @@ export class NavbarComponent implements AfterViewInit {
         this.onScroll();
     }
 
-    private setLogo(): void {
+    public setLogo(): void {
         if (this.innerWidth >= 820) {
             this.logoPath = 'assets/img/icons/logo3.png';
         } else {
