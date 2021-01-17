@@ -39,7 +39,7 @@ export class ArticlesScrollComponent implements OnInit, OnDestroy, AfterViewInit
         this.lastWidth = window.innerWidth;
         this.maxHeight = Math.round(0.7 * screen.height);
         this.height = `${this.maxHeight}px`;
-        this.minHeight = Math.round(5 * this.maxHeight / 8);
+        this.minHeight = Math.round(3 * this.maxHeight / 8);
         this.updateHeight();
         this.heightListener = renderer.listen('window', 'resize', () => this.updateHeight());
         this.scrollTimer = this.resetTimer.pipe(
@@ -82,7 +82,7 @@ export class ArticlesScrollComponent implements OnInit, OnDestroy, AfterViewInit
                 if (window.innerWidth >= screenWidthRatio) {
                     const heightDifference = window.innerHeight - +this.height.slice(0, -2);
                     if (heightDifference < 70) {
-                        if (window.innerHeight > this.minHeight) {
+                        if (window.innerHeight - 70 > this.minHeight) {
                             this.height = `${window.innerHeight - 70}px`;
                         } else {
                             this.height = `${this.minHeight}px`;
