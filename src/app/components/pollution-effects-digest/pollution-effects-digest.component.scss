@@ -2,17 +2,17 @@
 
 .pollution-effects-title {
     font-size: 50px;
+    font-weight: 700;
     text-align: center;
-    background-color: var.$thi-color;
-    padding: 5%;
+    padding: 20px 5%;
+    background-color: var.$thi-color-dark;
 }
 
 .pollution-effects-container {
-    margin:  0 auto 200px auto;
-    padding: 100px 5%;
+    padding: 70px 5% 200px;
     display: flex;
     justify-content: space-evenly;
-    background-color: var.$thi-color-dark;
+    background-color: var.$thi-color;
 
     .pollution-effect {
         $pollution-effect-size: 25vw;

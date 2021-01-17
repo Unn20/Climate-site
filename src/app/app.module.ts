@@ -13,7 +13,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {PollutionEffectsDigestComponent} from './components/pollution-effects-digest/pollution-effects-digest.component';
 import {DeathsCounterComponent} from './components/pollution-effects-digest/deaths-counter/deaths-counter.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {NewsScrollComponent} from './components/news-scroll/news-scroll.component';
+import {ArticlesScrollComponent} from './components/articles-scroll/articles-scroll.component';
 import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import {ArticlePageComponent} from './components/article-page/article-page.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -30,12 +30,12 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {GlobalWarmingPageComponent} from './components/pollution-effects-subpages/global-warming-page/global-warming-page.component';
 import {SmogPageComponent} from './components/pollution-effects-subpages/smog-page/smog-page.component';
 import {OzonePageComponent} from './components/pollution-effects-subpages/ozone-page/ozone-page.component';
-import { SourcesPageComponent } from './components/sources-page/sources-page.component';
-import { NasaCountersComponent } from './components/nasa-counters/nasa-counters.component';
+import {SourcesPageComponent} from './components/sources-page/sources-page.component';
+import {NasaCountersComponent} from './components/nasa-counters/nasa-counters.component';
 
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
-import { LoadingPageComponent } from './components/loading-page/loading-page.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
+import {LoadingPageComponent} from './components/loading-page/loading-page.component';
+import {ErrorPageComponent} from './components/error-page/error-page.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http);
@@ -50,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         PollutionEffectsDigestComponent,
         DeathsCounterComponent,
         NavbarComponent,
-        NewsScrollComponent,
+        ArticlesScrollComponent,
         ArticlePageComponent,
         AboutUsPageComponent,
         PrivacyPolicyPageComponent,

@@ -8,7 +8,7 @@ import {CountUp} from 'countup.js';
 })
 export class DeathsCounterComponent implements OnInit {
 
-    private distanceToStartFadeIn = 500;
+    private distanceToStartFadeIn = 700;
     private yearlyDeathsCausedByPollution = 6000000;
     private countUp: CountUp;
     public counterStarted = false;
