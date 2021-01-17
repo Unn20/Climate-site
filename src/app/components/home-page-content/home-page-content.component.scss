@@ -4,15 +4,14 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    padding: 0.5em;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    background-color: var.$thi-color-dark;
+    padding: 30px 10px;
 
     .content-container {
         box-shadow: 0 0 25px rgb(77 77 77);
         border-radius: 30px;
         background: #8ac5e9;
-        margin-bottom: 70px;
+        margin: 30px 0;
         font-size: 14pt;
         transition: .2s;
         width: 60%;
@@ -20,34 +19,37 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+        position: relative;
 
-        .content-text {
-            width: 60%;
-            padding: 20px;
-            box-sizing: border-box;
+        .content-text-wrapper {
+            padding: 40px;
 
-            .title {
-                font-size: 22px;
-                font-weight: 600;
-                margin: 20px 0 30px 20px;
-            }
+            .content-text {
+                box-sizing: border-box;
 
-            .point {
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-                font-size: 18px;
-            }
+                .title {
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin: 20px 0 30px 20px;
+                }
 
-            .icon {
-                width: 55px;
-                height: auto;
-                margin-right: 15px;
+                .point {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                }
+
+                .icon {
+                    width: 55px;
+                    height: auto;
+                    margin-right: 15px;
+                }
             }
         }
 
         .photo {
-            height: 500px;
+            height: 600px;
             width: 40%;
             object-fit: cover;
 
@@ -60,19 +62,12 @@
             }
         }
 
-        &.be-eco {
-            background-color: var.$thi-color;
-            border: 4px solid var.$thi-color-dark;
-        }
-
-        &.about-ecology {
-            background-color: var.$main-color;
-            border: 4px solid var.$main-color-dark;
-        }
-
-        &.eco-facts {
-            background-color: var.$thi-color;
-            border: 4px solid var.$thi-color-dark;
+        &.be-eco, &.about-ecology, &.eco-facts {
+            background-color: var.$sec-color;
+            box-shadow: -2px -2px 17px #999,
+                        -20px -20px 0px 0px #bcbcbc,
+                        -450px -10px 0 -130px var.$thi-color,
+                        450px -10px 0 -130px var.$thi-color;
         }
 
         @media only screen and (max-width: 1000px) {

@@ -1,0 +1,26 @@
+#error-page {
+    display: flex;
+
+    justify-content: center;
+
+    @media only screen and (max-width: 550px) {
+        flex-direction: column;
+        img {
+            left: 0;
+            align-self: center;
+        }
+    }
+
+    padding: 10%;
+
+    h2 {
+        text-align: center;
+    }
+
+    img {
+        max-height: 200px;
+        max-width: 200px;
+        position: relative;
+
+    }
+}

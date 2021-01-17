@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FigureTypeEnum} from '../../../enums/figure-type-enums';
 
 @Component({
     selector: 'app-pollution-effect-ozone-page',

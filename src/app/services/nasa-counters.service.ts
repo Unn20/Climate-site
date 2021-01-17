@@ -1,16 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class NasaCountersService {
 
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) {
+    }
 
-  getNasaCountersData(): Observable<object[]> {
-      return this.httpClient.get<object[]>(environment.backend.url + 'api/nasa-counters');
-  }
+    getNasaCountersData(): Observable<object[]> {
+        return this.httpClient.get<object[]>(environment.backend.url + 'api/nasa-counters');
+    }
 }

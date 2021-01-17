@@ -3,11 +3,10 @@
 $article-order-toggle: 600px;
 
 .article-list {
-    width: 92vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+    background-color: var.$sec-color;
 
     h2 {
         padding: 70px 0;
@@ -49,6 +48,7 @@ $article-order-toggle: 600px;
                 }
                 .header {
                     width: auto;
+
                     .title {
                         font-size: 30px;
                     }
@@ -64,6 +64,7 @@ $article-order-toggle: 600px;
                 }
                 .header {
                     width: 100%;
+
                     .title {
                         font-size: 25px;
                     }
@@ -75,13 +76,14 @@ $article-order-toggle: 600px;
                 background-color: lightgrey;
             }
 
-            .image-container{
+            .image-container {
                 .image {
                     width: 100%;
                     height: 100%;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
+
                 @media only screen and (max-width: 320px) {
                     display: none;
                     .image {
@@ -99,7 +101,7 @@ $article-order-toggle: 600px;
                 justify-content: space-between;
 
                 .date {
-                    color: darkgray;
+                    color: var.$link-color;
                     font-size: 20px;
                 }
 
@@ -131,7 +133,6 @@ $article-order-toggle: 600px;
 
             &:hover {
                 cursor: pointer;
-                background-color: var.$main-color-dark;
             }
         }
     }

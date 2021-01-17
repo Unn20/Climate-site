@@ -13,9 +13,11 @@
     #page-not-found-message {
         display: flex;
         flex-direction: row;
+
         img {
             height: 100px;
         }
+
         h1 {
             padding: 5% 10%;
             font-family: Verdana, serif;
@@ -27,6 +29,7 @@
         font-family: Verdana, serif;
         font-size: 20px;
         padding: 5% 10%;
+
         a {
             text-decoration: none;
         }

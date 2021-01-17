@@ -4,58 +4,65 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 
     h2 {
+        width: 100%;
+        padding: 20px 0;
         font-size: 3rem;
         text-align: center;
+        background-color: var.$thi-color-dark;
     }
 
-    .counters-container {
-        box-shadow: 0 0 1rem rgb(50 50 50);
-        padding: 0.6rem;
-        color: var.$black;
-        font-size: 2.4rem;
-        margin: 0.5em;
-        border-radius: 30px;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-flow: row wrap;
+    .counters-background {
+        width: 100%;
+        padding: 20px 0;
+        background-color: var.$thi-color;
 
-        div {
-            min-width: 13rem;
-            height: auto;
-            border-radius: 10px;
-            margin: 0.6rem 1.6rem;
+        .counters-container {
+            box-shadow: 0 0 1rem rgb(50 50 50);
+            padding: 0.6rem;
+            color: var.$black;
+            font-size: 2.4rem;
+            margin: 0.5em;
+            border-radius: 30px;
             display: flex;
-            transition: .3s;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: stretch;
+            align-content: center;
+            justify-content: center;
+            flex-flow: row wrap;
 
-            &:hover {
-                background-color: #88c6d0;
-                transform: scale(1.2);
-                cursor: pointer;
-            }
+            div {
+                min-width: 13rem;
+                height: auto;
+                border-radius: 10px;
+                margin: 0.6rem 1.6rem;
+                display: flex;
+                transition: .3s;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: stretch;
 
-            span {
-                padding: 1px;
-
-                &.counter-value {
-                    width: 170px;
-                    text-align: center;
-                    font-size: 0.7em;
-                    font-weight: bold;
+                &:hover {
+                    background-color: #88c6d0;
+                    transform: scale(1.2);
+                    cursor: pointer;
                 }
 
-                &.counter-text {
-                    width: 170px;
-                    font-size: 0.5em;
-                    text-align: center;
-                    color: #404040;
+                span {
+                    padding: 1px;
+
+                    &.counter-value {
+                        width: 170px;
+                        text-align: center;
+                        font-size: 0.7em;
+                        font-weight: bold;
+                    }
+
+                    &.counter-text {
+                        width: 170px;
+                        font-size: 0.5em;
+                        text-align: center;
+                        color: #404040;
+                    }
                 }
             }
         }

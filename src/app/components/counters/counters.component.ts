@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CountUp} from 'countup.js';
 import {CountersService} from '../../services/counters.service';
 import {Subscription} from 'rxjs';
@@ -33,7 +33,8 @@ export class CountersComponent implements OnInit, AfterViewInit {
         5: 'https://www.theworldcounts.com/challenges/planet-earth/oceans/plastic-in-the-ocean/story'
     };
 
-    constructor(private countersService: CountersService) { }
+    constructor(private countersService: CountersService) {
+    }
 
 
     ngOnInit(): void {

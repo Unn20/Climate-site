@@ -1,3 +1,13 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div *ngIf="itemsLoading > 0">
+    <app-loading-page></app-loading-page>
+</div>
+
+<div [hidden]="itemsLoading > 0 || errorFlag">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div>
+
+<div *ngIf="itemsLoading === 0 && errorFlag">
+    <app-error-page></app-error-page>
+</div>

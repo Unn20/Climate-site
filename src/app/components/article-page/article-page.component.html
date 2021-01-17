@@ -14,7 +14,8 @@
     <div class="latest-articles-container">
         <div class="see-more-title">Zobacz także</div>
         <div class="latest-articles">
-            <div *ngFor="let article of latestArticles" (click)="articleService.redirectToArticle(article.id)" class="article-link">
+            <div *ngFor="let article of latestArticles" (click)="articleService.redirectToArticle(article.id)"
+                 class="article-link">
                 <img src="{{article.mainImageUrl}}">
                 <div class="title">{{article.title}}</div>
             </div>

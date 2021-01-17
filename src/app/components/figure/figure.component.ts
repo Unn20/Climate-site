@@ -68,9 +68,6 @@ export class FigureComponent implements OnInit {
                 this.setArcticFigure();
                 break;
             }
-            default: {
-                throw new Error('Unknown figure!');
-            }
         }
     }
 
@@ -80,6 +77,7 @@ export class FigureComponent implements OnInit {
             detail: this.data.datasets[event.element._datasetIndex].data[event.element._index]
         });
     }
+
     private restrictDataItems(dataset: any[]): any[] {
         if (dataset.length > this.maxDataArraySize) {
             const result = [];
@@ -92,6 +90,7 @@ export class FigureComponent implements OnInit {
             return dataset;
         }
     }
+
     private setTemperatureFigure(): void {
         this.climateDataApiService.getTemperatureData().subscribe(
             data => {
