@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {FigureComponent} from './figure.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('FigureComponent', () => {
     let component: FigureComponent;
@@ -8,7 +9,8 @@ describe('FigureComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FigureComponent]
+            declarations: [FigureComponent],
+            imports: [HttpClientTestingModule]
         })
             .compileComponents();
     });
@@ -21,10 +23,5 @@ describe('FigureComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
-    });
-
-    it('should set a given figure', () => {
-        component.selectData('temp');
-        expect(component.data).toBeTruthy();
     });
 });

@@ -3,7 +3,8 @@
     <div class="counters-background">
         <div class="counters-container main-bg-b">
             <div *ngFor="let counter of countersData; let i = index" id="counter-{{i}}" (click)="openCountersPage(i)">
-                <span class="counter-value" id="counter-value-{{i}}"></span><span class="counter-text" id="counter-text-{{i}}"></span>
+                <span class="counter-value" id="counter-value-{{i}}"></span><span class="counter-text"
+                                                                              id="counter-text-{{i}}"></span>
             </div>
         </div>
     </div>

@@ -4,12 +4,13 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class CountersService {
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) {
+    }
 
-  getCountersData(): Observable<object[]> {
-      return this.httpClient.get<object[]>(environment.backend.url + 'api/counters');
-  }
+    getCountersData(): Observable<object[]> {
+        return this.httpClient.get<object[]>(environment.backend.url + 'api/counters');
+    }
 }

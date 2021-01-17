@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {ErrorInterceptor} from './interceptors/error.interceptor';
@@ -83,6 +83,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
             }
         })
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [
         ClimateDataApiService,
         {

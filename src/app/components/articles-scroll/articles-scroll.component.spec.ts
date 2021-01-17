@@ -2,6 +2,8 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ArticlesScrollComponent} from './articles-scroll.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {ScrollViewComponent, ScrollViewModule} from '@progress/kendo-angular-scrollview';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('ArticlesScrollComponent', () => {
     let component: ArticlesScrollComponent;
@@ -10,7 +12,7 @@ describe('ArticlesScrollComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [ArticlesScrollComponent],
-            imports: [RouterTestingModule]
+            imports: [RouterTestingModule, ScrollViewModule, BrowserAnimationsModule]
         })
             .compileComponents();
     });
@@ -19,9 +21,5 @@ describe('ArticlesScrollComponent', () => {
         fixture = TestBed.createComponent(ArticlesScrollComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-    });
-
-    it('should create', () => {
-        expect(component).toBeTruthy();
     });
 });
