@@ -1,53 +1,46 @@
 <div class="contact-page">
     <h2>O nas</h2>
-    <div class="intro">
-        Jesteśmy grupką 4 znajomych z politechniki poznańskiej których połączyła praca inżynierska. W składzie:
-        <ul class="lineup">
-            <li>Kamil Kowalczyk</li>
-            <li>Krzysztof Charlikowski</li>
-            <li>Maciej Leszczyk</li>
-            <li>Paweł Kryczka</li>
-        </ul>
-        Naszym promotorem podczas tworzenia tego projektu był: <br/>
-        <span class="professor">Dr Hab. Inż. Maciej Zakrzewicz, profesor Politechniki Poznańskiej.</span><br/>
-        Poniżej znajdziecie nieco więcej informacji o każdym z nas.
-    </div>
     <div class="about-us">
+        <div class="intro">
+            {{'about-us-page.intro' | translate}}
+            <ul class="lineup">
+                <li>Kamil Kowalczyk</li>
+                <li>Krzysztof Charlikowski</li>
+                <li>Maciej Leszczyk</li>
+                <li>Paweł Kryczka</li>
+            </ul>
+            {{'about-us-page.professor' | translate}}<br/>
+            <span class="professor">{{'about-us-page.professor-info' | translate}}</span><br/>
+            {{'about-us-page.team-mates' | translate}}<br/>
+        </div>
         <div class="info kamil">
-            <img src="assets/img/photos/kamil2.png" alt="a photo of Kamil"/>
+            <img src="assets/img/photos/kamil.jpg" alt="a photo of Kamil"/>
             <div class="text">
-                Cześć! Mam na imię Kamil. Na co dzień pracuję jako Frontend Web Developer. Lubię uczyć się nowych
-                rzeczy i wykorzystywać je do tworzenia własnych projektów i aplikacji. Pasjonuję się informatyką, ale
-                moimi dodatkowymi zainteresowaniami jest koszykówka, snowboarding, oraz gra na instrumentach muzycznych
-                (m.in. skrzypce, gitara).
+                {{'about-us-page.kamil' | translate}}
             </div>
         </div>
         <div class="info krzysztof">
             <img src="assets/img/photos/krzysiek.jpg" alt="a photo of Krzysztof"/>
             <div class="text">
-                Cześć, jestem Krzysiek, w momencie pisania tego projektu miałem 21 lat.
-                Lubię programować w pythonie, grać w gry komputerowe (głównie single-player), i oglądać jak inni w
-                nie grają. Swojego czasu czytałem też dużo fantastyki ale
-                ostatnio czytam głównie książki naukowe z różnych dziedzin (programownie, biologia).
+                {{'about-us-page.krzysztof' | translate}}
             </div>
         </div>
         <div class="info maciej">
             <img src="assets/img/photos/maciej.jpg" alt="a photo of Maciej"/>
             <div class="text">
-                Cześć, mam na imię Maciek i jestem jednym z autorów tej strony. Lubię zdobywać wiedzę i poznawać nowe
-                technologie informatyczne w praktyce. Staram się rozwijać w każdym kierunku, nie mam swojej ulubionej
-                dziedziny naukowej. W wolnym czasie jeżdzę na rolkach, na rowerze. Jestem również entuzjastą
-                jazdy na nartach.
+                {{'about-us-page.maciej' | translate}}
             </div>
         </div>
         <div class="info pawel">
             <img src="assets/img/photos/pawel2.jpg" alt="a photo of Pawel"/>
             <div class="text">
-                Witaj! Jestem Paweł i wolny czas uwielbiam spędzać w ruchu, a oprócz tego wielką przyjemność sprawia
-                mi, co jakiś czas odkrywanie nowej, i innej dla mnie muzyki. Podczas projektu głównie zajmowałem się
-                implementacją funkcjonalności bazy danych oraz backend'u (hosting AWS), CI/CD dla backend'u i
-                frontend'u. Zespół wspierałem również po stronie frontend'u, pomagając w rozwoju komponentów, oraz
-                odpowiadając za główny komponent do wyświetlania artykułów.
+                {{'about-us-page.pawel' | translate}}
+            </div>
+        </div>
+        <div class="contact-info">
+            <h2>{{'about-us-page.contact' | translate}}</h2>
+            <div class="contact-ways">
+                {{'about-us-page.email-info' | translate}}<a href="{{'about-us-page.email-info' | translate}}">{{'about-us-page.email' | translate}}</a>
             </div>
         </div>
     </div>

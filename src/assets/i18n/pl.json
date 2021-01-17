@@ -1,4 +1,90 @@
 {
+    "about-us-page": {
+        "intro": "Jesteśmy grupką 4 znajomych z politechniki poznańskiej których połączyła praca inżynierska. W składzie:",
+        "professor": "Naszym promotorem podczas tworzenia tego projektu był: ",
+        "professor-info": "Dr Hab. Inż. Maciej Zakrzewicz, profesor Politechniki Poznańskiej.",
+        "team-mates": "Poniżej znajdziecie nieco więcej informacji o każdym z nas.",
+        "kamil": "Mam na imię Kamil. Na co dzień pracuję jako Frontend Web Developer. Lubię uczyć się nowych\nrzeczy i wykorzystywać je do tworzenia w<łasnych projektów i aplikacji. Pasjonuję się informatyką, ale\nmoimi dodatkowymi zainteresowaniami jest koszykówka, snowboarding, oraz gra na instrumentach muzycznych\n(m.in. skrzypce, gitara).",
+        "krzysztof": "Cześć, jestem Krzysiek, w momencie pisania tego projektu miałem 21 lat.\nLubię programować w pythonie, grać w gry komputerowe (głównie single-player), i oglądać jak inni w\nnie grają. Swojego czasu czytałem też dużo fantastyki ale\nostatnio czytam głównie książki naukowe z różnych dziedzin (programownie, biologia).",
+        "maciej": " Cześć, mam na imię Maciek i jestem jednym z autorów tej strony. Lubię zdobywać wiedzę i poznawać nowe\ntechnologie informatyczne w praktyce. Staram się rozwijać w każdym kierunku, nie mam swojej ulubionej\ndziedziny naukowej. W wolnym czasie jeżdzę na rolkach, na rowerze. Jestem również entuzjastą\njazdy na nartach.",
+        "pawel": " Witaj! Jestem Paweł i wolny czas uwielbiam spędzać w ruchu, a oprócz tego wielką przyjemność sprawia\nmi, co jakiś czas odkrywanie nowej, i innej dla mnie muzyki. Podczas projektu głównie zajmowałem się\nimplementacją funkcjonalności bazy danych oraz backend'u (hosting AWS), CI/CD dla backend'u i\nfrontend'u. Zespół wspierałem również po stronie frontend'u, pomagając w rozwoju komponentów, oraz\nodpowiadając za główny komponent do wyświetlania artykułów.",
+        "contact": "Jak się z nami skontaktować ?",
+        "email-info": "Adres email: ",
+        "email-ref": "mailto:climatesite@gmail.com",
+        "email": "climatesite@gmail.com"
+    },
+    "article-list-page": {
+        "all-articles": "Lista wszystkich artykułów",
+        "show-more": "Pokaż więcej"
+    },
+    "counters": {
+        "title": "W ciągu dzisiejszego dnia",
+        "names": {
+            "carbon-dioxide": "ton CO2 wydalono do atmosfery",
+            "ice": "ton lodu stopniało",
+            "electricity": "teradżuli prądu zużyto",
+            "waste": "ton odpadów wyrzucono",
+            "resources": "ton surowców z ziemi wydobyto",
+            "plastic": "ton plastiku do oceanu wyrzucono"
+        }
+    },
+    "footer": {
+        "privacy-policy": "Polityka prywatności",
+        "sources": "Źródła strony"
+    },
+    "home-page-content": {
+        "be-eco": {
+            "title": "Co znajdziecie na tej stronie ?",
+            "trivia": "Ciekawostki z dziedziny ekologi i ochrony środowiska.",
+            "plots": "Wykresy z danymi klimatycznymi.",
+            "counters": "Liczniki odnośnie tempa zmian środowiskowych na świecie.",
+            "articles": "Artykuły o ekologii i ochronie środowiska."
+        },
+        "about-ecology": {
+            "title": "Czym jest ekologia ?",
+            "about-1": "Ekologia to dziedzina nauki zajmująca się badaniem otaczającej nas przyrody.",
+            "about-2-start": "Badanie przyrody prowadzi do ciekawych odkryć np.:",
+            "about-2-ref": "https://pl.wikipedia.org/wiki/Algorytm_mr%C3%B3wkowy",
+            "about-2-ref-text": "algorytm mrówkowy",
+            "about-2-end": "wzorowany na zachowaniu mrówek.",
+            "about-3": "Ekologia nie jest synonimem wiedzy o środowisku lub nauką obejmująca problemy środowiska.",
+            "about-4": "Nie oznacza to, że wyniki poznania ekologicznego nie powinny być wykorzystane w ochronie środowiska."
+        },
+        "eco-facts": {
+            "title": "Garść faktów z dziedziny ochrony środowiska",
+            "about-1": "Codziennie wymiera od 150 do 200 gatunków.",
+            "about-2": "Codziennie ścina się 27 000 drzew tylko do wyrobu papieru toaletowego.",
+            "about-3": "Co roku ludzie używają w przybliżeniu 80 000 000 000 000 aluminiowych puszek.",
+            "about-4": "Co roku około 1 000 000 zwierząt wodnych umiera z powodu odpadów plastikowych w morzach.",
+            "about-5": "Szło rozkłada się 4000 lat."
+        }
+    },
+    "loading-page": {
+        "main-message": "Trwa ładowanie strony. Proszę czekać."
+    },
+    "nasa-counters": {
+        "general": {
+            "link": "Dane ze strony NASA"
+        },
+        "name": {
+            "sea-level": "Poziom Mórz",
+            "ice-sheets": "Pokrywy Lodowe",
+            "global-temperature": "Globalna Temperatura",
+            "carbon-dioxide": "Dwutlenek Węgla",
+            "arctic-ice-minimum": "Minimum Arktycznej Pokrywy Lodowej"
+        },
+        "dir": {
+            "up": "wzrost",
+            "down": "spadek"
+        },
+        "unit": {
+            "millimeters-per-year": "millimetrów w ciągu roku",
+            "billion-metric-tons-per-year": "miliard ton w ciągu roku",
+            "since-1880": "°F od 1880",
+            "percent-per-decade": "procent w ciągu dekady",
+            "parts-per-million": "cząstek na milion"
+        }
+    },
     "navbar": {
         "articles": "Artykuły",
         "environment": "Środowisko",
@@ -7,9 +93,45 @@
         "environment-smog": "Smog",
         "about-us": "O nas"
     },
-    "footer": {
-        "privacy-policy": "Polityka prywatności",
-        "sources": "Źródła strony"
+    "page-not-found": {
+        "link-text-start": "Kliknij",
+        "link-text-ref": "tutaj",
+        "link-text-end": "aby powrócić na stronę główną."
+    },
+    "pollution-effect-ozone-page": {
+        "title": "Dziura ozonowa",
+        "about-1": "Jest to zmniejszenie się powłoki ozonowej, która ochrania nas przed szkodliwym dla zdrowia\npromieniowaniem UV",
+        "about-2": "Przyczynia się do wzrostu zachorowań na raka skóry i choroby oczu",
+        "about-3": "Jest przyczyną osłabienia odporności, a w konsekwencji zwiększenia ryzyka zarażenia chorobami\nwirusowymi i pasożytniczymi"
+    },
+    "pollution-effect-smog-page": {
+        "title": "Smog",
+        "about-1": "W głównej mierze spowodowany emisją spalin i pyłów do atmosfery przez samochody oraz zakłady\nprzemysłowe",
+        "about-2": "Jest przyczyną kwaśnych deszczy, które mają bardzo negatywny wpływ na środowisko",
+        "about-3": "Znacząco obniża poziom zdrowia mieszkańców obszarów na których występuje"
+    },
+    "pollution-effect-warming-page": {
+        "title": "Globalne ocieplenie",
+        "about-1": "Jest to stopniowe podnoszenie się średniej globalnej temperatury",
+        "about-2": "Skutkuje wymieraniem gatunków",
+        "about-3": "Powoduje częstsze występowanie zjawisk ekstremalnych takich jak fale upałów, susze,\npożary,\nhuragany, trąby powietrzne",
+        "about-4": "Jest przyczyną topnienia lodowców"
+    },
+    "pollution-effects": {
+        "title": "Skutki zaniedbania środowiska",
+        "global-warming": "Globalne ocieplenie",
+        "ozone-depletion": "Dziura ozonowa",
+        "smog": "Smog",
+        "deaths-counter": {
+            "main-text": "tyle osób rocznie umiera z powodu zanieczyszczenia wody i powietrza"
+        }
+    },
+    "sources-page": {
+        "sources": "Źródła",
+        "about-freepik-start": "Ikony stworzone przez",
+        "about-freepik-ref": "Freepik",
+        "about-freepik-end": "ze strony",
+        "about-pexels": "Obrazki pobrane ze strony"
     },
     "email": "climate.site.put@gmail.com"
 }

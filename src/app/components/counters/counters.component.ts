@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CountUp} from 'countup.js';
 import {CountersService} from '../../services/counters.service';
 import {Subscription} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-counters',
@@ -17,12 +18,12 @@ export class CountersComponent implements OnInit, AfterViewInit {
     changeBySecond: number[] = [];
     updateTimeout = 6000;
     dateOfDataFetch: Date;
-    countersText: string[] = ['ton CO2 wydalono do atmosfery',
-        'ton lodu stopniało',
-        'teradżuli prądu zużyto',
-        'ton odpadów wyrzucono',
-        'ton surowców z ziemi wydobyto',
-        'ton plastiku do oceanu wyrzucono'
+    countersText: string[] = ['counters.names.carbon-dioxide',
+        'counters.names.ice',
+        'counters.names.electricity',
+        'counters.names.waste',
+        'counters.names.resources',
+        'counters.names.plastic'
     ];
     urls = {
         0: 'https://www.theworldcounts.com/challenges/climate-change/global-warming/global-co2-emissions/story',
@@ -33,7 +34,10 @@ export class CountersComponent implements OnInit, AfterViewInit {
         5: 'https://www.theworldcounts.com/challenges/planet-earth/oceans/plastic-in-the-ocean/story'
     };
 
-    constructor(private countersService: CountersService) {
+    constructor(private countersService: CountersService, private translateService: TranslateService) {
+        for (let i = 0; i < this.countersText.length; i++){
+            this.translateService.get(this.countersText[i]).subscribe((text: string) => {this.countersText[i] = text; });
+        }
     }
 
 
