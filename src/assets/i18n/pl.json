@@ -18,7 +18,15 @@
         "show-more": "Pokaż więcej"
     },
     "counters": {
-        "title": "W ciągu dzisiejszego dnia"
+        "title": "W ciągu dzisiejszego dnia",
+        "names": {
+            "carbon-dioxide": "ton CO2 wydalono do atmosfery",
+            "ice": "ton lodu stopniało",
+            "electricity": "teradżuli prądu zużyto",
+            "waste": "ton odpadów wyrzucono",
+            "resources": "ton surowców z ziemi wydobyto",
+            "plastic": "ton plastiku do oceanu wyrzucono"
+        }
     },
     "footer": {
         "privacy-policy": "Polityka prywatności",

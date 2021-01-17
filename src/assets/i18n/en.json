@@ -18,7 +18,15 @@
         "show-more": "Show more."
     },
     "counters": {
-        "title": "During this day"
+        "title": "During this day",
+        "names": {
+            "carbon-dioxide": "tons of CO2 were emitted to the atmosphere",
+            "ice": "tons of ice melted",
+            "electricity": "tera-joules of electricity were used",
+            "waste": "tons of waste was dumped",
+            "resources": "tons of resources were extracted from Earth",
+            "plastic": "tons of plastic were thrown out to the ocean"
+        }
     },
     "footer": {
         "privacy-policy": "Privacy policy",
