@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DeathsCounterComponent} from './deaths-counter.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('DeathsCounterComponent', () => {
     let component: DeathsCounterComponent;
@@ -8,7 +9,8 @@ describe('DeathsCounterComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DeathsCounterComponent]
+            declarations: [DeathsCounterComponent],
+            imports: [TranslateModule.forRoot()]
         })
             .compileComponents();
     });

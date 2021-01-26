@@ -1,14 +1,16 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {AboutUsPageComponent} from './about-us-page.component';
+import {TranslateModule} from '@ngx-translate/core';
 
-describe('ContactPageComponent', () => {
+describe('AboutUsPageComponent', () => {
     let component: AboutUsPageComponent;
     let fixture: ComponentFixture<AboutUsPageComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AboutUsPageComponent]
+            declarations: [AboutUsPageComponent],
+            imports: [TranslateModule.forRoot()]
         })
             .compileComponents();
     });

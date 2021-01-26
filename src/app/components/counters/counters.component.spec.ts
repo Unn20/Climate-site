@@ -2,6 +2,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {CountersComponent} from './counters.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('CountersComponent', () => {
     let component: CountersComponent;
@@ -10,7 +11,7 @@ describe('CountersComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [CountersComponent],
-            imports: [HttpClientTestingModule]
+            imports: [HttpClientTestingModule, TranslateModule.forRoot()]
         })
             .compileComponents();
     });

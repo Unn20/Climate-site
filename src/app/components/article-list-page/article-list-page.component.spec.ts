@@ -4,6 +4,7 @@ import {ArticleListPageComponent} from './article-list-page.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ArticleListPageComponent', () => {
     let component: ArticleListPageComponent;
@@ -12,7 +13,7 @@ describe('ArticleListPageComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [ArticleListPageComponent],
-            imports: [HttpClientTestingModule, RouterTestingModule, NoopAnimationsModule]
+            imports: [HttpClientTestingModule, RouterTestingModule, NoopAnimationsModule, TranslateModule.forRoot()]
         })
             .compileComponents();
     });
