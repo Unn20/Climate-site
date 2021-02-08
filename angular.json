@@ -14,7 +14,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
               "allowedCommonJsDependencies": [
-                  "chart.js"
+                  "chart.js",
+                  "axios"
               ],
             "outputPath": "dist/climate-site",
             "index": "src/index.html",
