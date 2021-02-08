@@ -52,7 +52,7 @@ export class NavbarComponent implements AfterViewInit {
     }
 
     @HostListener('document:click', ['$event'])
-    clickout(event) {
+    clickout(event): void {
         if (!(document.getElementById('burgerIcon').contains(event.target))) {
             this.switchOffHamburger();
         } else {
