@@ -18,6 +18,8 @@ Pod przewodnictwem promotora prof. PP dr hab. mgr. inż. Macieja Zakrzewicza.
 
 ### Technologia
 
+![Logo technologi Angular](src/assets/img/icons/angular-logo.png)
+
 Projekt zostały wykonany z wykorzystaniem popularnego frame-worka **Angular**. (Wspieranego przez m. in. Google)
 Style do poszczególnych komponentów i do całości aplikacji są napisane w roszerzeniu języka **CSS** o nazwie **Sass**. Stosuje on rozszerzenia arkuszy stylów ```*.scss``` i rozszerza możliwości standardowego css o m. in.:
 
@@ -25,7 +27,7 @@ Style do poszczególnych komponentów i do całości aplikacji są napisane w ro
 - Możliwość deklarowania zmiennych
 - Wykorzystanie arkuszy w innych arkuszach poprzez dyrektywę **@use**
 
-![Logo technologi Angular](src/assets/img/icons/angular-logo.png)
+![Logo technologi Sass](src/assets/img/icons/sass-logo-s.png)
 
 ## Budowanie i uruchamianie
 ### Wymagania
