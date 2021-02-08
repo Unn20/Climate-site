@@ -3,6 +3,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {ArticlePageComponent} from './article-page.component';
 import {ArticleContentTypeEnum} from '../../enums/article-content-type-enum';
 import {RouterTestingModule} from '@angular/router/testing';
+import {PageNotFoundComponent} from '../page-not-found/page-not-found.component';
 
 describe('ArticlePageComponent', () => {
     let component: ArticlePageComponent;
@@ -11,7 +12,9 @@ describe('ArticlePageComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [ArticlePageComponent],
-            imports: [RouterTestingModule]
+            imports: [RouterTestingModule.withRoutes([
+                { path: '**', component: PageNotFoundComponent}
+            ])]
         })
             .compileComponents();
     });
