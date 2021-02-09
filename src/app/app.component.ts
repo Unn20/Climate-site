@@ -16,6 +16,8 @@ export class AppComponent {
     constructor(private translateService: TranslateService,
                 private router: Router,
                 private loadingPageService: LoadingPageService) {
+        console.warn = () => {};
+        console.error = () => {};
         const acceptedLanguages = ['pl', 'en'];
         const userLang = navigator.language || window.navigator.language;
         if (acceptedLanguages.includes(userLang)){
