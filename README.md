@@ -14,7 +14,7 @@ Wyżej wspomnieni pierwotni twórcy projketu to:
 - Paweł Kryczka,
 - Krzysztof Charlikowski.
 
-Pod przewodnictwem promotora prof. PP dr hab. mgr. inż. Macieja Zakrzewicza.
+Pod przewodnictwem Promotora dr hab. Macieja Zakrzewicza, prof. PP.
 
 ### Technologia
 
