@@ -16,7 +16,15 @@ export class AppComponent {
     constructor(private translateService: TranslateService,
                 private router: Router,
                 private loadingPageService: LoadingPageService) {
-        translateService.setDefaultLang('pl');
+        console.warn = () => {};
+        console.error = () => {};
+        const acceptedLanguages = ['pl', 'en'];
+        const userLang = navigator.language || window.navigator.language;
+        if (acceptedLanguages.includes(userLang)){
+            translateService.setDefaultLang(userLang);
+        } else {
+            translateService.setDefaultLang('pl');  // TODO: en?
+        }
         this.router.events.subscribe((evt) => {
             if (evt instanceof NavigationEnd) {
                 window.scrollTo(0, 0);

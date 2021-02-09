@@ -42,7 +42,7 @@ export class ArticlePageComponent {
             const articleToShowId = parseInt(event.articleId, 10);
             this.articleToShow = this.articles.find(article => article.id === articleToShowId);
             if (!this.articleToShow) {
-                this.router.navigate(['/home']);
+                this.router.navigate(['**']);
             } else {
                 const articlesWithoutCurrent = [...this.articles];
                 articlesWithoutCurrent.splice(this.articles.indexOf(this.articleToShow), 1);

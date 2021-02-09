@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {LoadingPageComponent} from './loading-page.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('LoadingPageComponent', () => {
     let component: LoadingPageComponent;
@@ -8,7 +9,8 @@ describe('LoadingPageComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [LoadingPageComponent]
+            declarations: [LoadingPageComponent],
+            imports: [TranslateModule.forRoot()]
         })
             .compileComponents();
     });

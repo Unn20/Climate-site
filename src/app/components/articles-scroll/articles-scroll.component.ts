@@ -126,9 +126,6 @@ export class ArticlesScrollComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     ngAfterViewInit(): void {
-        for (let i = 0; i < this.latestArticles.length; i++) {
-            this.myScrollView.next();
-        }
         this.myScrollView.pageChange(0);
         this.myScrollView.endless = true;
         this.updateHeight();

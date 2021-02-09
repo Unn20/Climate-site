@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {SourcesPageComponent} from './sources-page.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('SourcesPageComponent', () => {
     let component: SourcesPageComponent;
@@ -8,7 +9,8 @@ describe('SourcesPageComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [SourcesPageComponent]
+            declarations: [SourcesPageComponent],
+            imports: [TranslateModule.forRoot()]
         })
             .compileComponents();
     });

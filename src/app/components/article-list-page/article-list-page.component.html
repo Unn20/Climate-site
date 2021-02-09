@@ -1,6 +1,6 @@
 <div class="article-list">
-    <h2>Lista wszystkich artykułów</h2>
-    <div id="main-separator"></div>
+    <h2>{{'article-list-page.all-articles' | translate}}</h2>
+    <div id="main-separator">
     <div class="articles-container" id="articles">
         <div *ngFor="let article of articles" (click)="articleService.redirectToArticle(article.id);" class="article">
             <div class="separator"></div>
@@ -15,7 +15,8 @@
     </div>
     <div class="button-container">
         <button *ngIf="areMoreArticlesHidden()" class="show-more main-bg-b shade" (click)="showMoreArticles()"
-                (mousedown)="$event.preventDefault()">Pokaż więcej
+                (mousedown)="$event.preventDefault()">{{'article-list-page.show-more' | translate}}
         </button>
+    </div>
     </div>
 </div>

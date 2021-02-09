@@ -2,12 +2,20 @@ image: node:latest
 
 stages:
   - build
+  - test
   - deploy
 
 before_script:
-    - npm install -g @angular/cli@
-    - npm ci
+  - npm install -g @angular/cli@
+  - npm ci
 
+test:
+  image: trion/ng-cli-karma:latest
+  allow_failure: false
+  script:
+  - ng test --progress false --watch false
+  tags:
+  - docker
 
 build_development:
   stage: build

@@ -1,0 +1,137 @@
+{
+    "about-us-page": {
+        "intro": "We are but a group of 4 colleagues studying at Poznan University of Technology, who decided to work together on their Bachelor Thesis.",
+        "professor": "Our thesis supervisor during this project was: ",
+        "professor-info": "Maciej Zakrzewicz, Ph.D., Computer Science, member of the faculty of Poznan University of Technology.",
+        "team-mates": "Below you shall find a tad bit more information about each one of us.",
+        "kamil": "My name is Kamil. I work as a Frontend Web Developer. I like to learn new \nthings and use them to create my own projects and applications. I am passionate about computer science but\nmy additional interests involve basketball, snowboarding, and playing musical instruments\n(e.g. violin, guitar).",
+        "krzysztof": "Hi, my name is Krzysiek, I was 21 at the time of writing this project.\nI like to program in python, play computer games (mainly single-player), and watch as others play them.\n I used to read a lot of fantasy books but\nlately I switched to scientific books concerning different fields (programming, biology).",
+        "maciej": "Hi, my name is Maciek and I am one of the authors of this website. I like acquiring knowledge and getting a hands on experience with new\nIT related technologies. I try to develop myself in every direction, thus I do not have a favourite\nscientific field. In my spare time I go rollerblading or cycling. I am also a skiing enthusiast.",
+        "pawel": "Hello there! I am Paweł and I like to spend my spare time actively, on the move. I get a ton of fun from exploring\ndifferent kinds of music and really cherish finding something entirely new to me. During the project, mainly I handled\nthe implementation of the bac-kend side and the database side (AWS hosting),\nCI/CD for back-end and front-end.\nI also supported the team on the front-end side, helping with the development of various components.",
+        "contact": "How to contact us ?",
+        "email-info": "Email address: ",
+        "email-ref": "mailto:climatesite@gmail.com",
+        "email": "climatesite@gmail.com"
+    },
+    "article-list-page": {
+        "all-articles": "List of all articles",
+        "show-more": "Show more."
+    },
+    "counters": {
+        "title": "During this day",
+        "names": {
+            "carbon-dioxide": "tons of CO2 were emitted to the atmosphere",
+            "ice": "tons of ice melted",
+            "electricity": "tera-joules of electricity were used",
+            "waste": "tons of waste was dumped",
+            "resources": "tons of resources were extracted from Earth",
+            "plastic": "tons of plastic were thrown out to the ocean"
+        }
+    },
+    "footer": {
+        "privacy-policy": "Privacy policy",
+        "sources": "Page's sources"
+    },
+    "home-page-content": {
+        "be-eco": {
+            "title": "What will you find on this page ?",
+            "trivia": "Curiosities from the world of ecology and environment protection.",
+            "plots": "Graphs with climate data.",
+            "counters": "Counters concerning the dynamic of environmental changes in the world.",
+            "articles": "Articles concerning ecology and environment protection."
+        },
+        "about-ecology": {
+            "title": "What is ecology ?",
+            "about-1": "Ecology is a branch of biology that deals with the relations of organism to one another and their physical surroundings.",
+            "about-2-start": "Studying nature leads to many interesting discoveries, e.g.",
+            "about-2-ref": "https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms",
+            "about-2-ref-text": "Ant colony optimization algorithms",
+            "about-2-end": "based on the behavior of ants.",
+            "about-3": "Ecology is not synonymous with knowledge about the environment or sciences dealing with environmental problems.",
+            "about-4": "That does not mean that the achievements of ecological research should not be used to protect the environment."
+        },
+        "eco-facts": {
+            "title": "A bunch of facts from the field of environment protection",
+            "about-1": "From 150 to 200 species of animals die off on a daily basis.",
+            "about-2": "Everyday about 27 000 trees are cut down just to meet the need for toilet paper.",
+            "about-3": "Every year about 80 000 000 000 000 aluminum cans are used.",
+            "about-4": "Every year about 1 000 000 water animals die from plastic waste in seas.",
+            "about-5": "It takes about 4000 years for a glass bottle to decompose."
+        }
+    },
+    "loading-page": {
+        "main-message": "Website loading. Please stand by."
+    },
+    "nasa-counters": {
+        "general": {
+            "link": "Data from NASA's web page"
+        },
+        "name": {
+            "sea-level": "Sea Level",
+            "ice-sheets": "Ice Sheets",
+            "global-temperature": "Global Temperature",
+            "carbon-dioxide": "Carbon Dioxide",
+            "arctic-ice-minimum": "Arctic Ice Minimum"
+        },
+        "dir": {
+            "up": "up",
+            "down": "down"
+        },
+        "unit": {
+            "millimeters-per-year": "millimeters per year",
+            "billion-metric-tons-per-year": "billion metric tons per year",
+            "since-1880": "°F since 1880",
+            "percent-per-decade": "percent per decade",
+            "parts-per-million": "parts per million"
+        }
+    },
+    "navbar": {
+        "articles": "Articles",
+        "environment": "Environment",
+        "environment-global-warming": "Global warming",
+        "environment-ozone-hole": "Ozone hole",
+        "environment-smog": "Smog",
+        "about-us": "About us"
+    },
+    "page-not-found": {
+        "link-text-start": "Click",
+        "link-text-ref": "here",
+        "link-text-end": "to return to the main page."
+    },
+    "pollution-effect-ozone-page": {
+        "title": "Ozone hole",
+        "about-1": "A region of marked thinning of the ozone layer in high latitudes, chiefly in winter, attributed to the chemical action of CFCs and other atmospheric pollutants.",
+        "about-2": "The resulting increase in ultraviolet light at ground level gives rise to an increased risk of skin cancer.",
+        "about-3": "It causes weakened immunity and consequently increases the risk of\ncontracting viral and parasitic diseases."
+    },
+    "pollution-effect-smog-page": {
+        "title": "Smog",
+        "about-1": "W głównej mierze spowodowany emisją spalin i pyłów do atmosfery przez samochody oraz zakłady\nprzemysłowe",
+        "about-2": "Jest przyczyną kwaśnych deszczy, które mają bardzo negatywny wpływ na środowisko",
+        "about-3": "Znacząco obniża poziom zdrowia mieszkańców obszarów na których występuje"
+    },
+    "pollution-effect-warming-page": {
+        "title": "Global warming",
+        "about-1": "Jest to stopniowe podnoszenie się średniej globalnej temperatury",
+        "about-2": "Skutkuje wymieraniem gatunków",
+        "about-3": "Powoduje częstsze występowanie zjawisk ekstremalnych takich jak fale upałów, susze,\npożary,\nhuragany, trąby powietrzne",
+        "about-4": "Jest przyczyną topnienia lodowców"
+    },
+    "pollution-effects": {
+        "title": "The effects of environment neglection",
+        "global-warming": "Global warming",
+        "ozone-depletion": "Ozone hole",
+        "smog": "Smog",
+        "deaths-counter": {
+            "main-text": "This many people day every year due to water and air pollution"
+        }
+    },
+    "sources-page": {
+        "sources": "Sources",
+        "about-freepik-start": "Icons created by",
+        "about-freepik-ref": "Freepik",
+        "about-freepik-end": "from page",
+        "about-pexels": "Photos used from"
+    },
+    "email": "climate.site.put@gmail.com"
+}
