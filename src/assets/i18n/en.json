@@ -1,5 +1,6 @@
 {
     "about-us-page": {
+        "title": "About us",
         "intro": "We are but a group of 4 colleagues studying at Poznan University of Technology, who decided to work together on their Bachelor Thesis.",
         "professor": "Our thesis supervisor during this project was: ",
         "professor-info": "Maciej Zakrzewicz, Ph.D., Computer Science, member of the faculty of Poznan University of Technology.",
@@ -118,7 +119,7 @@
         "about-4": "Jest przyczyną topnienia lodowców"
     },
     "pollution-effects": {
-        "title": "The effects of environment neglection",
+        "title": "The effects of environment neglect",
         "global-warming": "Global warming",
         "ozone-depletion": "Ozone hole",
         "smog": "Smog",
