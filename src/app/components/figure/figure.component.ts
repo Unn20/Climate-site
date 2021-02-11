@@ -330,7 +330,7 @@ export class FigureComponent implements OnInit {
             data => {
                 this.apiData = this.restrictDataItems(data);
                 const xArray: any[] = this.apiData.map(value => {
-                    return this.pipe.transform(new Date(value[`year`]), 'yyyy');
+                    return this.pipe.transform(new Date(value[`year`], 0), 'yyyy');
                 });
                 const yArray1: any[] = this.apiData.map(value => {
                     return value[`extent`];
